@@ -28,7 +28,7 @@
 ![note-edit-create]
 
 ## Notebook
-![noteboook]
+![notebook]
 
 ## Notebook Form
 ![notebook-form]

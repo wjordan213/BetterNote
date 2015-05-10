@@ -1,22 +1,23 @@
-# Phase 1: User Authentication, Basic Blogs and Posts
+# Phase 1: User Authentication, DB Schema setup, Heroku Deployment (~1 day)
 
 ## Rails
 ### Models
 * User
-* Blog
-* Post
+* Note
+* Notebook
+* Tag
+* Tagging
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
-* PostsController (create, new, show)
+
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* blogs/new.html.erb
-* blogs/show.html.erb
+* /new.html.erb
+* /show.html.erb
 
 ## Backbone
 ### Models

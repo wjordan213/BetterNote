@@ -4,18 +4,21 @@
 ### Models
 
 ### Controllers
-
+- Api::Tags(create, show, index)
+- Api::Notebooks(create, show, index)
+- Api::Notes(index)
 ### Views
 
 ## Backbone
 ### Models
+- Tag (parses nested notes association)
+- Notebook (parses nested notes association)
 
 ### Collections
+- Tag (parses nested notes association)
+- Notebook (parses nested notes association)
 
 ### Views
-* PostForm
+- Sidebar View
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown

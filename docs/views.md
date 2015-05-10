@@ -1,7 +1,7 @@
 # View Wireframes
 
 ## New Session
-![new_session]
+![new-session]
 
 ## Feed Show (landing page)
 ![composite-view]
@@ -55,6 +55,3 @@
 [note-edit-create]: ./wireframes/note-edit-create.png
 [notebook]: ./wireframes/notebook.png
 [notebook-form]: ./wireframes/notebook-form.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png

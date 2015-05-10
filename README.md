@@ -1,4 +1,4 @@
-# Flux-capacitr
+# BetterNote
 
 [Heroku link][heroku]
 
@@ -28,52 +28,61 @@ BetterNote is a clone of Evernote built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
+### Phase 1: User Authentication, DB Schema setup, Heroku Deployment (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before moving on
-to phase 2.
+App Academy. Buy the end of this phase, users will be able to sign in, sign up,
+and all the tables for my database will be setup. The most important part of
+this phase will be pushing the app to Heroku and ensuring that everything works
+before moving on to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
-I will add API routes to serve blog and post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create blogs and view both blogs and posts, all
-inside a single Backbone app.
+### Phase 2: Note CRUD (~1 day)
+I plan to compose my composite view and my primary sub-view in this phase. First
+I will add API routes to serve note data as JSON, as well as CRUD controller
+actions for notes, then I will create a Backbone Model, View, Collection, and
+router for my notes. At the end of this phase, users will be able to create
+and view notes, all inside a single Backbone App.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: Notebooks, Tags, Notes Index via sidebar view (~2-3 days)
+On the back end, I will compose my api routes for sending down JSON objects
+consisting of titles and ID's for my notebook and tag. I will also create an api route
+that sends down a list of all the notes specific to a notebook.
+
+On the front end, I will create a sidebar composite view, and collection/model
+for notebooks. I will also create an association between notebooks and notes and
+vice versa. I will create sidebar-subviews that display an index of notebooks and
+notes, and I will then create a sidebar subview specific to listing tags
+finally, I will create a notebook primary subview, which indexes that
+notebook's notes.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
-collection fetches from the new route.  Ultimately, this will be the page users
-see after logging in.
+### Phase 4: Searching for Notes, Notebooks, and Tags (~1 day)
+The search will essentially thin down the indexed tags, notebooks, or notes
+in the sidebar. I will add a search bar on top of the view, then I will add
+an event handler for key input to the browser which matches the titles against
+search bar input
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need to add `search` routes to both the Blogs and Posts controllers. On the
-Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
-and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
-collections, but they will fetch from the new `search` routes.
+
+### Phase 5: drag and drop note linking  (~2-3 days)
+First, I'll have the primary note view/edit view resize when the sidebar view
+pops up, then I'll enable drag and drop from the sidebar to allow linking between
+notes. That drag and drop will have to yield some escaped html containing
+the dragged notes id. I will then set up click handlers on each dragged element
+for navigation to that note's corresponding view.
 
 [Details][phase-five]
 
+
 ### Bonus Features (TBD)
-- [ ] drag and drop note linking
 - [ ] change notebook/tag pages to only be contained in sidebar view
+- [ ] Back and forward buttons on notes
+- [ ] Easy hyperlinking to notes
 - [ ] Edit Tags
 - [ ] delete account
 - [ ] Pagination/infinite scroll

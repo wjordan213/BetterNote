@@ -1,26 +1,21 @@
 # Schema Information
 
-## blogs
+## Notes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
-title       | string    | not null
+user_id     | integer   | not null, indexed, foreign key (references users)
+notebook_id | integer   | indexed, foreign key (references notebook) has one?
+title       | string    | not null, indexed
+content     | text      | not null
 
-## followings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-blog_id     | integer   | not null, foreign key (references blogs)
-follower_id | integer   | not null, foreign key (references users)
 
-## posts
+## Notebooks
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
-body        | string    |
+user_id     | integer   | not null, indexed,  foreign key (references users)
+title       | string    | not null, indexed
 
 ## tags
 column name | data type | details
@@ -32,14 +27,13 @@ label       | string    | not null, unique
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-post_id     | integer   | not null, foreign key (references posts)
+note_id     | integer   | not null, foreign key (references posts)
 tag_id      | integer   | not null, foreign key (references tags)
 
 ## users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-email           | string    | not null, unique
+username        | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
-

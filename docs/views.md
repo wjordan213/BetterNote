@@ -38,8 +38,8 @@
 
 [tag-page]: ./wireframes/tag-page.png
 [new-session]: ./wireframes/new-session.png
-[composit-view]: ./wireframes/composite-view.png
-[annotated-composit-view]: ./wireframes/annotated-composite-view.png
+[composite-view]: ./wireframes/composite-view.png
+[annotated-composite-view]: ./wireframes/annotated-composite-view.png
 [sidebar-notebook-list]: ./wireframes/sidebar-notebook-list.png
 [sidebar-tag-list]: ./wireframes/sidebar-tag-list.png
 [sidebar-note-list]: ./wireframes/sidebar-note-list.png

@@ -3,7 +3,7 @@
 ## New Session
 ![new-session]
 
-## Feed Show (landing page)
+## Composite View
 ![composite-view]
 
 ## Anotated Composite View
@@ -36,15 +36,8 @@
 ## Tag Page
 ![tag-page]
 
-## Post Form
-![post-form]
-
-## Search Results
-![search-results]
-
-
 [tag-page]: ./wireframes/tag-page.png
-[new-session]: ./wireframes/new_session.png
+[new-session]: ./wireframes/new-session.png
 [composit-view]: ./wireframes/composite-view.png
 [annotated-composit-view]: ./wireframes/annotated-composite-view.png
 [sidebar-notebook-list]: ./wireframes/sidebar-notebook-list.png

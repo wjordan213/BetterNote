@@ -6,8 +6,8 @@
 ## Rootview and Sidebar
 ![Rootview-and-Sidebar]
 
-## Anotated Composite View
-![annotated-composite-view]
+## annotated Rootview and Sidebar
+![Main-view]
 
 ## Sidebar Notebook List
 ![sidebar-notebook-list]
@@ -39,12 +39,11 @@
 [tag-page]: ./wireframes/tag-page.png
 [new-session]: ./wireframes/new-session.png
 [Rootview-and-Sidebar]: ./wireframes/rootview-and-sidebar.png
-[annotated-composite-view]: ./wireframes/annotated-composite-view.png
+[Main-view]: ./wireframes/main-view.png
 [sidebar-notebook-list]: ./wireframes/sidebar-notebook-list.png
 [sidebar-tag-list]: ./wireframes/sidebar-tag-list.png
 [sidebar-note-list]: ./wireframes/sidebar-note-list.png
 [sidebar-search-results]: ./wireframes/sidebar-search-results.png
 [note-view]: ./wireframes/note-view.png
-[note-edit-create]: ./wireframes/note-edit-create.png
 [notebook]: ./wireframes/notebook.png
 [notebook-form]: ./wireframes/notebook-form.png

@@ -1,9 +1,5 @@
 <form action="<%= status %>" method="Post">
-  <input
-  type="hidden"
-  name="authenticity_token"
-  value="<%= form_authenticity_token %>">
-
+  <%= auth_token %>
   <label for="user_email">Email</label><br>
   <input type="text" name="user[email]"><br>
 <br>

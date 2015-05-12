@@ -1,4 +1,18 @@
 <ul class="header">
-    <li class="logo">BetterNote</li>
-    <li class="link"><a href="<%= new_user_url %>">Sign up</a></li>
+  <li class="logo">BetterNote</li>
+  <% if logged_in? %>
+    <li class="link">
+      <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="Delete">
+        <%= auth_token %>
+        <button>Logout</button>
+      </form>
+    </li>
+  <% else %>
+    <% if request.original_url == new_session_url %>
+      <li class="link"><a href="<%= new_user_url %>">Sign up</a></li>
+    <% else %>
+      <li class="link"><a href="<%= new_session_url %>">Sign in</a></li>
+    <% end %>
+  <% end %>
 </ul>

@@ -79,6 +79,8 @@ for navigation to that note's corresponding view.
 - [ ] Easy hyperlinking to notes
 - [ ] Back and forward buttons on notes
 - [ ] User Show page
+- [ ] Regexp email validation
+- [ ] email confirmation via actionMailer
 - [ ] filter out notes index by multiple tags
 - [ ] Edit Tags
 - [ ] delete account

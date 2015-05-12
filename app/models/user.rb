@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
-  validates :email,:password_digest, :session_token, presence: true
+  validates :email, :session_token, presence: true
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6}, allow_nil: true
   validates :email, length: {minimum: 6}
+  validate :password_digest_blank
 
-  before_validation :ensure_session_token
+  after_initialize :ensure_session_token
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64
@@ -22,6 +23,12 @@ class User < ActiveRecord::Base
 
   attr_accessor :password
 
+  def password_digest_blank
+    if password_digest.blank?
+      errors.add(:password, "can't be blank")
+    end
+  end
+
   def reset_session_token!
     self.session_token = User.generate_session_token
     self.save!
@@ -35,6 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def password=(password)
+    return if password.empty?
     self.password_digest = BCrypt::Password.create(password)
   end
 

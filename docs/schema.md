@@ -21,7 +21,7 @@ title       | string    | not null, indexed
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-label       | string    | not null, unique
+title       | string    | not null, unique
 
 ## taggings
 column name | data type | details

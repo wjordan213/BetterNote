@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :notebooks,
+  class_name: "Notebook",
+  foreign_key: :user_id,
+  primary_key: :id,
+  dependent: :destroy
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64
   end

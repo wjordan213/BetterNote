@@ -3,8 +3,8 @@
 ## New Session
 ![new-session]
 
-## Composite View
-![composite-view]
+## Rootview and Sidebar
+![Rootview-and-Sidebar]
 
 ## Anotated Composite View
 ![annotated-composite-view]
@@ -38,7 +38,7 @@
 
 [tag-page]: ./wireframes/tag-page.png
 [new-session]: ./wireframes/new-session.png
-[composite-view]: ./wireframes/composite-view.png
+[Rootview-and-Sidebar]: ./wireframes/rootview-and-sidebar.png
 [annotated-composite-view]: ./wireframes/annotated-composite-view.png
 [sidebar-notebook-list]: ./wireframes/sidebar-notebook-list.png
 [sidebar-tag-list]: ./wireframes/sidebar-tag-list.png

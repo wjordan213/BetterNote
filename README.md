@@ -78,6 +78,7 @@ for navigation to that note's corresponding view.
 ### Bonus Features (TBD)
 - [ ] Easy hyperlinking to notes
 - [ ] Back and forward buttons on notes
+- [ ] User Show page
 - [ ] filter out notes index by multiple tags
 - [ ] Edit Tags
 - [ ] delete account

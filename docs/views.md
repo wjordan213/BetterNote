@@ -24,9 +24,6 @@
 ## Note View
 ![note-view]
 
-## Note Edit/Create
-![note-edit-create]
-
 ## Notebook
 ![notebook]
 

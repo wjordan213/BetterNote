@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     SecureRandom::urlsafe_base64
   end
 
+  def self.generate_password_digest(password)
+    BCrypt::Password.create(password)
+  end
+
   def self.find_by_credentials(email, password)
     # fail
     user = self.find_by(email: email[1])
@@ -41,7 +45,6 @@ class User < ActiveRecord::Base
   end
 
   def ensure_session_token
-    puts 'hello'
     unless self.session_token
       self.session_token = User.generate_session_token
     end
@@ -49,7 +52,7 @@ class User < ActiveRecord::Base
 
   def password=(password)
     return if password.empty?
-    self.password_digest = BCrypt::Password.create(password)
+    self.password_digest = User.generate_password_digest(password)
   end
 
   def is_password?(password)

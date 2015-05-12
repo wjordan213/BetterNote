@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+users = User.create!([
+  {email: 'password', password_digest: User.generate_password_digest('password')},
+  {email: 'wjordan213@gmail.com', password_digest: User.generate_password_digest('password')}])
+
+notebooks = users[0].notebooks.create!([
+  {title: 'mcmuffins'},
+  {title: 'cheesy and delicious'},
+  {title: 'scrumptiousness'},
+  {title: 'soylent is disgustin'}
+  ])

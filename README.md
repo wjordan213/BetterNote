@@ -28,35 +28,31 @@ BetterNote is a clone of Evernote built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, DB Schema setup, Heroku Deployment (~1 day)
+### Phase 1: User Authentication Heroku Deployment (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. Buy the end of this phase, users will be able to sign in, sign up,
-and all the tables for my database will be setup. The most important part of
+App Academy. By the end of this phase, users will be able to sign in and sign up. The most important part of
 this phase will be pushing the app to Heroku and ensuring that everything works
 before moving on to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Note CRUD (~1 day)
-I plan to compose my composite view and my primary sub-view in this phase. First
-I will add API routes to serve note data as JSON, as well as CRUD controller
+### Phase 2: Notebooks via sidebar view (~1 day)
+I plan to compose my root view and my primary sub-view in this phase. First
+I will add API routes to serve notebook data as JSON, as well as CRUD controller
 actions for notes, then I will create a Backbone Model, View, Collection, and
-router for my notes. At the end of this phase, users will be able to create
-and view notes, all inside a single Backbone App.
+router for my notebooks. At the end of this phase, users will be able to create
+and view (empty) notebooks, all inside a single Backbone App.
 
 [Details][phase-two]
 
-### Phase 3: Notebooks, Tags, Notes Index via sidebar view (~2-3 days)
+### Phase 3: Note CRUD, Tags, Notes Index  (~2-3 days)
 On the back end, I will compose my api routes for sending down JSON objects
-consisting of titles and ID's for my notebook and tag. I will also create an api route
-that sends down a list of all the notes specific to a notebook.
+consisting of titles and ids for my tags and notes, as well as content for my notes. I will also create an api route
+that sends down a list of all the notes specific to a notebook and tag, and one for sending down all of the notes.
 
-On the front end, I will create a sidebar composite view, and collection/model
-for notebooks. I will also create an association between notebooks and notes and
-vice versa. I will create sidebar-subviews that display an index of notebooks and
-notes, and I will then create a sidebar subview specific to listing tags
-finally, I will create a notebook primary subview, which indexes that
-notebook's notes.
+On the front end, I will first create a view for editing/creating/viewing notes. I will then create a sidebar composite view, and collection/model
+for notes and tags. I will also create an association between notebooks and notes and
+vice versa. Last, I will create a sidebar-subview that display an index of notes corresponding to notebooks and one that groups by tags.
 
 [Details][phase-three]
 
@@ -80,9 +76,9 @@ for navigation to that note's corresponding view.
 
 
 ### Bonus Features (TBD)
-- [ ] change notebook/tag pages to only be contained in sidebar view
-- [ ] Back and forward buttons on notes
 - [ ] Easy hyperlinking to notes
+- [ ] Back and forward buttons on notes
+- [ ] filter out notes index by multiple tags
 - [ ] Edit Tags
 - [ ] delete account
 - [ ] Pagination/infinite scroll

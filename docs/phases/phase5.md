@@ -1,7 +1,9 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: drag and drop note linking
 
 ## Rails
 ### Models
+- noteLink
+- note
 
 ### Controllers
 
@@ -9,9 +11,11 @@
 
 ## Backbone
 ### Models
-
+- Note
 ### Collections
 
 ### Views
+- noteIndex
+- noteForm
 
 ## Gems/Libraries

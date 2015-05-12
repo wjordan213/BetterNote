@@ -2,23 +2,27 @@
 
 ## Rails
 ### Models
+* Notebook
 
 ### Controllers
-Api::NotesController (create, show, update, destroy)
+- Api::notebooksController
 
 ### Views
-* notes/show.json.jbuilder
+* root.html
+* notebooks/show.json.jbuilder
+* notebooks/index.json.jbuilder
 
 ## Backbone
 ### Models
-* Note
+* notebook (parses nested notes association)
 
 ### Collections
-* Notes
+* notebooks
 
 ### Views
-* CompView
-* NoteShow
-* NoteForm
+* sidebar view
+* sidebar-content view?
+* notebookShow
+* notebookIndex
 
 ## Gems/Libraries

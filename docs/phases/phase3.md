@@ -2,23 +2,33 @@
 
 ## Rails
 ### Models
+* Note
+* Tag
+* Tagging
 
 ### Controllers
+- Api::NotesController (create, show, update, destroy, index)
 - Api::Tags(create, show, index)
-- Api::Notebooks(create, show, index)
-- Api::Notes(index)
 ### Views
+* notes/show.json.jbuilder
+* notes/index.json.jbuilder
+* Tags/index.json.jbuilder
+* Tags/index.json.jbuilder
 
 ## Backbone
 ### Models
 - Tag (parses nested notes association)
-- Notebook (parses nested notes association)
+- Note
 
 ### Collections
 - Tag (parses nested notes association)
-- Notebook (parses nested notes association)
+- Notes
+- Notebooks are modified
 
 ### Views
-- Sidebar View
+- NoteShow
+- NoteForm
+- Notes index view
+- Tag index view
 
 ## Gems/Libraries

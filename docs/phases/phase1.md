@@ -3,10 +3,6 @@
 ## Rails
 ### Models
 * User
-* Note
-* Notebook
-* Tag
-* Tagging
 
 ### Controllers
 * UsersController (create, new)

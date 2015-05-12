@@ -1,16 +1,3 @@
 <h1>Sign up!</h1>
 
-<form action="<%= users_url %>" method="Post">
-  <input
-  type="hidden"
-  name="authenticity_token"
-  value="<%= form_authenticity_token %>">
-
-  <label for="user_email">Email</label><br>
-  <input type="text" name="user[email]" ><br>
-<br>
-  <label for="user_password">Password</label><br>
-  <input type="password" name="user[password]"><br>
-
-  <button>submit</button>
-</form>
+<%= render 'shared/form', status: users_url %>

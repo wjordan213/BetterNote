@@ -2,8 +2,10 @@ module Api
   class ApiController < ApplicationController
     before_action :require_logged_in!
 
-    def require_note_owner!
-      redirect_to new_session_url unless current_notebook.is_owner?(current_user)
+    def require_notebook_owner!
+      unless current_notebook.is_owner?(current_user)
+        render json: ["that isn't your notebook!"]
+      end
     end
 
     def require_logged_in!

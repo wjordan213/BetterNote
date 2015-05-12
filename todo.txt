@@ -1,7 +1,5 @@
 TODO:
 - deploy app to heroku
 - finish notebook api
-  -write current_notebook
-  -write Notebook#is_owner?(user)
 - create sidebar view and place it appropriately with html and css
-- create sfidebar content vieew
+- create sidebar content vieew

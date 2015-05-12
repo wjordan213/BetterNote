@@ -6,4 +6,8 @@ class Notebook < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
     )
+
+    def is_owner?(user)
+      self.user_id == user.id
+    end
 end

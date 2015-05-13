@@ -1,15 +1,16 @@
 module Api
   class NotebooksController < ApiController
-    before_action :require_notebook!, except: :index
+    before_action :require_notebook_owner!, except: :index
 
     def index
       user = current_user
-      puts 'hello worrsldfka'
       @notebooks = current_user.notebooks
-      render 'index', notebooks: @notebooks
+      render 'index'
     end
 
     def show
+      @notebook = Notebook.find(params[:id]);
+      render 'show'
     end
 
     def edit
@@ -22,7 +23,7 @@ module Api
 
     def current_notebook
       if params[:id]
-        Notebook.find(:id)
+        Notebook.find(params[:id])
       end
     end
   end

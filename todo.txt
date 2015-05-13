@@ -1,5 +1,11 @@
 TODO:
-- deploy app to heroku
 - finish notebook api
+  -after views are built:
+    -edit notebooks
+    -destroy notebooks
 - create sidebar view and place it appropriately with html and css
 - create sidebar content vieew
+
+- after day is over
+  - update timeline
+  - update wireframes with project notes

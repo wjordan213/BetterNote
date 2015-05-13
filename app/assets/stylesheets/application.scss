@@ -103,6 +103,14 @@ html, body {
 
 // sidepane
 
+.sidePane .new {
+  text-decoration: underline;
+  text-color: blue;
+  cursor: pointer;
+}
+
+
+
 .sidePane{
   position: absolute;
   top: 0;

@@ -6,7 +6,17 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.collection.each(this.addContentView.bind(this)); // possibly redundant
   },
 
+  events: {
+    'click .new' : 'newContent'
+  },
+
   template: JST['side_pane/side_pane'],
+
+  newContent: function() {
+    event.preventDefault();
+
+    Backbone.history.navigate($(event.target).data('href'));
+  },
 
   addContentView: function(content) {
     var subview = new BetterNote.Views.SideContent({ model: content });

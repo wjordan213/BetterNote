@@ -24,7 +24,6 @@ BetterNote.Routers.Router = Backbone.Router.extend({
       this._currentPane.remove();
     }
     this._currentPane = view;
-    debugger;
     this.$paneEl.html(this._currentPane.render().$el)
   }
 })

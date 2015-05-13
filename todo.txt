@@ -1,6 +1,15 @@
 TODO:
+
+next:
+  -add form for notebook creation that pops up from
+  click on add notebook symbol on list.
+
 -build views
   -sidebar content view, with varying collection on router
+
+
+  -implementation note: I will need to create notes before I set event listeners on clicks for list items.
+
 
 -after views are built:
   -edit notebooks
@@ -12,3 +21,9 @@ TODO:
   - update wireframes with project notes
 
 -auth persistence
+
+
+
+CSS:
+  -style sidebar buttons
+  -pick appropriate colors

@@ -1,8 +1,10 @@
 TODO:
-- finish notebook api
-  -after views are built:
-    -edit notebooks
-    -destroy notebooks
+-build views
+  -sidebar content view, with varying collection on router
+
+-after views are built:
+  -edit notebooks
+  -destroy notebooks
 - create sidebar content vieew
 
 - after day is over

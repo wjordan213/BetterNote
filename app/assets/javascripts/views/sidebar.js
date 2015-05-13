@@ -14,7 +14,7 @@ BetterNote.Views.Sidebar = Backbone.View.extend({
   },
 
   callIndex: function() {
-    Backbone.history.navigate('', {trigger: true});
+    Backbone.history.navigate('notebooks', {trigger: true});
   }
 
 })

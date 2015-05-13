@@ -4,10 +4,10 @@ BetterNote.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '' : 'index'
+    'notebooks' : 'notebookIndex'
   },
 
-  index: function() {
-    
+  notebookIndex: function() {
+    var notebooksView = new BetterNote.Views.SideContent({ collection: BetterNote.notebooks })
   }
 })

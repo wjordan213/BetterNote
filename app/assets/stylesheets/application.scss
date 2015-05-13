@@ -47,8 +47,20 @@ ul, li {
   font-size: 35px;
 }
 
-.header > .link {
+.header > .link button {
   display: block;
+  padding: 10px;
+  background: grey;
+  text-align: center;
+  margin-left: 80%;
+  margin-top: 10px;  
+}
+
+.header > .link a {
+  display: block;
+  padding: 10px;
+  background: grey;
+  text-align: center;
   margin-left: 80%;
   margin-top: 10px;
 }

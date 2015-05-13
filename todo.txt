@@ -8,3 +8,5 @@ TODO:
 - after day is over
   - update timeline
   - update wireframes with project notes
+
+-auth persistence

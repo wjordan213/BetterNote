@@ -4,7 +4,7 @@ window.BetterNote = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new BetterNote.Routers.Router($rootEl: $(".main"));
+    new BetterNote.Routers.Router({$rootEl: $(".main")});
     this.populateSidebar();
     Backbone.history.start();
   },

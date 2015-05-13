@@ -3,7 +3,6 @@ TODO:
   -after views are built:
     -edit notebooks
     -destroy notebooks
-- create sidebar view and place it appropriately with html and css
 - create sidebar content vieew
 
 - after day is over

@@ -1,11 +1,20 @@
 BetterNote.Views.Sidebar = Backbone.View.extend({
-  events: {
+  tagName: 'nav',
+  template: JST['sidebar'],
 
+  events: {
+    'click .notebooks' : 'callIndex'
   },
 
-  template: JST['sidebar']
-
   render: function() {
+    var content = this.template();
+    this.$el.html(content);
 
+    return this;
+  },
+
+  callIndex: function() {
+    Backbone.history.navigate('', {trigger: true});
   }
+
 })

@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+
+// reset
+
+h1, h2, h3, ul, li, p, body, section, nav, header, button {
+  font: inherit;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// header
+
+.header {
+  padding: 20px;
+  background: green;
+}
+
+.header > .logo {
+  float: left;
+  font-size: 35px;
+}
+
+.header > .link {
+  display: block;
+  margin-left: 80%;
+  margin-top: 10px;
+}
+
+// sidebar
+
+.sidebar {
+  width: 100px;
+  background: yellow;
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+}
+
+.sidebar > nav {
+  margin-top: 55px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: red;
+  margin-top: 20px;
+}

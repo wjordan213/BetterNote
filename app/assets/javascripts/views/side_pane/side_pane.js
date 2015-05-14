@@ -6,6 +6,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.addContentView);
 
     // 1 level deep
+    // TODO: refactor header so the whole view doesn't have to re-render
     if (options.model) {
       this.listenTo(this.model, 'sync', this.render);
     }

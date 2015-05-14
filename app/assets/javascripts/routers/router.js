@@ -9,7 +9,6 @@ BetterNote.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '' : 'notebookIndex',
     'notebooks/new': 'new',
     'notebooks/:id/edit': 'notebookEdit'
   },

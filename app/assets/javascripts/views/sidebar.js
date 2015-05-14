@@ -4,7 +4,7 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
   template: JST['sidebar'],
 
   events: {
-    'click .notebooks' : 'callIndex'
+    'click .notebooks' : 'changeToIndex'
   },
 
   render: function() {
@@ -14,8 +14,10 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
     return this;
   },
 
-  callIndex: function() {
-    Backbone.history.navigate('', {trigger: true});
+  changeToIndex: function() {
+    BetterNote.notebooks.fetch();
+    var sidePane = BetterNote.sidePane = new BetterNote.Views.SidePane({type: 'notebooks', collection: BetterNote.notebooks })
+    this._swapPaneView(sidePane);
   }
 
 }))

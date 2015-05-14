@@ -4,6 +4,6 @@ BetterNote.Mixins.PaneChanger = {
       BetterNote._currentPane.remove();
     }
     BetterNote._currentPane = view;
-    this.$paneEl.html(BetterNote._currentPane.render().$el)
+    $('.sidePane').html(BetterNote._currentPane.render().$el)
   }
 }

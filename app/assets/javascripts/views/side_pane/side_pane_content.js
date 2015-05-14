@@ -15,27 +15,28 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     this.listenTo(this.model, 'change:title', this.render);
   },
 
+
+
+
+
   changePane: function(event) {
     event.preventDefault();
 
-    if (this.type === 'note') {
-      Backbone.history.navigate($(event.target).data('href'), {trigger: true});
-    } else { // (if this.type === 'notebook')
-      // swapView
-      newPane = new Backbone.Views.Notebooks({
-        type: 'notebook'
-      })
-    }
-
-
+    var id = $(event.target).data('id');
 
     var notebook = BetterNote.notebooks.getOrFetch(id);
 
     var notebookShow = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: "notebook", model: notebook });
 
-    BetterNote.notebooks.fetch();
+    notebook.fetch();
     this._swapPaneView(notebookShow);
   },
+
+
+
+
+
+
 
   destroy: function(event) {
     event.preventDefault();

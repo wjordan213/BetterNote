@@ -1,6 +1,10 @@
 TODO:
 
 - create show view for notebook
+  -refactor h2 on sidepane to only rerender that part on
+
+  -after note show is complete, make side pane default
+
 - set page refresh to always render notebook list if nothing else is on the page. router and callback
 - make sure that everything is working correctly before moving forward
 
@@ -16,7 +20,9 @@ Future:
   - update timeline
   - update wireframes with project notes
 
--auth persistence
+- Backbone auth
+  -for transition from login/signup into main view
+  -requires conversion of root.html.erb into a big composite view
 
 CSS:
   -style sidebar buttons

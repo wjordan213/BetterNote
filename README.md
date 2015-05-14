@@ -90,7 +90,7 @@ for navigation to that note's corresponding view.
 - [ ] Pagination/infinite scroll
 - [ ] Note types (image posts, quote posts, etc)
 - [ ] Multiple sessions/session management
-
+- [ ] Backbone auth for transition from login/signup into main view
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md

@@ -3,9 +3,12 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.type = options.type;
     this.listenTo(this.collection, 'add', this.addContentView);
+    if (options.model) {
+      this.listenTo(this.model, 'sync', this.render);
+    }
     this.collection.each(function(item) {
-      addContentView(item);
-    })
+      this.addContentView(item);
+    }.bind(this))
   },
 
   events: {
@@ -26,7 +29,13 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var contents = this.template({type: this.type});
+
+    // if (this.model) {
+    //   this.type = this.model.get('title');
+    //   var contents = this.template({type: this.type, model: this.model });
+    // } else {
+      var contents = this.template({type: this.type });
+    // }
     this.$el.html(contents);
     this.attachSubviews();
     return this;

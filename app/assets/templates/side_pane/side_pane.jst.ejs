@@ -1,3 +1,9 @@
-<a data-href="<%= type %>s/new" class="new">new <%= type %></a>
-<h2><%= type %>s</h2>
+<% if (this.model) { %>
+  <a data-href="<%= type %>s/<%= this.model.id %>/notes/new" class="new">new note</a>
+  <h2><%= this.model.get('title') %> notes</h2>
+<% } else { %>
+  <a data-href="<%= type %>s/new" class="new">new <%= type %></a>
+  <h2><%= type %>s</h2>
+<% } %>
+
 <ul class="content"></ul>

@@ -12,7 +12,6 @@ BetterNote.Routers.Router = Backbone.Router.extend({
   routes: {
     '' : 'notebookIndex',
     'notebooks/new': 'new',
-    'notebooks/:id' : 'notebookShow',
     'notebooks/:id/edit': 'notebookEdit'
   },
 
@@ -20,15 +19,6 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     var notebooksView = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: 'notebook' })
     BetterNote.notebooks.fetch();
     this._swapPaneView(notebooksView)
-  },
-
-  notebookShow: function(id) {
-    var notebook = BetterNote.notebooks.getOrFetch(id);
-
-    var notebookShow = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: "notebook", model: notebook });
-
-    BetterNote.notebooks.fetch();
-    this._swapPaneView(notebookShow);
   },
 
   notebookEdit: function(id) {

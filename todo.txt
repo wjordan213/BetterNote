@@ -1,6 +1,10 @@
 TODO:
 
 - create show view for notebook
+  -**link to notebook#show on notebook index page
+
+  -refactor, possibly ask for help
+
   -refactor h2 on sidepane to only rerender that part on
 
   -after note show is complete, make side pane default

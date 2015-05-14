@@ -28,14 +28,10 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.addSubview('.content', subview);
   },
 
-  render: function() {
 
-    // if (this.model) {
-    //   this.type = this.model.get('title');
-    //   var contents = this.template({type: this.type, model: this.model });
-    // } else {
-      var contents = this.template({type: this.type });
-    // }
+
+  render: function() {
+    var contents = this.template({type: this.type });
     this.$el.html(contents);
     this.attachSubviews();
     return this;

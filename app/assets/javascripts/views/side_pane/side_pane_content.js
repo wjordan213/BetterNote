@@ -4,11 +4,21 @@ BetterNote.Views.SideContent = Backbone.View.extend({
 
   events: {
     'click .edit' : 'edit',
-    'click .delete' : 'destroy'
+    'click .delete' : 'destroy',
+    'click .title' : 'showContent'
   },
 
   initialize: function() {
     this.listenTo(this.model, 'change:title', this.render);
+  },
+
+  showContent: function(event) {
+    var notebook = BetterNote.notebooks.getOrFetch(id);
+
+    var notebookShow = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: "notebook", model: notebook });
+
+    BetterNote.notebooks.fetch();
+    this._swapPaneView(notebookShow);
   },
 
   destroy: function(event) {

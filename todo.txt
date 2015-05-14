@@ -31,3 +31,19 @@ Future:
 CSS:
   -style sidebar buttons
   -pick appropriate colors
+
+_swapPaneView: function(view) {
+  if (BetterNote._currentPane) {
+    BetterNote._currentPane.remove();
+  }
+  BetterNote._currentPane = view;
+  this.$paneEl.html(BetterNote._currentPane.render().$el)
+}
+
+
+
+notebookIndex: function() {
+  var notebooksView = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: 'notebook' })
+  BetterNote.notebooks.fetch();
+  this._swapPaneView(notebooksView)
+},

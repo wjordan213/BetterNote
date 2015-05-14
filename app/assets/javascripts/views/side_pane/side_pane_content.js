@@ -1,18 +1,34 @@
-BetterNote.Views.SideContent = Backbone.View.extend({
+BetterNote.Views.SideContent = Backbone.View.extend(
+  _.extend({}, BetterNote.Mixins.PaneChanger, {
+
   tagName: 'li',
   template: JST["side_pane/side_pane_content"],
 
   events: {
     'click .edit' : 'edit',
     'click .delete' : 'destroy',
-    'click .title' : 'showContent'
+    'click .title' : 'changePane'
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.type = options.type;
     this.listenTo(this.model, 'change:title', this.render);
   },
 
-  showContent: function(event) {
+  changePane: function(event) {
+    event.preventDefault();
+
+    if (this.type === 'note') {
+      Backbone.history.navigate($(event.target).data('href'), {trigger: true});
+    } else { // (if this.type === 'notebook')
+      // swapView
+      newPane = new Backbone.Views.Notebooks({
+        type: 'notebook'
+      })
+    }
+
+
+
     var notebook = BetterNote.notebooks.getOrFetch(id);
 
     var notebookShow = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: "notebook", model: notebook });
@@ -38,4 +54,4 @@ BetterNote.Views.SideContent = Backbone.View.extend({
     this.$el.html(contents);
     return this;
   }
-})
+}))

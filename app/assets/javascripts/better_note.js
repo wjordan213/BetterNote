@@ -1,4 +1,5 @@
 window.BetterNote = {
+  Mixins: {},
   Models: {},
   Collections: {},
   Views: {},
@@ -6,7 +7,14 @@ window.BetterNote = {
   initialize: function() {
     new BetterNote.Routers.Router({$rootEl: $(".main")});
     this.populateSidebar();
+    this.populateSidepane();
     Backbone.history.start();
+  },
+
+  populateSidepane: function() {
+    BetterNote.notebooks.fetch();
+    var sidePane = BetterNote.sidePane = new BetterNote.Views.SidePane({type: 'notebooks', collection: BetterNote.notebooks })
+    $(".sidePane").html(sidePane.render().$el);
   },
 
   populateSidebar: function() {

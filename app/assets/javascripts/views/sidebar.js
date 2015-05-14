@@ -1,4 +1,5 @@
-BetterNote.Views.Sidebar = Backbone.View.extend({
+BetterNote.Views.Sidebar = Backbone.View.extend(
+  _.extend({}, BetterNote.Mixins.PaneChanger, {
   tagName: 'nav',
   template: JST['sidebar'],
 
@@ -17,4 +18,4 @@ BetterNote.Views.Sidebar = Backbone.View.extend({
     Backbone.history.navigate('', {trigger: true});
   }
 
-})
+}))

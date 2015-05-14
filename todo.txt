@@ -1,5 +1,8 @@
 TODO:
 
+
+have successful submission re-render side pane on view for notebook
+
 next:
   -add form for notebook creation that pops up from
   click on add notebook symbol on list.

@@ -1,0 +1,7 @@
+<h2 class="notebook-form">New Notebook</h2>
+
+<form action="/api/notebooks" method="post">
+  <label for="notebook_title">title</label><br>
+  <input type="text" name="notebook[title]" value="<%= notebook.title %>"><br>
+  <button clas="submit">Submit</button>
+</form>

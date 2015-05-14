@@ -3,7 +3,9 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.type = options.type;
     this.listenTo(this.collection, 'add', this.addContentView);
-    this.collection.each(this.addContentView.bind(this)); // possibly redundant
+    this.collection.each(function(item) {
+      addContentView(item);
+    })
   },
 
   events: {
@@ -15,7 +17,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   newContent: function() {
     event.preventDefault();
 
-    Backbone.history.navigate($(event.target).data('href'));
+    Backbone.history.navigate($(event.target).data('href'), {trigger: true});
   },
 
   addContentView: function(content) {

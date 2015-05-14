@@ -11,13 +11,21 @@ BetterNote.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '' : 'notebookIndex',
-    'notebooks/new': 'new'
+    'notebooks/new': 'new',
+    'notebooks/:id/edit': 'edit'
   },
 
   notebookIndex: function() {
     var notebooksView = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: 'notebook' })
     BetterNote.notebooks.fetch();
     this._swapPaneView(notebooksView)
+  },
+
+  edit: function(id) {
+    var notebook = BetterNote.notebooks.getOrFetch(id);
+    var editNotebookView = new BetterNote.Views.NotebookForm({model: notebook})
+
+    this._swapPrimaryView(editNotebookView);
   },
 
   new: function() {
@@ -33,7 +41,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     }
     this._currentView = view;
     this.$primaryEl.html(this._currentView.render().$el);
-  }
+  },
 
   _swapPaneView: function(view) {
     if (this._currentPane) {

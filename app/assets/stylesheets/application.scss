@@ -45,6 +45,7 @@ html, body {
 .main {
   display: block;
   position: absolute;
+  left: 100px;
   width: 100%;
   height: 100%;
 }
@@ -86,7 +87,7 @@ html, body {
   background: yellow;
   position: absolute;
   top: 80px;
-  bottom: 0;
+  height: 100%;
 }
 
 .sidebar > nav {
@@ -115,7 +116,7 @@ html, body {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 100px;
+  left: 0;
   right: 50%;
   background: orange;
   border-left: 2px solid black;
@@ -136,4 +137,30 @@ html, body {
   padding-left: 20px;
   border-bottom: 2px solid black;
   font-size: 18px;
+}
+
+
+// noteview
+
+.noteView {
+  display: block;
+  position: absolute;
+  left: 447px;
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  background: #ccc;
+}
+
+.noteView div {
+  padding: 20px 0 0 20px;
+  border-bottom: 2px solid black;
+}
+
+.noteView Button {
+  margin-top: 10px;
+  padding: 10px;
+  background: purple;
+  color: white;
+  margin-bottom: 20px;
 }

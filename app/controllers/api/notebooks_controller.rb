@@ -1,6 +1,6 @@
 module Api
   class NotebooksController < ApiController
-    before_action :require_notebook_owner!, except: :index
+    before_action :require_notebook_owner!, except: [:index, :create]
 
     def index
       user = current_user
@@ -13,10 +13,30 @@ module Api
       render 'show'
     end
 
-    def edit
+    def create
+      notebook = current_user.notebooks.new(notebook_params);
+      if notebook.save
+        render json: notebook
+      else
+        render json: notebook.errors.full_messages
+      end
+    end
+
+    def update
+      notebook = Notebook.find(params[:id]);
+
+      if notebook.update(notebook_params)
+        render json: notebook
+      else
+        render json: notebook.errors.full_messages
+      end
     end
 
     def destroy
+      notebook = Notebook.find(params[:id]);
+
+      notebook.destroy
+      render json: 'success'
     end
 
     # private?
@@ -25,6 +45,10 @@ module Api
       if params[:id]
         Notebook.find(params[:id])
       end
+    end
+
+    def notebook_params
+      params.require(:notebook).permit(:title);
     end
   end
 end

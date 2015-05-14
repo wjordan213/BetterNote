@@ -1,6 +1,7 @@
 TODO:
 
--create show view for notebook
+- create show view for notebook
+- set page refresh to always render notebook list if nothing else is on the page. router and callback
 - make sure that everything is working correctly before moving forward
 
 - write ENTIRE api for notes

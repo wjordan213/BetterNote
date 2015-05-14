@@ -78,6 +78,7 @@ for navigation to that note's corresponding view.
 
 
 ### Bonus Features (TBD)
+- [ ] Link notebooks to notes (polymorphic)
 - [ ] Easy hyperlinking to notes
 - [ ] Back and forward buttons on notes
 - [ ] User Show page

@@ -4,6 +4,8 @@
 
 [heroku]: http://flux-capacitr.herokuapp.com
 
+- username/password: password
+
 ## Minimum Viable Product
 BetterNote is a clone of Evernote built on Rails and Backbone. Users can:
 

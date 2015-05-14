@@ -1,31 +1,21 @@
 TODO:
 
+-create show view for notebook
+- make sure that everything is working correctly before moving forward
 
-have successful submission re-render side pane on view for notebook
-
-next:
-  -add form for notebook creation that pops up from
-  click on add notebook symbol on list.
-
--build views
-  -sidebar content view, with varying collection on router
+- write ENTIRE api for notes
+- get to the backbone
 
 
-  -implementation note: I will need to create notes before I set event listeners on clicks for list items.
 
 
--after views are built:
-  -edit notebooks
-  -destroy notebooks
-- create sidebar content vieew
+Future:
 
 - after day is over
   - update timeline
   - update wireframes with project notes
 
 -auth persistence
-
-
 
 CSS:
   -style sidebar buttons

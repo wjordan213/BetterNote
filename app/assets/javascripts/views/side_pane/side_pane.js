@@ -4,7 +4,6 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     // default: notebooks
     this.type = options.type;
     this.listenTo(this.collection, 'add', this.addContentView);
-
     // 1 level deep
     // TODO: refactor header so the whole view doesn't have to re-render
     if (options.model) {
@@ -30,6 +29,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   addContentView: function(content) {
+    // debugger;
     var subview = new BetterNote.Views.SideContent({ model: content, type: this.type });
     this.addSubview('.content', subview);
   },

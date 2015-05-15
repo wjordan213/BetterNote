@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   primary_key: :id,
   dependent: :destroy
 
+  has_many :notes, through: :notebooks
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64
   end

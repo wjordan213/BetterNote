@@ -16,3 +16,9 @@ notebooks = users[0].notebooks.create!([
   {title: 'scrumptiousness'},
   {title: 'soylent is disgustin'}
   ])
+
+notes = notebooks[0].notes.create!([
+  {title: 'are they good', body: 'yes they are delicious'},
+  {title: 'mcdonalds is lame', body: 'peanut butter'},
+  {title: 'yes world mang', body: 'yes and no and yes and no and yes and no'}
+  ])

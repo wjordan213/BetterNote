@@ -1,0 +1,1 @@
+json.body @note.body

@@ -1,16 +1,9 @@
 TODO:
 
-- create show view for notebook
-  -**link to notebook#show on notebook index page
+notes api:
 
-  -refactor, possibly ask for help
 
-  -refactor h2 on sidepane to only rerender that part on
-
-  -after note show is complete, make side pane default
-
-- set page refresh to always render notebook list if nothing else is on the page. router and callback
-- make sure that everything is working correctly before moving forward
+-refactor h2 on sidepane to only rerender that part on
 
 - write ENTIRE api for notes
 - get to the backbone
@@ -20,30 +13,12 @@ TODO:
 
 Future:
 
+- note form looking awesome might complicate the api. beware
+
 - after day is over
   - update timeline
   - update wireframes with project notes
 
-- Backbone auth
-  -for transition from login/signup into main view
-  -requires conversion of root.html.erb into a big composite view
-
 CSS:
   -style sidebar buttons
   -pick appropriate colors
-
-_swapPaneView: function(view) {
-  if (BetterNote._currentPane) {
-    BetterNote._currentPane.remove();
-  }
-  BetterNote._currentPane = view;
-  this.$paneEl.html(BetterNote._currentPane.render().$el)
-}
-
-
-
-notebookIndex: function() {
-  var notebooksView = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: 'notebook' })
-  BetterNote.notebooks.fetch();
-  this._swapPaneView(notebooksView)
-},

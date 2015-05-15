@@ -21,13 +21,12 @@ BetterNote.Views.SideContent = Backbone.View.extend(
 
   changePane: function(event) {
     event.preventDefault();
-
     var id = $(event.target).data('id');
 
     var notebook = BetterNote.notebooks.getOrFetch(id);
+    // debugger;
 
-    var notebookShow = new BetterNote.Views.SidePane({ collection: BetterNote.notebooks, type: "notebook", model: notebook });
-
+    var notebookShow = new BetterNote.Views.SidePane({ collection: notebook.notes(), type: "note", model: notebook });
     notebook.fetch();
     this._swapPaneView(notebookShow);
   },

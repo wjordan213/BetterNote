@@ -11,11 +11,11 @@ BetterNote is a clone of Evernote built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Create/edit/delete notebooks
 - [ ] Create/edit notes for notebooks
 - [ ] Delete Notes
-- [ ] Create/edit notebooks
 - [ ] Tag Notes
 - [ ] Search for notes by title
 - [ ] Search for notes by notebook

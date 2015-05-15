@@ -2,7 +2,7 @@ BetterNote.Collections.Notebooks = Backbone.Collection.extend({
   url: "/api/notebooks",
   model: BetterNote.Models.Notebook,
 
-  getOrFetch: function(id) {
+  getOrFetch: function(id, options) {
     var notebook = this.get(id);
     if (notebook) {
       notebook.fetch();

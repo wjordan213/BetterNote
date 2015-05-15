@@ -22,13 +22,17 @@ BetterNote.Views.SideContent = Backbone.View.extend(
   changePane: function(event) {
     event.preventDefault();
     var id = $(event.target).data('id');
+    if (this.type === "notes") {
+      Backbone.history.navigate('notes/' + id, {trigger: true})
+    } else {
 
-    var notebook = BetterNote.notebooks.getOrFetch(id);
-    // debugger;
+      var notebook = BetterNote.notebooks.getOrFetch(id);
+      // debugger;
 
-    var notebookShow = new BetterNote.Views.SidePane({ collection: notebook.notes(), type: "notes", model: notebook });
-    notebook.fetch();
-    this._swapPaneView(notebookShow);
+      var notebookShow = new BetterNote.Views.SidePane({ collection: notebook.notes(), type: "notes", model: notebook });
+      notebook.fetch();
+      this._swapPaneView(notebookShow);
+    }
   },
 
 
@@ -45,9 +49,6 @@ BetterNote.Views.SideContent = Backbone.View.extend(
 
   edit: function(event) {
     event.preventDefault();
-
-    debugger;
-
     Backbone.history.navigate($(event.target).data('href'), {trigger: true})
   },
 

@@ -1,5 +1,18 @@
 TODO:
 
+
+
+
+- have backbone delete all notes that belong to notebooks so notes index has notes removed
+
+- make note show page
+
+- have edit form display title for notebooks
+
+-
+
+
+
 notes api:
 
 

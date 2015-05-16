@@ -139,6 +139,23 @@ html, body {
   font-size: 18px;
 }
 
+.content button {
+  padding: 5px;
+}
+
+.content button:hover {
+  background: gray;
+}
+
+.content a {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.content a:hover {
+  background: gray;
+}
+
 
 // noteview
 

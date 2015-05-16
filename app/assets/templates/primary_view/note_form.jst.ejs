@@ -1,0 +1,19 @@
+<% if (note.isNew()) { %>
+  <h1>New Note</h1>
+<% } else { %>
+  <h1>Edit Note</h1>
+<% } %>
+
+<label for="note_notebook">Notebook</label><br>
+<select class="notebook" name="notebook_id">
+  <% BetterNote.notebooks.each(function(notebook) { %>
+    <option value="<%= notebook.get('id') %>"><%= notebook.get('title') %></option>
+  <% }) %>
+</select>
+
+<label for="note_title">Title</label><br>
+<input type="text" value="<%= note.get('title') %>" name="title"><br>
+
+<label for="note_body">Body</label><br>
+<textarea name="body" rows="8" cols="40"><%= note.get('body') %></textarea>
+<button class="submit">Submit</button>

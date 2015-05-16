@@ -11,6 +11,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
   routes: {
     'notebooks/new': 'newNotebook',
     'notebooks/:id/edit': 'notebookEdit',
+    'notes/new' : 'new',
     'notes/:id' : 'show'
   },
 
@@ -26,6 +27,13 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     var newNotebookView = new BetterNote.Views.NotebookForm({model: newNotebook})
 
     this._swapPrimaryView(newNotebookView);
+  },
+
+  new: function(id) {
+    var newNote = new BetterNote.Models.Note();
+    var newNoteView = new BetterNote.Views.NoteForm({model: newNote});
+
+    this._swapPrimaryView(newNoteView);
   },
 
   show: function(id) {

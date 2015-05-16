@@ -1,0 +1,12 @@
+
+
+
+1)errors for note form:
+  <% if (!(typeof errors === undefined)) { %>
+    <ul>
+      <% errors.forEach(function(error) { %>
+        <li><%= error %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+was throwing error.

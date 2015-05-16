@@ -1,14 +1,26 @@
 TODO:
 
-- make note show page
+-prevent note creation without notebook
+  -preferrably redirect user to notebook form, have them fill that out, then on creation the note automatically goes in the form.
+  -set event listeners on global collections
+-make note#notebook function
+-check to see if the note is the notebook in each dropdown item
+
+
+problem:
+  - when clicking on link to make a new note in a current notebook,
+    persist that notebook's id and set it to the default in the dropdown
+    for the note form. right now the type is wrong. maybe I should consider having a model type. look into situations where the side pane has a model.
+
+    -learn the inner workings of all of this backwards and forwards before moving forward but AFTER the new note form has been created.
+
+
 
 - make note edit/create page
 
 - have edit form display title for notebooks
 
 - Move on to tags
-
-
 
 
 Question:

@@ -23,10 +23,14 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
   template: JST['side_pane/side_pane'],
 
-  newContent: function() {
+  newContent: function(event) {
     event.preventDefault();
+    if (this.model instanceof BetterNote.Models.Notebook) {
+      Backbone.history.navigate('notebooks/' + this.model.get('id') + '/notes/new', {trigger: true})
+    } else {
 
-    Backbone.history.navigate($(event.target).data('href'), {trigger: true});
+      Backbone.history.navigate($(event.target).data('href'), {trigger: true});
+    }
   },
 
   removeContentView: function(content) {

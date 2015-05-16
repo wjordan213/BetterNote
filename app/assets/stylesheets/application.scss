@@ -152,7 +152,12 @@ html, body {
   padding-right: 5px;
 }
 
+.content li {
+  cursor: default;
+}
+
 .content a:hover {
+  cursor: default;
   background: gray;
 }
 
@@ -183,10 +188,32 @@ html, body {
 }
 
 .noteView h1 {
+  display: block;
   font-size: 24px;
 }
 
 .noteView p {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.noteView label {
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.noteView input {
+  // display: block;
+  margin-left: 20px;
+}
+
+.noteView select {
+  // display: block;
+  margin-left: 5px;
+}
+
+.noteView textarea {
+  // display: block;
+  margin-left: 20px;
 }

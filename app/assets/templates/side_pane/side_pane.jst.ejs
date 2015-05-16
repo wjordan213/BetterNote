@@ -1,5 +1,5 @@
 <% if (this.model) { %>
-  <a data-href="<%= type %>/<%= this.model.id %>/notes/new" class="new">new note</a>
+  <a href="#" class="new">new note</a>
   <h2><%= this.model.get('title') %> notes</h2>
 <% } else { %>
   <a data-href="<%= type %>/new" class="new">new <%= type %></a>

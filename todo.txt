@@ -1,10 +1,5 @@
 TODO:
 
-
-
-
-- have backbone delete all notes that belong to notebooks so notes index has notes removed
-
 - make note show page
 
 - have edit form display title for notebooks
@@ -13,13 +8,13 @@ TODO:
 
 
 
+
+Question:
+  -success callback not being called upon successful model destruction.
+  -ask why collection is the same as it was on last instantiation for notes index
+
 notes api:
-
-
 -refactor h2 on sidepane to only rerender that part on
-
-- write ENTIRE api for notes
-- get to the backbone
 
 
 

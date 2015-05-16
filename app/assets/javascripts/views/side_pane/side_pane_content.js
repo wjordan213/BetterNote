@@ -35,12 +35,6 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     }
   },
 
-
-
-
-
-
-
   destroy: function(event) {
     event.preventDefault();
     this.model.destroy();

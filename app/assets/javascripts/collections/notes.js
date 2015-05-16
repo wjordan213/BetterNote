@@ -1,5 +1,6 @@
 BetterNote.Collections.Notes = Backbone.Collection.extend({
-  url: '/api/notes'
+  url: '/api/notes',
+  model: BetterNote.Models.Note
 })
 
 BetterNote.notes = new BetterNote.Collections.Notes();

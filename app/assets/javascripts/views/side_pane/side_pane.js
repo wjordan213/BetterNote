@@ -4,12 +4,13 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     // default: notebooks
     this.type = options.type;
     this.listenTo(this.collection, 'add', this.addContentView);
+    this.listenTo(this.collection, 'remove', this.removeContentView)
     // 1 level deep
     // TODO: refactor header so the whole view doesn't have to re-render
     if (options.model) {
       this.listenTo(this.model, 'sync', this.render);
     }
-
+    // debugger;
     // necessary, but potential issue with overlap. fix later
     this.collection.each(function(item) {
       this.addContentView(item);
@@ -28,9 +29,13 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     Backbone.history.navigate($(event.target).data('href'), {trigger: true});
   },
 
+  removeContentView: function(content) {
+    this.removeModelSubview('.content', content);
+  },
+
   addContentView: function(content) {
     // debugger;
-    var subview = new BetterNote.Views.SideContent({ model: content, type: this.type });
+    var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
     this.addSubview('.content', subview);
   },
 

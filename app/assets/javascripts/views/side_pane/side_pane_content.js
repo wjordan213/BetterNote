@@ -12,7 +12,7 @@ BetterNote.Views.SideContent = Backbone.View.extend(
 
   initialize: function(options) {
     this.type = options.type;
-    this.listenTo(this.model, 'change:title', this.render);
+    this.listenTo(this.model, 'change:title sync', this.render);
   },
 
 

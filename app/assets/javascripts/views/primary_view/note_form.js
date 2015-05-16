@@ -16,7 +16,6 @@ BetterNote.Views.NoteForm = Backbone.View.extend({
     var content = this.template({note: this.model});
     // debugger;
     this.$el.html(content);
-
     return this;
   },
 

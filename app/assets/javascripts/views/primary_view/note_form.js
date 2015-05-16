@@ -8,7 +8,7 @@ BetterNote.Views.NoteForm = Backbone.View.extend({
   template: JST['primary_view/note_form'],
 
   initialize: function() {
-
+    this.listenTo(BetterNote.notebooks, 'sync', this.render)
     this.listenTo(this.model, 'sync', this.render);
   },
 

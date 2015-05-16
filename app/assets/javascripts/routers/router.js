@@ -1,5 +1,7 @@
 BetterNote.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
+    BetterNote.notebooks.fetch();
+    BetterNote.notes.fetch();
     this.$rootEl = options.$rootEl;
     this.$rootEl
     .$noteEl = this.$rootEl.append($('<section class="noteView"></section>')) // so is this

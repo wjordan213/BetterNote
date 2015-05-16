@@ -36,6 +36,10 @@ notes api:
 
 Future:
 
+- error messages on top of primary view for when things go wrong. get teacher's help
+
+- notebook creation directs sidepanel to notebook show
+
 - note form looking awesome might complicate the api. beware
 
 - after day is over

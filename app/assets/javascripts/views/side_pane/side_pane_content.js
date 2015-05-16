@@ -15,10 +15,6 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     this.listenTo(this.model, 'change:title sync', this.render);
   },
 
-
-
-
-
   changePane: function(event) {
     event.preventDefault();
     var id = $(event.target).data('id');

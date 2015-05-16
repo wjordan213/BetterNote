@@ -1,7 +1,13 @@
 TODO:
 
-- Move on to tags
+- TAGS:
+  -db: note_id, title,
+  -api: create, destroy, index, show
 
+  order to proceed in:
+  -model/migration
+  -routes
+  -controller
 
 Question:
   -success callback not being called upon successful model destruction.

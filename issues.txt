@@ -4,17 +4,9 @@ Current Issue:
 
 
 issues:
-
   -layout is unrendered under dev tools which looks weird
 
-  -
-
   -looks like the javascripts are being loaded on sign up and sign in page. this needs to be fixed
-
-  -check to see if no notebooks have been created yet, if so, redirect to notebook creation page
-
-
-
 
 
 1)errors for note form:

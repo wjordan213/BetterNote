@@ -14,8 +14,8 @@ BetterNote is a clone of Evernote built on Rails and Backbone. Users can:
 - [x] Create accounts
 - [x] Create sessions (log in)
 - [x] Create/edit/delete notebooks
-- [ ] Create/edit notes for notebooks
-- [ ] Delete Notes
+- [x] Create/edit notes for notebooks
+- [x] Delete Notes
 - [ ] Tag Notes
 - [ ] Search for notes by title
 - [ ] Search for notes by notebook
@@ -87,7 +87,7 @@ for navigation to that note's corresponding view.
 - [ ] filter out notes index by multiple tags
 - [ ] Edit Tags
 - [ ] delete account
-- [ ] Pagination/infinite scroll
+- [ ] infinite scroll/scroll within sectons of page
 - [ ] Note types (image posts, quote posts, etc)
 - [ ] Multiple sessions/session management
 - [ ] Backbone auth for transition from login/signup into main view

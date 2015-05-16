@@ -1,25 +1,5 @@
 TODO:
 
--prevent note creation without notebook
-  -preferrably redirect user to notebook form, have them fill that out, then on creation the note automatically goes in the form.
-  -set event listeners on global collections
--make note#notebook function
--check to see if the note is the notebook in each dropdown item
-
-
-problem:
-  - when clicking on link to make a new note in a current notebook,
-    persist that notebook's id and set it to the default in the dropdown
-    for the note form. right now the type is wrong. maybe I should consider having a model type. look into situations where the side pane has a model.
-
-    -learn the inner workings of all of this backwards and forwards before moving forward but AFTER the new note form has been created.
-
-
-
-- make note edit/create page
-
-- have edit form display title for notebooks
-
 - Move on to tags
 
 
@@ -28,23 +8,17 @@ Question:
   -ask why collection is the same as it was on last instantiation for notes index
   -Is my approach to the root html with  wrong?
 
-notes api:
--refactor h2 on sidepane to only rerender that part on
-
-
-
-
 Future:
 
+- notes api:
+  -refactor h2 on sidepane to only rerender that part on
 - error messages on top of primary view for when things go wrong. get teacher's help
-
-- notebook creation directs sidepanel to notebook show
+  -error message for invalid form input
+  -error message for after redirect when trying to go to note submission without already having a notebook
 
 - note form looking awesome might complicate the api. beware
 
-- after day is over
-  - update timeline
-  - update wireframes with project notes
+- update timeline
 
 CSS:
   -style sidebar buttons

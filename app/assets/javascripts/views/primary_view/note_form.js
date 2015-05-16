@@ -29,7 +29,7 @@ BetterNote.Views.NoteForm = Backbone.View.extend({
     this.model.save({}, {
       success: function() {
         this.collection.add(this.model, { merge: true });
-        BetterNote.notes.add(this.model, {merge: true });
+        BetterNote.notes.add(this.model, { merge: true });
         Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
       }.bind(this),
 

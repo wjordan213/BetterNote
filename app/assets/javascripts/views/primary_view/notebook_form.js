@@ -1,4 +1,6 @@
-BetterNote.Views.NotebookForm = Backbone.View.extend({
+BetterNote.Views.NotebookForm = Backbone.View.extend(
+  _.extend({}, BetterNote.Mixins.PaneChanger, {
+
   template: JST['primary_view/notebook_form'],
 
   initialize: function() {
@@ -38,6 +40,9 @@ BetterNote.Views.NotebookForm = Backbone.View.extend({
       this.model.save();
     }
 
+    var notebookShow = new BetterNote.Views.SidePane({ collection: this.model.notes(), type: "notes", model: this.model });
+    this._swapPaneView(notebookShow);
+
     Backbone.history.navigate('', { trigger: true });
   }
-})
+}))

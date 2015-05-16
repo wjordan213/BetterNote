@@ -2,9 +2,11 @@ TODO:
 
 - make note show page
 
+- make note edit/create page
+
 - have edit form display title for notebooks
 
--
+- Move on to tags
 
 
 
@@ -12,6 +14,7 @@ TODO:
 Question:
   -success callback not being called upon successful model destruction.
   -ask why collection is the same as it was on last instantiation for notes index
+  -Is my approach to the root html with  wrong?
 
 notes api:
 -refactor h2 on sidepane to only rerender that part on

@@ -154,7 +154,7 @@ html, body {
 
 .noteView div {
   padding: 20px 0 0 20px;
-  border-bottom: 2px solid black;
+  // border-bottom: 2px solid black;
 }
 
 .noteView Button {
@@ -162,5 +162,14 @@ html, body {
   padding: 10px;
   background: purple;
   color: white;
+  margin-bottom: 20px;
+}
+
+.noteView h1 {
+  font-size: 24px;
+}
+
+.noteView p {
+  margin-top: 20px;
   margin-bottom: 20px;
 }

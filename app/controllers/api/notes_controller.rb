@@ -7,7 +7,7 @@ module Api
 
     def index
       # yikes! TODO: pagination and/or infinite scroll
-      @notes = Note.all
+      @notes = current_user.notes
       render :index
     end
 

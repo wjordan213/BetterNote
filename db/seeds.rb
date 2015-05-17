@@ -22,3 +22,16 @@ notes = notebooks[0].notes.create!([
   {title: 'mcdonalds is lame', body: 'peanut butter'},
   {title: 'yes world mang', body: 'yes and no and yes and no and yes and no'}
   ])
+
+Tag.create!([
+  {title: 'tasty stuff', user_id: 1},
+  {title: 'sandwiches', user_id: 1},
+  {title: 'new things', user_id: 1}
+])
+
+Tagging.create!([
+  {note_id: 1, tag_id: 1},
+  {note_id: 1, tag_id: 2},
+  {note_id: 2, tag_id: 1},
+  {note_id: 3, tag_id: 2}
+  ])

@@ -1,8 +1,15 @@
 TODO:
 
+UP NEXT:
+- tested all tag controller operations but create and destroy
+- do these through backbone stuff
+ GET STARTED ON BACKBONE TAG CREATION, "DESTRUCTION", SHOW, AND INDEXING
+  -do index first, then show, then create, then destroy
+
+
 - TAGS:
   -db: note_id, title,
-  -api: create, destroy, index, show
+  -api: destroy, index, show
 
   order to proceed in:
   -model/migration

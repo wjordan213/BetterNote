@@ -14,14 +14,11 @@ module Api
     def create
       note = Note.new(note_params)
 
-      # if the tag with user's id already exists, grab that tag. else
-      # save the tag.
-      # grab the note id from params[:nt]
-      # then create the tagging and save that. If that fails,
-
       if note.save
-        tag = current_user.tags.new(tag_params)
-        tag.save_with_tagging(note.id)
+        if tag_params
+          tag = current_user.tags.new(tag_params)
+          tag.save_with_tagging(note.id)
+        end
         render json: note
       else
         render json: note.errors.full_messages

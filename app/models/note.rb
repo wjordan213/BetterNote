@@ -6,6 +6,8 @@ class Note < ActiveRecord::Base
   foreign_key: :note_id,
   primary_key: :id
 
+  has_many :tags, through: :taggings
+
   belongs_to :notebook,
   class_name: "Notebook",
   foreign_key: :notebook_id,

@@ -17,7 +17,11 @@ class User < ActiveRecord::Base
 
   has_many :taggings, through: :notes
 
-  has_many :tags, through: :taggings
+  has_many :tags,
+  class_name: "Tag",
+  foreign_key: :user_id,
+  primary_key: :id,
+  dependent: :destroy
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64

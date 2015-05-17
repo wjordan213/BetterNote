@@ -10,6 +10,7 @@ TODO:
   -controller
 
 Question:
+  -How to eliminate redundancy from api?
   -success callback not being called upon successful model destruction.
   -ask why collection is the same as it was on last instantiation for notes index
   -Is my approach to the root html with  wrong?

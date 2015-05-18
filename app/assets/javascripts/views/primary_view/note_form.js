@@ -1,8 +1,10 @@
-BetterNote.Views.NoteForm = Backbone.View.extend({
+BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   tagName: 'form',
 
   events: {
-    'click .submit' : 'submit'
+    'click .submit' : 'submit',
+    'click .new_tag' : 'tagInput',
+    'blur .tag_input' : 'addTag'
   },
 
   template: JST['primary_view/note_form'],
@@ -17,6 +19,30 @@ BetterNote.Views.NoteForm = Backbone.View.extend({
     // debugger;
     this.$el.html(content);
     return this;
+  },
+
+  tagInput: function(event) {
+    event.preventDefault();
+    this.toggleTagInput();
+    $('.tag_input').focus();
+  },
+
+  addTag: function(event) {
+    var tag_input = $('.tag_input').val();
+    this.toggleTagInput();
+    if ($.trim(tag_input).length === 0)  {
+      return;
+    }
+    var newTag = new BetterNote.Models.Tag();
+    newTag.set({title: tag_input});
+    newTag.save({});
+    // this has gotten up to tag model formation
+  },
+
+
+  toggleTagInput: function() {
+    $('.new_tag').toggleClass('inactive');
+    $('.tag_input').toggleClass('inactive');
   },
 
   submit: function(event) {

@@ -1,8 +1,8 @@
 module Api
   class TagsController < ApplicationController
     def show
-      tag = Tag.find(params[:id])
-      @notes = tag.notes
+      @tag = Tag.find(params[:id])
+      @notes = @tag.notes
     end
 
     def index

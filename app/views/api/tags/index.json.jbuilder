@@ -1,4 +1,3 @@
 json.array! @tags do |tag|
-  json.id tag.id
-  json.title tag.title
+  json.partial! 'shared/tag', tag: tag
 end

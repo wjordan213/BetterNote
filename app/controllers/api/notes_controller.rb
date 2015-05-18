@@ -45,6 +45,7 @@ module Api
     private
 
     def tag_params
+      return unless params[:tag]
       params.require(:tag).permit(:id, :title);
     end
 

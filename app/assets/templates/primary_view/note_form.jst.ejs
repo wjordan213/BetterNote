@@ -4,17 +4,22 @@
   <h1>Edit Note</h1>
 <% } %>
 
-<label for="note_notebook">Notebook</label>
-<select class="notebook" name="notebook_id">
-  <% BetterNote.notebooks.each(function(notebook) { %>
+<section class="note_container">
+  <label for="note_notebook">Notebook</label>
+  <select class="notebook" name="notebook_id">
+    <% BetterNote.notebooks.each(function(notebook) { %>
+      <option value="<%= notebook.get('id') %>"
+        <% if (notebook.get('id') == note.get('notebook_id')) { %>
+          selected
+        <% } %>
+        ><%= notebook.get('title') %></option>
+    <% }) %>
+  </select>
+  <ul class="tags inactive"></ul>
+  <button class="new_tag">+</button>
+  <input type="text" class="tag_input inactive">
+</section>
 
-    <option value="<%= notebook.get('id') %>"
-      <% if (notebook.get('id') == note.get('notebook_id')) { %>
-        selected
-      <% } %>
-      ><%= notebook.get('title') %></option>
-  <% }) %>
-</select>
 <br>
 
 <label for="note_title">Title</label><br>

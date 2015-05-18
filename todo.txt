@@ -1,28 +1,32 @@
 TODO:
 
-First:
-  refactor everything in one foul swoop
+
+
+
+- configure note create form to dynamically save every time focus is taken off of an element (if content has been inserted into that element of course).
+- remove edit view upon model deletion
+- fix notebook redirection bug
+
+After these things, move on to complete backbone tags
+
 
 backbone tags:
-  -what html tags store them?
-  -note show should send them down --api refactor (note.tags)
-    -model method for it
+  -upon tag input blur event
+    -save already occurs(of entire note, changing the property associated with tags in this instance)
+    -the corresponding tag model still needs to be generated
+    -take that model, and make a button with it.
+    -make a ul insert function that takes the model, makes the button, and appends to the ul
+    -make tags select function that is tied to any click event that bubbles up to the tags ul
+    -make tags remove function that toggles ul's class to inactive if there are no items on the ul after the remove
 
-    -jquery manipulated [+] and textbox for tag input
-    -create new subview for each tag show
-    -input
-      -user clicks on [+] for input.
-      -text box opens up
-      -user fills out text, then keypress's tab or clicks elsewhere
-      -ajax post request sent
-      -model is generated for new tag immediately
-      -subview for show with tag as model is generated
-      -new + button is generated
-        -jquery addition with class and event handler. simple to implement.
-    -show
-      -user clicks on tag
-      -tag is highlighted
-      -if user clicks delete
+  -subview for show with tag as model is generated
+  -show
+    -user clicks on tag
+    -tag is highlighted
+    -if user clicks delete
+
+
+
 
 then
   -tag addition/destruction on note form
@@ -57,4 +61,6 @@ CSS:
 
 
 Concerns:
+  -this._tags = new BetterNote.Collections.Tags([], { note: this });
+    -why exactly? are the arguments included like this?
   -success callback not being called upon successful model destruction.

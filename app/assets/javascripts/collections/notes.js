@@ -2,10 +2,6 @@ BetterNote.Collections.Notes = Backbone.Collection.extend({
   url: '/api/notes',
   model: BetterNote.Models.Note,
 
-  // initialize: function() {
-  //   this.listenTo(this.model,
-  // },
-
   getOrFetch: function(id) {
     var note = this.get(id);
     if (note) {

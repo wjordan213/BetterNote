@@ -1,7 +1,5 @@
-json.id @notebook.id
-json.title @notebook.title
+json.partial! 'shared/notebook', notebook: @notebook
 
 json.notes @notebook.notes do |note|
-  json.id note.id
-  json.title note.title
+  json.partial! 'shared/note', note: note
 end

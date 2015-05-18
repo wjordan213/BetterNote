@@ -1,19 +1,28 @@
 TODO:
 
-
-on current bug:
-  -tag params not included in form yet due to change made to api. unrelated to current bug.
-
-
-
-
 First:
   refactor everything in one foul swoop
 
-Refactoring TODO:
-  - dry up api
-  - extract more functionality into pane-changer mixin
-  - take out BetterNote.sidePane
+backbone tags:
+  -what html tags store them?
+  -note show should send them down --api refactor (note.tags)
+    -model method for it
+
+    -jquery manipulated [+] and textbox for tag input
+    -create new subview for each tag show
+    -input
+      -user clicks on [+] for input.
+      -text box opens up
+      -user fills out text, then keypress's tab or clicks elsewhere
+      -ajax post request sent
+      -model is generated for new tag immediately
+      -subview for show with tag as model is generated
+      -new + button is generated
+        -jquery addition with class and event handler. simple to implement.
+    -show
+      -user clicks on tag
+      -tag is highlighted
+      -if user clicks delete
 
 then
   -tag addition/destruction on note form

@@ -21,19 +21,8 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     if (this.type === "notes") {
       Backbone.history.navigate('notes/' + id, {trigger: true})
     } else {
-
-      // debugger;
-      // var notebookShow = new BetterNote.Views.SidePane({ collection: this.model.notes(), type: "notes", model: this.model });
-      // this.model.fetch();
-      console.log("========================")
-      console.log("========================")
-      console.log(this.model.notes());
-      console.log(this.model);
-      console.log("========================")
-      console.log("========================")
       this.model.fetch();
       this._swapPaneView(this.model.notes(), "notes", this.model);
-      // looks like this.model.notes() is calling the entire notes collection
     }
   },
 

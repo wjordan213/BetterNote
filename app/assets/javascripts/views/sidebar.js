@@ -17,23 +17,15 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
   },
 
   changeToNotes: function() {
-    BetterNote.notes.fetch();
-    var sidePane = BetterNote.sidePane = new BetterNote.Views.SidePane({type: 'notes', collection: BetterNote.notes});
-
-    this._swapPaneView(sidePane);
+    this._swapPaneView(BetterNote.notes, 'notes');
   },
 
   changeToNotebooks: function() {
-    BetterNote.notebooks.fetch();
-    var sidePane = BetterNote.sidePane = new BetterNote.Views.SidePane({type: 'notebooks', collection: BetterNote.notebooks })
-    this._swapPaneView(sidePane);
+    this._swapPaneView(BetterNote.notebooks, 'notebooks');
   },
 
   changeToTags: function() {
-    BetterNote.tags.fetch();
-    var sidePane = BetterNote.sidePane = new BetterNote.Views.SidePane({type: 'tags', collection: BetterNote.tags });
-
-    this._swapPaneView(sidePane);
+    this._swapPaneView(BetterNote.tags, 'tags');
   }
 
 }))

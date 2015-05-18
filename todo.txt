@@ -1,6 +1,12 @@
 TODO:
 
 
+on current bug:
+  -tag params not included in form yet due to change made to api. unrelated to current bug.
+
+
+
+
 First:
   refactor everything in one foul swoop
 

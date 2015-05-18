@@ -23,10 +23,17 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     } else {
 
       // debugger;
-
-      var notebookShow = new BetterNote.Views.SidePane({ collection: this.model.notes(), type: "notes", model: this.model });
+      // var notebookShow = new BetterNote.Views.SidePane({ collection: this.model.notes(), type: "notes", model: this.model });
+      // this.model.fetch();
+      console.log("========================")
+      console.log("========================")
+      console.log(this.model.notes());
+      console.log(this.model);
+      console.log("========================")
+      console.log("========================")
       this.model.fetch();
-      this._swapPaneView(notebookShow);
+      this._swapPaneView(this.model.notes(), "notes", this.model);
+      // looks like this.model.notes() is calling the entire notes collection
     }
   },
 

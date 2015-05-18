@@ -20,3 +20,4 @@ BetterNote.Collections.Notebooks = Backbone.Collection.extend({
 });
 
 BetterNote.notebooks = new BetterNote.Collections.Notebooks();
+BetterNote.notebooks.fetch();

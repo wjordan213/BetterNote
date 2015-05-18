@@ -22,3 +22,4 @@ BetterNote.Collections.Tags = Backbone.Collection.extend({
 
 
 BetterNote.tags = new BetterNote.Collections.Tags();
+BetterNote.tags.fetch();

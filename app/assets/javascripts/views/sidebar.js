@@ -17,6 +17,7 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
   },
 
   changeToNotes: function() {
+    BetterNote.notes.fetch();
     this._swapPaneView(BetterNote.notes, 'notes');
   },
 

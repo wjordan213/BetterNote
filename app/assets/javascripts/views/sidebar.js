@@ -5,7 +5,8 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
 
   events: {
     'click .notebooks' : 'changeToNotebooks',
-    'click .notes' : 'changeToNotes'
+    'click .notes' : 'changeToNotes',
+    'click .tags' : 'changeToTags'
   },
 
   render: function() {
@@ -25,6 +26,13 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
   changeToNotebooks: function() {
     BetterNote.notebooks.fetch();
     var sidePane = BetterNote.sidePane = new BetterNote.Views.SidePane({type: 'notebooks', collection: BetterNote.notebooks })
+    this._swapPaneView(sidePane);
+  },
+
+  changeToTags: function() {
+    BetterNote.tags.fetch();
+    var sidePane = BetterNote.sidePane = new BetterNote.Views.SidePane({type: 'tags', collection: BetterNote.tags });
+
     this._swapPaneView(sidePane);
   }
 

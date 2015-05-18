@@ -38,7 +38,6 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   addContentView: function(content) {
-    // debugger;
     var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
     this.addSubview('.content', subview);
   },

@@ -78,6 +78,8 @@ for navigation to that note's corresponding view.
 
 
 ### Bonus Features (TBD)
+- [ ] make note show and note edit the same thing
+- [ ] real-time ajax updates during note edit
 - [ ] Link notebooks to notes (polymorphic)
 - [ ] Easy hyperlinking to notes
 - [ ] Back and forward buttons on notes
@@ -87,8 +89,8 @@ for navigation to that note's corresponding view.
 - [ ] filter out notes index by multiple tags
 - [ ] Edit Tags
 - [ ] delete account
+- [ ] fancy note forms.
 - [ ] infinite scroll/scroll within sectons of page
-- [ ] Note types (image posts, quote posts, etc)
 - [ ] Multiple sessions/session management
 - [ ] Backbone auth for transition from login/signup into main view
 [phase-one]: ./docs/phases/phase1.md

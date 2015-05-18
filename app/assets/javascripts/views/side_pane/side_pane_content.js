@@ -22,11 +22,10 @@ BetterNote.Views.SideContent = Backbone.View.extend(
       Backbone.history.navigate('notes/' + id, {trigger: true})
     } else {
 
-      var notebook = BetterNote.notebooks.getOrFetch(id);
       // debugger;
 
-      var notebookShow = new BetterNote.Views.SidePane({ collection: notebook.notes(), type: "notes", model: notebook });
-      notebook.fetch();
+      var notebookShow = new BetterNote.Views.SidePane({ collection: this.model.notes(), type: "notes", model: this.model });
+      this.model.fetch();
       this._swapPaneView(notebookShow);
     }
   },

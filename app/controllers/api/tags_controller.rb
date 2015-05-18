@@ -3,7 +3,6 @@ module Api
     def show
       tag = Tag.find(params[:id])
       @notes = tag.notes
-      render 'api/notes/index'
     end
 
     def index

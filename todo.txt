@@ -1,31 +1,33 @@
 TODO:
 
-UP NEXT:
-- tested all tag controller operations but create and destroy
-- do these through backbone stuff
- GET STARTED ON BACKBONE TAG CREATION, "DESTRUCTION", SHOW, AND INDEXING
-  -do index first, then show, then create, then destroy
+
+First:
+  refactor everything in one foul swoop
+
+Refactoring TODO:
+  - dry up api
+  - extract more functionality into pane-changer mixin
+  - take out BetterNote.sidePane
+
+then
+  -tag addition/destruction on note form
+    -textbox's render/destroy based on activated status of container
+    -buttons with tag names render/destroy based on user creating/deleting
+    tags.
+    -QUESTION:
+      -should I make ajax calls right away or start out with standard whole
+      form submission?
 
 
-- TAGS:
-  -db: note_id, title,
-  -api: destroy, index, show
 
-  order to proceed in:
-  -model/migration
-  -routes
-  -controller
-
-Question:
-  -How to eliminate redundancy from api?
-  -success callback not being called upon successful model destruction.
-  -ask why collection is the same as it was on last instantiation for notes index
-  -Is my approach to the root html with  wrong?
 
 Future:
+-notebook edit/show combination
+  -use drop down as a convenient way to show notebook
 
 - notes api:
   -refactor h2 on sidepane to only rerender that part on
+
 - error messages on top of primary view for when things go wrong. get teacher's help
   -error message for invalid form input
   -error message for after redirect when trying to go to note submission without already having a notebook
@@ -37,3 +39,7 @@ Future:
 CSS:
   -style sidebar buttons
   -pick appropriate colors
+
+
+Concerns:
+  -success callback not being called upon successful model destruction.

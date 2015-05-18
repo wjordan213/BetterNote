@@ -1,6 +1,8 @@
 <% if (this.model) { %>
   <a href="#" class="new">new note</a>
   <h2><%= this.model.get('title') %> notes</h2>
+<% } else if (type === "tags") { %>
+  <h2><%= type %></h2>
 <% } else { %>
   <a data-href="<%= type %>/new" class="new">new <%= type %></a>
   <h2><%= type %></h2>

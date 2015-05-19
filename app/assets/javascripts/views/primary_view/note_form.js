@@ -4,9 +4,9 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   events: {
     'click .submit' : 'submit',
     'click .new_tag' : 'tagInput',
-    'blur input' : 'submit',
-    'blur textarea' : 'submit'
-    // 'blur .tag_input' : 'addTag'
+    // 'blur input' : 'submit',
+    // 'blur textarea' : 'submit',
+    'blur .tag_input' : 'addTag'
   },
 
   template: JST['primary_view/note_form'],
@@ -14,12 +14,21 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   initialize: function() {
     this.listenTo(BetterNote.notebooks, 'sync', this.render)
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model.tags(), 'add', this.render);
   },
 
   render: function() {
     var content = this.template({note: this.model});
     // debugger;
     this.$el.html(content);
+    if (this.model.tags().length > 0) {
+      var $tags = $('.allTags').toggleClass('inactive');
+      this.model.tags().each(function(tag) {
+        var newTag = $('<li>');
+        newTag.html(tag.get('title')).addClass('tag');
+        $tags.append(newTag);
+      })
+    }
     return this;
   },
 
@@ -31,14 +40,19 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
 
   addTag: function(event) {
     var tag_input = $('.tag_input').val();
+    $('.tag_input').val('');
+
     this.toggleTagInput();
     if ($.trim(tag_input).length === 0)  {
       return;
     }
-    var newTag = new BetterNote.Models.Tag();
-    newTag.set({title: tag_input});
-    return newTag;
-    // this has gotten up to tag model formation
+    // here we've got a title that's got a length greater than 0
+    // debugger;
+    if (!this.model.tags().some(function(tag) {return tag.get('title') === tag_input })) {
+      var newTag = new BetterNote.Models.Tag();
+      newTag.set({title: tag_input});
+      this.model.tags().add(newTag);
+    }
   },
 
 
@@ -56,9 +70,14 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
 
     this.collection = notebook.notes();
     this.model.set(formData);
+    if (this.model.get('title') === "") {
+      return;
+    }
+
+    // debugger;
 
     // if the event target is the tag input, construct it to a new tag and add tag button with it to view. also do this
-    
+
   //   $.post( '/api/notes', { note: formData, tag: tagData }, function( resp ) {
   // else
   //   $.post( '/api/notes', { note: formData}, function( resp ) {

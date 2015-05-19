@@ -4,7 +4,9 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   events: {
     'click .submit' : 'submit',
     'click .new_tag' : 'tagInput',
-    'blur .tag_input' : 'addTag'
+    'blur input' : 'submit',
+    'blur textarea' : 'submit'
+    // 'blur .tag_input' : 'addTag'
   },
 
   template: JST['primary_view/note_form'],
@@ -35,7 +37,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
     }
     var newTag = new BetterNote.Models.Tag();
     newTag.set({title: tag_input});
-    newTag.save({});
+    return newTag;
     // this has gotten up to tag model formation
   },
 
@@ -48,15 +50,19 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     var formData = $(this.$el).serializeJSON();
+
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
+
     this.collection = notebook.notes();
     this.model.set(formData);
-
+  //   $.post( '/data/save', { name: 'Rebecca' }, function( resp ) {
+  // console.log( resp );
     this.model.save({}, {
       success: function() {
         this.collection.add(this.model, { merge: true });
         BetterNote.notes.add(this.model, { merge: true });
-        Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
+        // Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
+
       }.bind(this),
 
       failure: function(response) {

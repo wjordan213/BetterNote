@@ -1,6 +1,7 @@
 TODO:
 
-
+Currently working on:
+  -dynamic note saving. the current predicament is properly saving forms. may require more changes to api.
 
 
 - configure note create form to dynamically save every time focus is taken off of an element (if content has been inserted into that element of course).
@@ -11,6 +12,7 @@ After these things, move on to complete backbone tags
 
 
 backbone tags:
+  -iterate through tags on render, making buttons then
   -upon tag input blur event
     -save already occurs(of entire note, changing the property associated with tags in this instance)
     -the corresponding tag model still needs to be generated

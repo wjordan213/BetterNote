@@ -3,13 +3,9 @@ BetterNote.Models.Note = Backbone.Model.extend({
 
   toJSON: function() {
     var json = Backbone.Model.prototype.toJSON.call(this);
-    var object = json
-    if (json.tag_ids) {
-      var tag_ids = json.tag_ids
-      delete json.tag_ids
-      object = {note: json, tag_ids: tag_ids};
-    }
-    debugger;
+
+    var object = {note: {id: json.id, tag_ids: json.tag_ids, title: json.title, body: json.body, notebook_id: json.notebook_id}};
+    delete json;
     return object;
   },
 

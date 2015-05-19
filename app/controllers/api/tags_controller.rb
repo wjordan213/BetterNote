@@ -10,10 +10,10 @@ module Api
     end
 
     def create
-      title = params[:title]
-      tag = Tag.find_by({title: title})
+      title = params[:title];
+      tag = current_user.tags.find_by({:title => title });
 
-      tag = Tag.create!(title: title) if !tag
+      tag = current_user.tags.create!(title: title) if !tag
       render json: tag
     end
 

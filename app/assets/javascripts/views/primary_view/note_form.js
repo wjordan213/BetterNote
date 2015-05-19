@@ -78,11 +78,17 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
 
     // iterate through this.model.tags(), creating tag_ids
     this.model.set({tag_ids: []});
+
+
+
     this.model.tags().each(function(tag) {
       this.model.get('tag_ids').push(tag.get('id'));
     }.bind(this))
 
+    // up to here everything looks good. query contains the right array
+
     this.model.save({}, {
+      parse: true,
       success: function() {
         this.collection.add(this.model, { merge: true });
         BetterNote.notes.add(this.model, { merge: true });

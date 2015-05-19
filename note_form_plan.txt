@@ -38,6 +38,8 @@ to start:
 			-View name: TitleInput
 			-Selector: note_input
 			-mixin: blurrable
+
+			
 		-body input
 			-view name: BodyInput
 			-selector: 'note_input'

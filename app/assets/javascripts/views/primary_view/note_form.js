@@ -3,9 +3,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
 
   events: {
     'click .submit' : 'submit',
-    'click .new_tag' : 'tagInput',
     'blur .main_input' : 'submit',
-    'blur .tag_input' : 'addTag'
   },
 
   template: JST['primary_view/note_form'],
@@ -13,61 +11,36 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   initialize: function() {
     this.listenTo(BetterNote.notebooks, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.tags(), 'add', this.render);
+    this.listenTo(this.model.tags(), 'add', this.addTagButton);
+  },
+
+  addTagButton: function(tag) {
+    var tagButton = new BetterNote.Views.TagButton({model: tag});
+    this.addSubview('.allTags', tagButton);
   },
 
   render: function() {
     var content = this.template({note: this.model});
-    // debugger;
     this.$el.html(content);
+
+    // BAD! needs fixing
     if (this.model.tags().length > 0) {
       var $tags = $('.allTags').toggleClass('inactive');
       this.model.tags().each(function(tag) {
-        var newTag = $('<li>');
-        newTag.html(tag.get('title')).addClass('tag');
-        $tags.append(newTag);
-      })
+        this.addTagButton(tag);
+      }.bind(this))
     }
+
+    this.addTagInputField();
+
     return this;
   },
 
-  tagInput: function(event) {
-    event.preventDefault();
-    this.toggleTagInput();
-    $('.tag_input').focus();
+  addTagInputField: function() {
+    var addTag = new BetterNote.Views.AddTag({model: this.model});
+    this.addSubview('.add_tags', addTag);
   },
 
-  addTag: function(event) {
-    var newTag;
-    var tag_input = $('.tag_input').val();
-    $('.tag_input').val('');
-
-    this.toggleTagInput();
-    if ($.trim(tag_input).length === 0)  {
-      return;
-    }
-
-    if (!this.model.tags().some(function(tag) {return tag.get('title') === tag_input })) {
-      newTag = new BetterNote.Models.Tag();
-      newTag.set({title: tag_input});
-      this.model.tags().add(newTag);
-      var something = newTag;
-      newTag.save({}, {
-      success: function() {
-          if (!this.model.isNew()) {
-          $('.submit').trigger('click');
-        }
-      }.bind(this)
-      });
-    }
-
-  },
-
-
-  toggleTagInput: function() {
-    $('.new_tag').toggleClass('inactive');
-    $('.tag_input').toggleClass('inactive');
-  },
 
   submit: function(event) {
     event.preventDefault();
@@ -99,7 +72,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
       success: function() {
         this.collection.add(this.model, { merge: true });
         BetterNote.notes.add(this.model, { merge: true });
-        debugger;
+
         if (wasNew) {
           Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});
         }

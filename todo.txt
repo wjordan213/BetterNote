@@ -5,6 +5,8 @@ Currently Working On:
   -see note_form_plan.txt
 
 Future:
+-fix bugs with random errors popping up due to bad stack order at startup
+
 -notebook edit/show combination
   -use drop down as a convenient way to show notebook
 

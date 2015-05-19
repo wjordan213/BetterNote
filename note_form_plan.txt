@@ -7,16 +7,17 @@ to start:
 
 	-subviews:
 		-list items for individual tags
-			-selector: 'allTags'
-			-View name: TagButton
-			-tagName: 'li'
 			-functionality
-				-outside
-					-they can be rendered individually and appended to the ul
-					-views added to allTags after collection addition
 				-inside
 					-they can remove themselves after destroy click events
 					-they can also change color after being clicked and talk to each other
+
+				-implementation:
+					1) write click event on tag items
+					2) write remove event on tag items
+
+
+
 
 		-tag input --> [+] button and text field
 			-selector: 'add_tags'
@@ -24,6 +25,15 @@ to start:
 			-functionality
 				-respond to blur events with functions moved from composite view into this view
 				-toggleTags
+
+			-implementation:
+				-1) add taginput view during render
+				-2) write taginput template and view
+				-3) move submit into tagInput
+
+
+
+
 		-title input
 			-View name: TitleInput
 			-Selector: note_input
@@ -39,7 +49,8 @@ to start:
 
 
 
-
+3) remove inactive class nonsense from tags ul
+4) destruction of tags
 5) css form
 6) prevent enter from triggering submit event
 9) remove tags with no taggings

@@ -4,8 +4,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   events: {
     'click .submit' : 'submit',
     'click .new_tag' : 'tagInput',
-    // 'blur input' : 'submit',
-    // 'blur textarea' : 'submit',
+    'blur .main_input' : 'submit',
     'blur .tag_input' : 'addTag'
   },
 
@@ -39,6 +38,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   },
 
   addTag: function(event) {
+    var newTag;
     var tag_input = $('.tag_input').val();
     $('.tag_input').val('');
 
@@ -49,10 +49,13 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
     // here we've got a title that's got a length greater than 0
     // debugger;
     if (!this.model.tags().some(function(tag) {return tag.get('title') === tag_input })) {
-      var newTag = new BetterNote.Models.Tag();
+      newTag = new BetterNote.Models.Tag();
       newTag.set({title: tag_input});
       this.model.tags().add(newTag);
+      var something = newTag;
+      newTag.save();
     }
+
   },
 
 
@@ -64,8 +67,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   submit: function(event) {
     event.preventDefault();
     var formData = $(this.$el).serializeJSON();
-
-
+    delete formData.tag;
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
 
     this.collection = notebook.notes();
@@ -74,21 +76,17 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
       return;
     }
 
-    // debugger;
+    // iterate through this.model.tags(), creating tag_ids
+    this.model.set({tag_ids: []});
+    this.model.tags().each(function(tag) {
+      this.model.get('tag_ids').push(tag.get('id'));
+    }.bind(this))
 
-    // if the event target is the tag input, construct it to a new tag and add tag button with it to view. also do this
-
-  //   $.post( '/api/notes', { note: formData, tag: tagData }, function( resp ) {
-  // else
-  //   $.post( '/api/notes', { note: formData}, function( resp ) {
-  // console.log( resp );
-  // on save notebook notes and betternote notes both need this model saved.
-  // maybe I could set the model with the response?
     this.model.save({}, {
       success: function() {
         this.collection.add(this.model, { merge: true });
         BetterNote.notes.add(this.model, { merge: true });
-        // Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
+        Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});
 
       }.bind(this),
 

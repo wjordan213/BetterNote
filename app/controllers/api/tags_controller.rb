@@ -9,6 +9,14 @@ module Api
       @tags = current_user.tags
     end
 
+    def create
+      title = params[:title]
+      tag = Tag.find_by({title: title})
+
+      tag = Tag.create!(title: title) if !tag
+      render json: tag
+    end
+
     def destroy
       tagging = Tagging.where('tag_id = ? AND note_id = ?', params[:id], params[:note_id])[0]
       tagging.destroy

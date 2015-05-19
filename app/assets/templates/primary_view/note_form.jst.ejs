@@ -23,8 +23,8 @@
 <br>
 
 <label for="note_title">Title</label><br>
-<input type="text" value="<%= note.get('title') %>" name="title"><br>
+<input type="text" class="main_input" value="<%= note.get('title') %>" name="title"><br>
 
 <label for="note_body">Body</label><br>
-<textarea name="body" rows="8" cols="40"><%= note.get('body') %></textarea>
+<textarea name="body" class="main_input" rows="8" cols="40"><%= note.get('body') %></textarea>
 <button class="submit">Submit</button>

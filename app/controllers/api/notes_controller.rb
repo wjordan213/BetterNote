@@ -15,10 +15,10 @@ module Api
       note = Note.new(note_params)
 
       if note.save
-        if tag_params
-          tag = current_user.tags.new(tag_params)
-          tag.save_with_tagging(note.id)
-        end
+        # if tag_params
+        #   tag_ids = current_user.tags.new(tag_params)
+        #   tag.save_with_tagging(note.id)
+        # end
         render json: note
       else
         render json: note.errors.full_messages
@@ -43,11 +43,6 @@ module Api
     end
 
     private
-
-    def tag_params
-      return unless params[:tag]
-      params.require(:tag).permit(:id, :title);
-    end
 
     def note_params
       params.require(:note).permit(:notebook_id, :title, :body)

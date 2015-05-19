@@ -22,10 +22,12 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
   },
 
   changeToNotebooks: function() {
+    BetterNote.notebooks.fetch();
     this._swapPaneView(BetterNote.notebooks, 'notebooks');
   },
 
   changeToTags: function() {
+    BetterNote.tags.fetch();
     this._swapPaneView(BetterNote.tags, 'tags');
   }
 

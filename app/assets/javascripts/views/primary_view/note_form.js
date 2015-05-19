@@ -11,7 +11,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   template: JST['primary_view/note_form'],
 
   initialize: function() {
-    this.listenTo(BetterNote.notebooks, 'sync', this.render)
+    this.listenTo(BetterNote.notebooks, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model.tags(), 'add', this.render);
   },
@@ -46,14 +46,19 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
     if ($.trim(tag_input).length === 0)  {
       return;
     }
-    // here we've got a title that's got a length greater than 0
-    // debugger;
+
     if (!this.model.tags().some(function(tag) {return tag.get('title') === tag_input })) {
       newTag = new BetterNote.Models.Tag();
       newTag.set({title: tag_input});
       this.model.tags().add(newTag);
       var something = newTag;
-      newTag.save();
+      newTag.save({}, {
+      success: function() {
+          if (!this.model.isNew()) {
+          $('.submit').trigger('click');
+        }
+      }.bind(this)
+      });
     }
 
   },
@@ -87,13 +92,17 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
 
     // up to here everything looks good. query contains the right array
 
+    var wasNew = this.model.isNew();
+
     this.model.save({}, {
       parse: true,
       success: function() {
         this.collection.add(this.model, { merge: true });
         BetterNote.notes.add(this.model, { merge: true });
-        Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});
-
+        debugger;
+        if (wasNew) {
+          Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});
+        }
       }.bind(this),
 
       failure: function(response) {

@@ -3,6 +3,8 @@ TODO:
 Currently working on:
   -dynamic note saving. the current predicament is properly saving forms. may require more changes to api.
 
+  - get back end to retrieve tag if it already exists in the database and use that
+
 
 - configure note create form to dynamically save every time focus is taken off of an element (if content has been inserted into that element of course).
 - remove edit view upon model deletion

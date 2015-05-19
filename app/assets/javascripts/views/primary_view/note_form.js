@@ -51,12 +51,20 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
     event.preventDefault();
     var formData = $(this.$el).serializeJSON();
 
+
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
 
     this.collection = notebook.notes();
     this.model.set(formData);
-  //   $.post( '/data/save', { name: 'Rebecca' }, function( resp ) {
+
+    // if the event target is the tag input, construct it to a new tag and add tag button with it to view. also do this
+    
+  //   $.post( '/api/notes', { note: formData, tag: tagData }, function( resp ) {
+  // else
+  //   $.post( '/api/notes', { note: formData}, function( resp ) {
   // console.log( resp );
+  // on save notebook notes and betternote notes both need this model saved.
+  // maybe I could set the model with the response?
     this.model.save({}, {
       success: function() {
         this.collection.add(this.model, { merge: true });

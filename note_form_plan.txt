@@ -26,6 +26,9 @@ to start:
 				-respond to blur events with functions moved from composite view into this view
 				-toggleTags
 
+
+				-write mixin. have it do submit.
+
 			-implementation:
 				-1) add taginput view during render
 				-2) write taginput template and view
@@ -39,7 +42,7 @@ to start:
 			-Selector: note_input
 			-mixin: blurrable
 
-			
+
 		-body input
 			-view name: BodyInput
 			-selector: 'note_input'

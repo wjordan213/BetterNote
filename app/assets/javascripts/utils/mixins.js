@@ -1,8 +1,4 @@
 BetterNote.Mixins.PaneChanger = {
-
-
-
-
   _swapPaneView: function(collection, type, model) {
     if (model) {
       var sidePane = new BetterNote.Views.SidePane({type: type, collection:  collection, model: model});

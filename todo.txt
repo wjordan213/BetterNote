@@ -6,6 +6,9 @@ Search
 
 
 Future:
+
+-remove tags after all their taggings are gone
+
 -fix bugs with random errors popping up due to bad stack order at startup
 -get it so that new can switch to edit on a note seamlessly, thus eliminating the need for the form header
   -means setting off click event after navigating to edit page

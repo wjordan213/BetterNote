@@ -46,6 +46,6 @@ BetterNote.Views.NotebookForm = Backbone.View.extend(
     var notebookShow = new BetterNote.Views.SidePane({ collection: this.model.notes(), type: "notes", model: this.model });
     this._swapPaneView(this.model.notes(), 'notes', this.model);
 
-    // Backbone.history.navigate('', { trigger: true });
+    Backbone.history.navigate('', { trigger: true });
   }
 }))

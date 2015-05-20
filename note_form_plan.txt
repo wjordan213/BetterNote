@@ -1,6 +1,5 @@
 to start:
 3) possible memory leaks. ask as they come up.
-4) destruction of tags
 5) css form
 6) prevent enter from triggering submit event
 9) remove tags with no taggings

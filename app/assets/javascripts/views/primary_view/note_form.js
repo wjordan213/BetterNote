@@ -29,7 +29,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
     this.addTagInputField();
     this.addTitleInputField();
     this.addBodyInputField();
-
+    this.model.tags().each(this.addTagButton.bind(this));
     return this;
   },
 
@@ -39,6 +39,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   },
 
   renderNewTitleField: function() {
+    // debugger;
     this._titleInput.remove();
     this.addTitleInputField();
   },

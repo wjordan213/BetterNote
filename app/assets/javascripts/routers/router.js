@@ -1,6 +1,5 @@
 BetterNote.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
-    BetterNote.notebooks.fetch();
     BetterNote.notes.fetch();
     this.$rootEl = options.$rootEl;
     this.$rootEl
@@ -23,7 +22,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     var notebook = BetterNote.notebooks.getOrFetch(id);
     var editNotebookView = new BetterNote.Views.NotebookForm({model: notebook})
     notebook.fetch();
-    
+
     this._swapPrimaryView(editNotebookView);
   },
 
@@ -51,6 +50,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
 
   edit: function(id){
     var note = BetterNote.notes.getOrFetch(id);
+
     var editNoteView = new BetterNote.Views.NoteForm({model: note});
 
     this._swapPrimaryView(editNoteView);

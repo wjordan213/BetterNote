@@ -11,17 +11,17 @@ users = User.create!([
   {email: 'wjordan213@gmail.com', password_digest: User.generate_password_digest('password')}])
 
 notebooks = users[0].notebooks.create!([
-  {title: 'mcmuffins'},
-  {title: 'cheesy and delicious'},
-  {title: 'scrumptiousness'},
-  {title: 'soylent is disgustin'}
+  {title: 'first notebook'},
+  {title: 'second notebook'},
+  {title: 'third notebook'},
+  {title: 'fourth notebook'}
   ])
 
-notes = notebooks[0].notes.create!([
-  {title: 'are they good', body: 'yes they are delicious'},
-  {title: 'mcdonalds is lame', body: 'peanut butter'},
-  {title: 'yes world mang', body: 'yes and no and yes and no and yes and no'}
-  ])
+
+notes = notebooks[0].notes.create!({title: 'created first', body: 'yes they are delicious'})
+
+notes = notebooks[0].notes.create!({title: 'created second', body: 'peanut butter'})
+notes = notebooks[0].notes.create!({title: 'created third', body: 'yes and no and yes and no and yes and no'})
 
 Tag.create!([
   {title: 'tasty stuff', user_id: 1},

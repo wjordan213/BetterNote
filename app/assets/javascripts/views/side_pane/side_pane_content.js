@@ -19,7 +19,7 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     event.preventDefault();
     var id = $(event.target).data('id');
     if (this.type === "notes") {
-      Backbone.history.navigate('notes/' + id, {trigger: true})
+      Backbone.history.navigate('notes/' + id, {trigger: true});
     } else {
       this.model.fetch();
       this._swapPaneView(this.model.notes(), "notes", this.model);
@@ -28,7 +28,12 @@ BetterNote.Views.SideContent = Backbone.View.extend(
 
   destroy: function(event) {
     event.preventDefault();
+
     this.model.destroy();
+
+    if (Backbone.history.getFragment().match('/' + this.model.id + '/edit')) {
+      Backbone.history.navigate('/notes/new', {trigger: true});
+    }
     this.remove();
   },
 

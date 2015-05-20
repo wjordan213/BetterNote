@@ -3,21 +3,45 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.collectionViews = {};
     this.type = options.type;
-    this.listenTo(this.collection, 'add', this.addContentView);
-    this.listenTo(this.collection, 'remove', this.removeContentView)
+    this.listenTo(this.collection, 'sort', this.addContentViews);
+    this.listenTo(this.collection, 'remove', this.removeContentView);
+
+    this._beenSorted = false;
 
     if (options.model) {
       this.listenTo(this.model, 'sync', this.render);
     }
 
-    this.collection.each(function(item) {
-      this.addContentView(item);
-    }.bind(this))
+    this.addContentViews();
+  },
+
+  addLastContentView: function() {
+    this.addContentView(this.collection.last());
+  },
+
+  addContentViews: function() {
+    if (!this._beenSorted && this.collection.length > 0) {
+      this._beenSorted = true;
+      this.listenTo(this.collection, 'add', this.prependContent);
+
+      this.collection.each(function(item) {
+        this.addContentView(item);
+      }.bind(this))
+    } else {
+      this.addLastContentView;
+    }
+  },
+
+  prependContent: function(content) {
+    var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
+    this.collectionViews[content.get('id')] = subview;
+
+    this.addSubview('.content', subview, true);
   },
 
   events: {
     'click .new' : 'newContent',
-    'input .search' : 'searchContent',
+    'input .search' : 'searchContent'
   },
 
   template: JST['side_pane/side_pane'],
@@ -33,11 +57,24 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     // 1) check to see if the title of content matches inputVal
     if (content.get('title').match(inputVal)) {
       if (!this.collectionViews[content.get('id')]) {
-        this.addContentView(content);
+        this.addContentView(content, {insert: true});
       }
     } else if(this.collectionViews[content.get('id')]) {
-      this.removeContentView(content);
+      this.removeContentView(content, {insert: true});
     }
+  },
+
+  insertContent: function(subview) {
+
+
+    // iterate, call insertAfter on subview.$el, then add subview to this.subviews() and break out of loop
+    console.log('content stuff');
+    this.eachSubview(function(contentView, selector) {
+      console.log(contentView.model.get('updated_at'));
+      console.log(contentView.model.get('title'));
+    })
+
+    this.subviews('.content').push(subview);
   },
 
   newContent: function(event) {
@@ -55,12 +92,16 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.collectionViews[content.get('id')] = false;
   },
 
-  addContentView: function(content) {
+  addContentView: function(content, options) {
     var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
 
     this.collectionViews[content.get('id')] = subview;
 
-    this.addSubview('.content', subview);
+    if (options && options.insert) {
+      this.insertContent(subview);
+    } else{
+      this.addSubview('.content', subview);
+    }
   },
 
   render: function() {

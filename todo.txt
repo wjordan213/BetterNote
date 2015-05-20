@@ -1,11 +1,14 @@
 TODO:
 
-Currently Working On:
-  -note composite view conversion
-  -see note_form_plan.txt
+
+Search
+
+
 
 Future:
 -fix bugs with random errors popping up due to bad stack order at startup
+-get it so that new can switch to edit on a note seamlessly, thus eliminating the need for the form header
+  -means setting off click event after navigating to edit page
 
 -notebook edit/show combination
   -use drop down as a convenient way to show notebook
@@ -16,10 +19,6 @@ Future:
 - error messages on top of primary view for when things go wrong. get teacher's help
   -error message for invalid form input
   -error message for after redirect when trying to go to note submission without already having a notebook
-
-- note form looking awesome might complicate the api. beware
-
-- update timeline
 
 CSS:
   -style sidebar buttons

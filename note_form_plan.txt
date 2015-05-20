@@ -1,5 +1,6 @@
 to start:
 
+2) push to heroku IMMEDIATELY
 3) speed it up!
 4) destruction of tags
 5) css form

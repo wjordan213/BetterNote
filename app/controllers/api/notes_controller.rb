@@ -15,13 +15,7 @@ module Api
     def create
       @note = Note.new(note_params)
       puts params
-      # use tag_ids= to create and delete columns on taggings table
       if @note.save
-        # if tag_params
-        #   tag_ids = current_user.tags.new(tag_params)
-        #   tag.save_with_tagging(note.id)
-        # end
-        # render a partial here
         render :show
       else
         render json: @note.errors.full_messages
@@ -30,7 +24,6 @@ module Api
 
     def update
       @note = Note.find(params[:id])
-
       if @note.update(note_params)
         puts @note.tags[1].title
         render :show

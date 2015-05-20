@@ -42,7 +42,7 @@ BetterNote.Mixins.NoteSubmit = {
 
     this.model.save({}, {
       parse: true,
-      success: function() {
+      success: function(response) {
         this.collection.add(this.model, { merge: true });
         BetterNote.notes.add(this.model, { merge: true });
 

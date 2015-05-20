@@ -34,7 +34,6 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   },
 
   renderNotebookOptions: function() {
-    console.log('yup');
     this._notebookInput.remove();
     this.addNotebookInputField();
   },

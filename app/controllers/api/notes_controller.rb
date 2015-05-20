@@ -25,7 +25,6 @@ module Api
     def update
       @note = Note.find(params[:id])
       if @note.update(note_params)
-        puts @note.tags[1].title
         render :show
       else
         render json: @note.errors.full_messages

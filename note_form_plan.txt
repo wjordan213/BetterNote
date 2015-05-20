@@ -1,60 +1,6 @@
 to start:
 
-1) convert note form into composite view
-
--note form view has form as root el it is the main composite view
-	-notebook dropdown is a part of this form
-
-	-subviews:
-		-list items for individual tags
-			-functionality
-				-inside
-					-they can remove themselves after destroy click events
-					-they can also change color after being clicked and talk to each other
-
-				-implementation:
-					1) write click event on tag items
-					2) write remove event on tag items
-
-
-
-
-		-tag input --> [+] button and text field
-			-selector: 'add_tags'
-			-View name: addTag
-			-functionality
-				-respond to blur events with functions moved from composite view into this view
-				-toggleTags
-
-
-				-write mixin. have it do submit.
-
-			-implementation:
-				-1) add taginput view during render
-				-2) write taginput template and view
-				-3) move submit into tagInput
-
-
-
-
-		-title input
-			-View name: TitleInput
-			-Selector: note_input
-			-mixin: blurrable
-
-
-		-body input
-			-view name: BodyInput
-			-selector: 'note_input'
-			-mixin: blurrable
-
-	-mixins
-		-register blur events
-		-call submit
-
-
-
-3) remove inactive class nonsense from tags ul
+3) speed it up!
 4) destruction of tags
 5) css form
 6) prevent enter from triggering submit event

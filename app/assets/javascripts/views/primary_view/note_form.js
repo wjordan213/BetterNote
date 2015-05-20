@@ -18,7 +18,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   },
 
   addTagButton: function(tag) {
-    var tagButton = new BetterNote.Views.TagButton({model: tag});
+    var tagButton = new BetterNote.Views.TagButton({model: tag, note: this.model});
     this.addSubview('.allTags', tagButton);
   },
 

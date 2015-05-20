@@ -1,7 +1,5 @@
 to start:
-
-2) push to heroku IMMEDIATELY
-3) speed it up!
+3) possible memory leaks. ask as they come up.
 4) destruction of tags
 5) css form
 6) prevent enter from triggering submit event

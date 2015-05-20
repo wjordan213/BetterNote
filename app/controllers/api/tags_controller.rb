@@ -1,3 +1,4 @@
+require 'byebug'
 module Api
   class TagsController < ApplicationController
     def show

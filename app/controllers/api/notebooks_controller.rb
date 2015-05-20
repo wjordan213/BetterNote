@@ -14,7 +14,7 @@ module Api
     end
 
     def create
-      notebook = current_user.notebooks.new(notebook_params);
+      notebook = current_user.notebooks.new(title: params[:title]);
       if notebook.save
         render json: notebook
       else
@@ -25,7 +25,7 @@ module Api
     def update
       notebook = Notebook.find(params[:id]);
 
-      if notebook.update(notebook_params)
+      if notebook.update({title: params[:title]})
         render json: notebook
       else
         render json: notebook.errors.full_messages
@@ -47,8 +47,8 @@ module Api
       end
     end
 
-    def notebook_params
-      params.require(:notebook).permit(:title);
-    end
+    # def notebook_params
+    #   params.require(:notebook).permit(:title);
+    # end
   end
 end

@@ -1,7 +1,8 @@
 BetterNote.Collections.Tags = Backbone.Collection.extend({
   url: '/api/tags',
   model: BetterNote.Models.Tag,
-
+  comparator: 'updated_at',
+  
   getOrFetch: function(id) {
     var tag = this.get(id);
 

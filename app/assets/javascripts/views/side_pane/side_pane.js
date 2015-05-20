@@ -33,11 +33,9 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     // 1) check to see if the title of content matches inputVal
     if (content.get('title').match(inputVal)) {
       if (!this.collectionViews[content.get('id')]) {
-        // debugger;
         this.addContentView(content);
       }
     } else if(this.collectionViews[content.get('id')]) {
-        // debugger;
       this.removeContentView(content);
     }
   },

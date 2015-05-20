@@ -1,6 +1,7 @@
 BetterNote.Collections.Notes = Backbone.Collection.extend({
   url: '/api/notes',
   model: BetterNote.Models.Note,
+  comparator: 'updated_at',
 
   getOrFetch: function(id) {
     var note = this.get(id);

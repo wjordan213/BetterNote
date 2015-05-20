@@ -15,7 +15,8 @@ BetterNote.Mixins.PaneChanger = {
 
 BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
-    event.preventDefault();
+    // event.preventDefault();
+    // debugger;
     var formData = this.$form.serializeJSON();
     // debugger
     delete formData.tag;

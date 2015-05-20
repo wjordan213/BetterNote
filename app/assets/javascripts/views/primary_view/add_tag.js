@@ -1,8 +1,13 @@
-BetterNote.Views.AddTag = Backbone.View.extend({
+BetterNote.Views.AddTag = Backbone.View.extend(
+	_.extend({}, BetterNote.Mixins.NoteSubmit, {
 	template: JST['primary_view/add_tag'],
 	events: {
 		'click .new_tag' : 'tagInput',
 		'blur .tag_input' : 'addTag'
+	},
+
+	initialize: function(options) {
+		this.$form = options.$form;
 	},
 
 	render: function() {
@@ -37,7 +42,8 @@ BetterNote.Views.AddTag = Backbone.View.extend({
 			newTag.save({}, {
 			success: function() {
 					if (!this.model.isNew()) {
-					$('.submit').trigger('click');
+
+						this.submit.call(this);
 				}
 			}.bind(this)
 			});
@@ -50,4 +56,4 @@ BetterNote.Views.AddTag = Backbone.View.extend({
 		$('.new_tag').toggleClass('inactive');
 		$('.tag_input').toggleClass('inactive');
 	}
-})
+}))

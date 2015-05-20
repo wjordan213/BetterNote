@@ -43,7 +43,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   },
 
   addTagInputField: function() {
-    var addTag = new BetterNote.Views.AddTag({model: this.model});
+    var addTag = new BetterNote.Views.AddTag({model: this.model, $form: this.$el, collection: this.collection });
     this.addSubview('.add_tags', addTag);
   }
 })

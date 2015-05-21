@@ -16,14 +16,16 @@ BetterNote.Mixins.PaneChanger = {
 
 BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
-
+    // debugger;
     var formData = this.$form.serializeJSON();
 
     delete formData.tag;
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
 
     this.collection = notebook.notes();
+    // debugger;
     this.model.set(formData);
+    // debugger;
     if (this.model.get('title') === "") {
       return;
     }
@@ -47,13 +49,14 @@ BetterNote.Mixins.NoteSubmit = {
       success: function(response) {
 
         if (!wasNew) {
+          // debugger;
           BetterNote._currentPane.removeAndInsert(this.model);
         }
 
+        this.collection.add(this.model, { merge: true });
+        BetterNote.notes.add(this.model, { merge: true });
 
         if (wasNew) {
-          this.collection.add(this.model, { merge: true });
-          BetterNote.notes.add(this.model, { merge: true });
           Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});
           $('.main_input').focus()
         } else {

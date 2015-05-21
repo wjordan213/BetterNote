@@ -1,8 +1,18 @@
 TODO:
 
 
+
+-element is not being inserted to the right position after change when notebook panel is open
+
+
+
+
 now search works the way it should be working even after editing.
   -now all we have to do is properly apply removeAndInsert() and we should be good to go.
+
+
+
+  -fix regexp error
 
 
 currently:

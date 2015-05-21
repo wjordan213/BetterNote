@@ -21,6 +21,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   removeAndInsert: function(model) {
+    // debugger;
     if (this.containsModel(model) && this.collectionViews[0].contains(model)) {
       console.log('called rmandins');
       this.removeContentView(model);

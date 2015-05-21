@@ -12,7 +12,6 @@ currently:
 
   -remove containsModel
 
-
   HUGE BUG:
     -after edit, sort on search stops working
     GET HELP!!!!!!

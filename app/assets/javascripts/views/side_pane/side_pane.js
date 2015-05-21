@@ -13,6 +13,10 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
       this.listenTo(this.model, 'sync', this.render);
     }
 
+    if (this.type === "notebooks") {
+      this.collection.sort();
+    }
+
     this.addContentViews();
   },
 

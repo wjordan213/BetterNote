@@ -8,6 +8,7 @@ window.BetterNote = {
     new BetterNote.Routers.Router({$rootEl: $(".main")});
     this.populateSidebar();
     this.populateSidepane();
+
     Backbone.history.start();
   },
 

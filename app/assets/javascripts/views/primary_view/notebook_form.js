@@ -27,7 +27,7 @@ BetterNote.Views.NotebookForm = Backbone.View.extend(
 
   submitForm: function(event) {
     event.preventDefault();
-    // debugger;
+
     var formData = $(event.currentTarget).serializeJSON();
     this.model.set(formData);
     if (this.model.isNew()) {
@@ -39,6 +39,7 @@ BetterNote.Views.NotebookForm = Backbone.View.extend(
       });
     } else {
       this.model.save();
+      BetterNote.notebooks.sortBy;
       this.remove();
     }
 

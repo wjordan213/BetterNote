@@ -5,9 +5,11 @@ To start:
   -remove tags after all their taggings are gone
     -Get Constance's help on this
 
-
+  -drag and drop
 
 Future:
+  -either keep tag buttons in chronological order or alphabetical, whatever is easier to implement.
+    -change tag buttons to be highlighted on click, and replace remove button with delete keypress event while button is highlighted and active
 
 
 -remove new note from tag show side pane

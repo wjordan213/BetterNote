@@ -22,19 +22,21 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
   removeAndInsert: function(model) {
     // debugger;
-    if (this.containsModel(model) && this.collectionViews[0].contains(model)) {
-      console.log('called rmandins');
-      this.removeContentView(model);
+    if (this.containsModel(model, this.collection) && this.containsModel(model, this.collectionViews[0])) {
+
+      var workingModel = this.collectionViews[0].findWhere({updated_at: model.get('updated_at')});
+
+      this.removeContentView(workingModel);
 
       // debugger;
 
-      var subview = new BetterNote.Views.SideContent({ model: model, type: this.type, collection: this.collection });
+      var subview = new BetterNote.Views.SideContent({ model: workingModel, type: this.type, collection: this.collection });
       this.insertContent(subview);
     }
   },
 
-  containsModel: function(model) {
-    return this.collection.some(function(curModel) {
+  containsModel: function(model, collection) {
+    return collection.some(function(curModel) {
       return curModel.get('updated_at') === model.get('updated_at');
     })
   },

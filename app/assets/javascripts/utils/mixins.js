@@ -48,13 +48,14 @@ BetterNote.Mixins.NoteSubmit = {
       parse: true,
       success: function(response) {
 
+        this.collection.add(this.model, { merge: true });
+        BetterNote.notes.add(this.model, { merge: true });
+
         if (!wasNew) {
           // debugger;
           BetterNote._currentPane.removeAndInsert(this.model);
         }
 
-        this.collection.add(this.model, { merge: true });
-        BetterNote.notes.add(this.model, { merge: true });
 
         if (wasNew) {
           Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});

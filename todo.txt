@@ -3,8 +3,8 @@ TODO:
 
 
 -element is not being inserted to the right position after change when notebook panel is open
-
-
+-move general new note to sidebar
+-persist click event upon new note submission
 
 
 now search works the way it should be working even after editing.

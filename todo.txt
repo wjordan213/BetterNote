@@ -1,6 +1,41 @@
 TODO:
 
 
+currently:
+
+  HUGE BUG:
+    -after edit, sort on search stops working
+    GET HELP!!!!!!
+
+
+
+  -things that have bearing in this instance
+  -searchContent
+  -compareContent
+  -addContentView
+  -insertContent
+
+
+
+
+  -possible currentPane issue
+
+  -then set event listener on change to of content model to remove and then prepend the view
+
+  -then remove tags that have no taggings
+
+2) complete search implementation
+search implementation:
+  -"search whatever" displayed on search bar when empty and un-selected
+
+
+extra:
+  -partial for note show item separate from note index item
+
+
+
+
+
 To start:
   -remove tags after all their taggings are gone
     -Get Constance's help on this

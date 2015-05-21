@@ -41,15 +41,20 @@ BetterNote.Mixins.NoteSubmit = {
 
     var wasNew = this.model.isNew();
 
+    // if (!wasNew) {
+    //   console.log('called');
+    //   BetterNote._currentPane.removeAndInsert(this.model);
+    // }
+
     this.model.save({}, {
       parse: true,
       success: function(response) {
-        this.collection.add(this.model, { merge: true });
-        BetterNote.notes.add(this.model, { merge: true });
 
 
 
         if (wasNew) {
+          this.collection.add(this.model, { merge: true });
+          BetterNote.notes.add(this.model, { merge: true });
           Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});
           $('.main_input').focus()
         }

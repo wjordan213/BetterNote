@@ -15,6 +15,33 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.addContentViews();
   },
 
+  // here we have three situations
+  // 1) the model is not in the sidePane's collection
+  //      -early return and move on
+  // 2) the model is in the collection and is not currently rendered on the page.
+  //      -early return and move on
+  // 3) the model is in the collection and is currently rendered on the page
+  //      -remove the corresponding subview, then re-insert it
+  removeAndInsert: function(model) {
+    // debugger;
+    if (this.containsModel(model) && this.collectionViews[model.id]) {
+      console.log('called');
+      this.collectionViews[model.id].remove();
+      this.collectionViews[model.id] = false;
+
+      // debugger;
+
+      var subview = new BetterNote.Views.SideContent({ model: model, type: this.type, collection: this.collection });
+      this.insertContent(subview);
+    }
+  },
+
+  containsModel: function(model) {
+    return this.collection.some(function(curModel) {
+      return curModel.get('updated_at') === model.get('updated_at');
+    })
+  },
+
   addLastContentView: function() {
     this.addContentView(this.collection.last());
   },
@@ -48,6 +75,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
   searchContent: function(event) {
     var inputVal = $(event.target).val();
+    // debugger;
     this.collection.each(function(content) {
       this.compareContent(content, inputVal);
     }.bind(this))
@@ -55,6 +83,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
   compareContent: function(content, inputVal) {
     // 1) check to see if the title of content matches inputVal
+    // debugger;
     if (content.get('title').match(inputVal)) {
       if (!this.collectionViews[content.get('id')]) {
         this.addContentView(content, {insert: true});
@@ -77,13 +106,9 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
       // from here forward, we know that contentView is something currently rendered on the page
       var result = this.collection.comparator(contentView.model, subview.model);
-      console.log("===========================================");
-      console.log(contentView.model.get("title"));
-      console.log(subview.model.get("title"));
-      console.log(result)
-      console.log("===========================================");
       // if result is one, subview is older and contentView is newer, else, subview is newer
       if (result === -1) {
+        // if (subview.model.get('title') === 'created thirdasas') { debugger}
         inserted = true;
         // debugger;
         subview.render().$el.insertAfter(contentView.$el);
@@ -93,6 +118,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     }
       // access this.collection's comparator function, giving it contentView and subView. It should start from newest and work it's way down to oldest. when it finds something older than it, it is inserted either before or after (not sure how the ordering works out)
     if (!inserted) {
+      this.collectionViews[subview.model.get('id')] = subview;
       this.prependContent(subview.model);
     } else {
       this.subviews('.content').push(subview);

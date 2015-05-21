@@ -12,7 +12,7 @@ window.BetterNote = {
   },
 
   populateSidepane: function() {
-    var sidePane = new BetterNote.Views.SidePane({type: 'notes', collection: BetterNote.notes })
+    var sidePane = BetterNote._currentPane = new BetterNote.Views.SidePane({type: 'notes', collection: BetterNote.notes })
     $(".sidePane").html(sidePane.render().$el);
   },
 

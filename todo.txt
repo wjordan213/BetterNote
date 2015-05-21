@@ -1,11 +1,8 @@
 TODO:
 
-
-
--element is not being inserted to the right position after change when notebook panel is open
 -move general new note to sidebar
 -persist click event upon new note submission
-
+-clear out tmp and log
 
 now search works the way it should be working even after editing.
   -now all we have to do is properly apply removeAndInsert() and we should be good to go.
@@ -21,11 +18,6 @@ currently:
   collectionView.add(subview.model, {sort: true})
 
   -remove containsModel
-
-  HUGE BUG:
-    -after edit, sort on search stops working
-    GET HELP!!!!!!
-
 
 
   -things that have bearing in this instance

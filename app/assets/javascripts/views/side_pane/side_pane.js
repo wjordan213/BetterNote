@@ -21,7 +21,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   removeAndInsert: function(model) {
-    // debugger;
+    debugger;
     if (this.containsModel(model, this.collection) && this.containsModel(model, this.collectionViews[0])) {
 
       var workingModel = this.collectionViews[0].findWhere({updated_at: model.get('updated_at')});

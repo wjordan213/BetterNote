@@ -22,7 +22,7 @@ BetterNote.Mixins.NoteSubmit = {
     delete formData.tag;
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
 
-    this.collection = notebook.notes();
+    this.collection = BetterNote._currentPane.model.notes();
     // debugger;
     this.model.set(formData);
     // debugger;
@@ -52,7 +52,7 @@ BetterNote.Mixins.NoteSubmit = {
         BetterNote.notes.add(this.model, { merge: true });
 
         if (!wasNew) {
-          // debugger;
+          debugger;
           BetterNote._currentPane.removeAndInsert(this.model);
         }
 

@@ -2,17 +2,17 @@ BetterNote.Collections.Tags = Backbone.Collection.extend({
   url: '/api/tags',
   model: BetterNote.Models.Tag,
   comparator: function(first, second) {
-    var first_updated = first.get('updated_at');
-    var second_updated = second.get('updated_at');
+    var first_updated = first.get('title');
+    var second_updated = second.get('title');
     if (first_updated > second_updated) {
-      return -1;
+      return 1;
     } else if (first_updated === second_updated) {
       return 0;
     } else {
-      return 1;
+      return -1;
     }
   },
-  
+
   getOrFetch: function(id) {
     var tag = this.get(id);
 

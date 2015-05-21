@@ -1,15 +1,22 @@
 TODO:
 
 
-Search
+To start:
+  -remove tags after all their taggings are gone
+    -Get Constance's help on this
 
 
 
 Future:
 
--remove tags after all their taggings are gone
 
 -remove new note from tag show side pane
+
+-pingify heroku site
+
+-get code review
+
+-sniff out memory leaks and zombie views
 
 -fix bugs with random errors popping up due to bad stack order at startup
 -get it so that new can switch to edit on a note seamlessly, thus eliminating the need for the form header

@@ -21,9 +21,16 @@ BetterNote.Mixins.NoteSubmit = {
 
     delete formData.tag;
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
-
-    this.collection = BetterNote._currentPane.model.notes();
     // debugger;
+
+    if (BetterNote._currentPane.model) {
+      this.collection = BetterNote._currentPane.model.notes();
+      BetterNote._currentPane.model;
+    } else {
+      this.collection = BetterNote.notebooks;
+    }
+
+
     this.model.set(formData);
     // debugger;
     if (this.model.get('title') === "") {

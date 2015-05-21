@@ -6,7 +6,13 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
   events: {
     'click .notebooks' : 'changeToNotebooks',
     'click .notes' : 'changeToNotes',
-    'click .tags' : 'changeToTags'
+    'click .tags' : 'changeToTags',
+    'click .newNote' : 'newNote'
+  },
+
+  newNote: function(event) {
+    event.preventDefault();
+    Backbone.history.navigate($(event.target).data('href'), {trigger: true});
   },
 
   render: function() {

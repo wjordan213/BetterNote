@@ -87,7 +87,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
         inserted = true;
         // debugger;
         subview.render().$el.insertAfter(contentView.$el);
-        // $('.content').before(subview.render(.$el, contentView.$el);
+        this.collectionViews[subview.model.get('id')] = subview;
         break;
       }
     }

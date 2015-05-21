@@ -1,5 +1,17 @@
 TODO:
 
+prevent any and all zombie tags from existing in the database
+-first situation
+  -when a new tag is generated during note creation and that note is not completed, the tag is not removed from the BetterNote.tags collection and it is not destroyed in the Database.
+  -remove it from the collection, then destory it
+
+
+
+
+
+
+
+
 -move general new note to sidebar
 -persist click event upon new note submission
 -clear out tmp and log

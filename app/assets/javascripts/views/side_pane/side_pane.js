@@ -65,16 +65,38 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   insertContent: function(subview) {
-
+    var inserted = false;
 
     // iterate, call insertAfter on subview.$el, then add subview to this.subviews() and break out of loop
-    console.log('content stuff');
-    this.eachSubview(function(contentView, selector) {
-      console.log(contentView.model.get('updated_at'));
-      console.log(contentView.model.get('title'));
-    })
+    for (var key in this.collectionViews) {
+      var contentView = this.collectionViews[key];
+      // debugger;
+      if (contentView === false) {
+        continue;
+      }
 
-    this.subviews('.content').push(subview);
+      // from here forward, we know that contentView is something currently rendered on the page
+      var result = this.collection.comparator(contentView.model, subview.model);
+      console.log("===========================================");
+      console.log(contentView.model.get("title"));
+      console.log(subview.model.get("title"));
+      console.log(result)
+      console.log("===========================================");
+      // if result is one, subview is older and contentView is newer, else, subview is newer
+      if (result === -1) {
+        inserted = true;
+        // debugger;
+        subview.render().$el.insertAfter(contentView.$el);
+        // $('.content').before(subview.render(.$el, contentView.$el);
+        break;
+      }
+    }
+      // access this.collection's comparator function, giving it contentView and subView. It should start from newest and work it's way down to oldest. when it finds something older than it, it is inserted either before or after (not sure how the ordering works out)
+    if (!inserted) {
+      this.prependContent(subview.model);
+    } else {
+      this.subviews('.content').push(subview);
+    }
   },
 
   newContent: function(event) {
@@ -95,11 +117,11 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   addContentView: function(content, options) {
     var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
 
-    this.collectionViews[content.get('id')] = subview;
 
     if (options && options.insert) {
       this.insertContent(subview);
     } else{
+      this.collectionViews[content.get('id')] = subview;
       this.addSubview('.content', subview);
     }
   },

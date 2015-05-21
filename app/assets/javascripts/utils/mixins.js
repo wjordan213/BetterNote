@@ -15,13 +15,18 @@ BetterNote.Mixins.PaneChanger = {
 }
 
 BetterNote.Mixins.NoteSubmit = {
+
+  removeAndDestroyTags: function(model) {
+    model.tags().each(function(tag) {
+      // debugger;
+    })
+  },
+
   submit: function(event) {
-    // debugger;
     var formData = this.$form.serializeJSON();
 
     delete formData.tag;
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
-    // debugger;
 
     if (BetterNote._currentPane.model) {
       this.collection = BetterNote._currentPane.model.notes();
@@ -32,10 +37,11 @@ BetterNote.Mixins.NoteSubmit = {
 
 
     this.model.set(formData);
-    // debugger;
-    if (this.model.get('title') === "") {
-      return;
-    }
+    // if (this.model.get('title') === "") {
+    //   // remove tags from collection and delete from database
+    //   // this.removeAndDestroyTags(this.model);
+    //   return;
+    // }
 
     // iterate through this.model.tags(), creating tag_ids
     this.model.set({tag_ids: []});
@@ -59,7 +65,6 @@ BetterNote.Mixins.NoteSubmit = {
         BetterNote.notes.add(this.model, { merge: true });
 
         if (!wasNew) {
-          debugger;
           BetterNote._currentPane.removeAndInsert(this.model);
         }
 

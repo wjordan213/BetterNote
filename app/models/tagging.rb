@@ -11,4 +11,10 @@ class Tagging < ActiveRecord::Base
   class_name: "Tag",
   foreign_key: :tag_id,
   primary_key: :id
+
+  def destroy
+    tag = Tag.find(tag_id)
+    tag.destroy if tag.taggings.empty?
+    super
+  end
 end

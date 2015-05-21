@@ -6,7 +6,7 @@ module Api
     end
 
     def index
-      @tags = current_user.tags
+      @tags = current_user.tags.joins(:taggings)
     end
 
     def create
@@ -26,5 +26,3 @@ module Api
     end
   end
 end
-
-# subids= params[:subids]

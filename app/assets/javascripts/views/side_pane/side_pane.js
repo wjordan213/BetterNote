@@ -6,7 +6,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.type = options.type;
     this.listenTo(this.collection, 'sort', this.addContentViews);
     this.listenTo(this.collection, 'remove', this.removeContentView);
-
+    // this.listenTo(this.collection, 'add', this.insertContentView);
     this._beenSorted = false;
 
     if (options.model) {
@@ -20,8 +20,13 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.addContentViews();
   },
 
+  insertContentView: function(model) {
+    var subview = new BetterNote.Views.SideContent({ model: model, type: this.type, collection: this.collection });
+    this.insertContent(subview);
+  },
+
   removeAndInsert: function(model) {
-    debugger;
+
     if (this.containsModel(model, this.collection) && this.containsModel(model, this.collectionViews[0])) {
 
       var workingModel = this.collectionViews[0].findWhere({updated_at: model.get('updated_at')});
@@ -59,10 +64,16 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   prependContent: function(content) {
-    var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
-    this.collectionViews[1][content.get('id')] = subview;
-    this.collectionViews[0].add(content, {sort: true});
-    this.addSubview('.content', subview, true);
+    if (content.urlRoot === "/api/tags") {
+      var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
+      this.insertContent(subview);
+    } else {
+
+      var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
+      this.collectionViews[1][content.get('id')] = subview;
+      this.collectionViews[0].add(content, {sort: true});
+      this.addSubview('.content', subview, true);
+    }
   },
 
   events: {

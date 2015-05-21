@@ -5,7 +5,8 @@ class Note < ActiveRecord::Base
   class_name: "Tagging",
   foreign_key: :note_id,
   primary_key: :id,
-  inverse_of: :note
+  inverse_of: :note,
+  dependent: :destroy
 
   has_many :tags, through: :taggings
 

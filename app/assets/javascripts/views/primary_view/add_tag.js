@@ -38,6 +38,7 @@ BetterNote.Views.AddTag = Backbone.View.extend(
 			newTag = new BetterNote.Models.Tag();
 			newTag.set({title: tag_input});
 			this.model.tags().add(newTag);
+			BetterNote.tags.add(newTag);
 
 			newTag.save({}, {
 			success: function() {

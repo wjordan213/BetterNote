@@ -12,6 +12,7 @@ BetterNote.Views.TagButton = Backbone.View.extend({
 
 	removeTag: function(event) {
 		event.preventDefault();
+		BetterNote.tags.remove(this.model);
 		this.model.destroy({data: { note_id: this.note.get('id') }, processData: true});
 		this.remove();
 	},

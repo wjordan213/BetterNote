@@ -3,6 +3,12 @@ TODO:
 
 currently:
 
+
+  collectionView.add(subview.model, {sort: true})
+
+
+
+
   HUGE BUG:
     -after edit, sort on search stops working
     GET HELP!!!!!!
@@ -27,7 +33,7 @@ currently:
 2) complete search implementation
 search implementation:
   -"search whatever" displayed on search bar when empty and un-selected
-
+  -title is selected at new form open
 
 extra:
   -partial for note show item separate from note index item

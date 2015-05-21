@@ -25,7 +25,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   removeAndInsert: function(model) {
     // debugger;
     if (this.containsModel(model) && this.collectionViews[model.id]) {
-      console.log('called');
+      console.log('called rmandins');
       this.collectionViews[model.id].remove();
       this.collectionViews[model.id] = false;
 
@@ -93,10 +93,24 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     }
   },
 
+  // the bug occurs here or in submit
+
+  // called in two contexts
+    // 1) during search
+    // 2) after insertAndRemove()
+
+    // the bug occurs here, as a result of a submit function that is called
+    // on a function that is not new
   insertContent: function(subview) {
     var inserted = false;
 
     // iterate, call insertAfter on subview.$el, then add subview to this.subviews() and break out of loop
+
+
+    // this may be related to the order of collectionViews. I might have to change collectionViews so that I can sort it the same way as the collection?
+
+
+
     for (var key in this.collectionViews) {
       var contentView = this.collectionViews[key];
       // debugger;
@@ -105,6 +119,13 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
       }
 
       // from here forward, we know that contentView is something currently rendered on the page
+
+      // contentView is not however in sorted order!
+      // need to resort contentView after any given edit, so in insert and remove
+
+      // here's the plan: replace contentView with a collection of models? remove the model from this collection when it's corresponding subview is removed.
+
+
       var result = this.collection.comparator(contentView.model, subview.model);
       // if result is one, subview is older and contentView is newer, else, subview is newer
       if (result === -1) {

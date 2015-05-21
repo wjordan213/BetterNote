@@ -41,14 +41,14 @@ BetterNote.Mixins.NoteSubmit = {
 
     var wasNew = this.model.isNew();
 
-    if (!wasNew) {
-      BetterNote._currentPane.removeAndInsert(this.model);
-    }
 
     this.model.save({}, {
       parse: true,
       success: function(response) {
 
+        if (!wasNew) {
+          BetterNote._currentPane.removeAndInsert(this.model);
+        }
 
 
         if (wasNew) {

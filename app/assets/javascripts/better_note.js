@@ -14,20 +14,20 @@ window.BetterNote = {
         Backbone.history.start();
       },
       failure: function() {
-        Backbone.history.start
+        Backbone.history.start();
       }
-    })
+    });
 
   },
 
   populateSidepane: function() {
-    var sidePane = BetterNote._currentPane = new BetterNote.Views.SidePane({type: 'notes', collection: BetterNote.notes })
+    var sidePane = BetterNote._currentPane = new BetterNote.Views.SidePane({type: 'notes', collection: BetterNote.notes });
     $(".sidePane").html(sidePane.render().$el);
   },
 
   populateSidebar: function() {
     var sidebar = new BetterNote.Views.Sidebar();
-    $(".sidebar").html(sidebar.render().$el)
+    $(".sidebar").html(sidebar.render().$el);
   }
 };
 

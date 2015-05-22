@@ -3,7 +3,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     BetterNote.notes.fetch();
     this.$rootEl = options.$rootEl;
     this.$rootEl
-    .$noteEl = this.$rootEl.append($('<section class="noteView"></section>')) // so is this
+    .$noteEl = this.$rootEl.append($('<section class="noteView"></section>')); // so is this
 
     this.$paneEl = this.$rootEl.find('.sidePane');
     this.$primaryEl = this.$rootEl.find('.noteView');
@@ -19,7 +19,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
 
   notebookEdit: function(id) {
     var notebook = BetterNote.notebooks.getOrFetch(id);
-    var editNotebookView = new BetterNote.Views.NotebookForm({model: notebook})
+    var editNotebookView = new BetterNote.Views.NotebookForm({model: notebook});
     notebook.fetch();
 
     this._swapPrimaryView(editNotebookView);
@@ -84,4 +84,4 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     this._currentView = view;
     this.$primaryEl.html(this._currentView.render().$el);
   }
-})
+});

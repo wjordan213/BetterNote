@@ -14,11 +14,14 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 	},
 
 	goToBody: function(e) {
+		// debugger
 		var keyCode = e.keyCode || e.which;
 		if (keyCode === 9) {
 		// debugger;
 			if (!this.model.isNew()){
 				e.preventDefault();
+				$('p.main_input').dblclick();
+			} else {
 				$('p.main_input').dblclick();
 			}
 		}

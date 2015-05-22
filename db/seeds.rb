@@ -11,10 +11,10 @@ users = User.create!([
   {email: 'wjordan213@gmail.com', password_digest: User.generate_password_digest('password')}])
 
 notebooks = users[0].notebooks.create!([
-  {title: 'first notebook'},
-  {title: 'second notebook'},
-  {title: 'third notebook'},
-  {title: 'fourth notebook'}
+  {title: 'a notebook'},
+  {title: 'orgo'},
+  {title: 'birds and bees'},
+  {title: 'pokemon'}
   ])
 
 

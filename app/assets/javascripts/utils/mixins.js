@@ -17,7 +17,9 @@ BetterNote.Mixins.PaneChanger = {
 BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
     var formData = this.$form.serializeJSON();
-    if (formData.title === this.model.get('title') && formData.body === this.model.get('body')) {
+    // debugger;
+    // check if the target is a nonempty tag input
+    if (formData.title === this.model.get('title') && formData.body === this.model.get('body') && !($(event.target).hasClass('tag_input') && $(event.target).val().length > 0)) {
       return false;
     }
 

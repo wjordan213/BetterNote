@@ -94,7 +94,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   compareContent: function(content, inputVal) {
     // 1) check to see if the title of content matches inputVal
     // debugger;
-    if (content.get('title').match(inputVal)) {
+    if (content.get('title').toLowerCase().match(inputVal.toLowerCase())) {
       if (!this.collectionViews[0].contains(content)) {
         this.addContentView(content, {insert: true});
       }

@@ -1,5 +1,6 @@
 TODO:
 
+
 major refactor:
   -change jquery events into custom model events.
 Bug:

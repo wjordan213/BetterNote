@@ -9,7 +9,15 @@ window.BetterNote = {
     this.populateSidebar();
     this.populateSidepane();
 
-    Backbone.history.start();
+    BetterNote.notebooks.fetch({
+      success: function() {
+        Backbone.history.start();
+      },
+      failure: function() {
+        Backbone.history.start
+      }
+    })
+
   },
 
   populateSidepane: function() {

@@ -34,7 +34,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
 
   new: function(notebook_id) {
     if (BetterNote.notebooks.length === 0) {
-      Backbone.history.navigate('notebooks/new', {trigger: true})
+      Backbone.history.navigate('notebooks/new', {trigger: true});
     } else {
       var newNote = new BetterNote.Models.Note();
 

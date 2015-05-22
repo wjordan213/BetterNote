@@ -19,7 +19,7 @@ BetterNote.Mixins.NoteSubmit = {
     var formData = this.$form.serializeJSON();
     // debugger;
     // check if the target is a nonempty tag input
-    if (formData.title === this.model.get('title') && formData.body === this.model.get('body') && !($(event.target).hasClass('tag_input') && $(event.target).val().length > 0)) {
+    if (($(event.target).val() === "") || (formData.title === this.model.get('title') && formData.body === this.model.get('body') && !($(event.target).hasClass('tag_input') && $(event.target).val().length > 0))) {
       return false;
     }
 

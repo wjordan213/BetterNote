@@ -25,6 +25,9 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 	},
 
 	submitAndToggle: function(event) {
+		if ($(event.target).val() === "") {
+			return false;
+		}
 		if (!this.submit(event)) {
 			this.toggleInactive(event);
 		}

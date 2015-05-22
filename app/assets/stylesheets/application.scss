@@ -241,5 +241,21 @@ label.inactive {
 }
 
 li.tag {
+  display: block;
   margin-left: 20px;
+  float: left;
+}
+
+li.tag > button.remove {
+  font-size: 12px;
+  padding: 5px 5px 7px 5px;
+  border-radius: 5px;
+}
+
+div.add_tags {
+  padding-top: 0;
+}
+
+div.add_tags div{
+  padding-top: 0px;
 }

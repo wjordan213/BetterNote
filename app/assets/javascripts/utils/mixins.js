@@ -1,17 +1,18 @@
 BetterNote.Mixins.PaneChanger = {
   _swapPaneView: function(collection, type, model) {
+    var sidePane;
     if (model) {
-      var sidePane = new BetterNote.Views.SidePane({type: type, collection:  collection, model: model});
+      sidePane = new BetterNote.Views.SidePane({type: type, collection:  collection, model: model});
     } else {
-      var sidePane = new BetterNote.Views.SidePane({type: type, collection: collection});
+      sidePane = new BetterNote.Views.SidePane({type: type, collection: collection});
     }
     if (BetterNote._currentPane) {
       BetterNote._currentPane.remove();
     }
     BetterNote._currentPane = sidePane;
-    $('.sidePane').html(BetterNote._currentPane.render().$el)
+    $('.sidePane').html(BetterNote._currentPane.render().$el);
   }
-}
+};
 
 BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
@@ -25,7 +26,7 @@ BetterNote.Mixins.NoteSubmit = {
 
     if (BetterNote._currentPane.model) {
       this.collection = BetterNote._currentPane.model.notes();
-      BetterNote._currentPane.model;
+      // BetterNote._currentPane.model;
     } else {
       this.collection = BetterNote.notebooks;
     }
@@ -38,7 +39,7 @@ BetterNote.Mixins.NoteSubmit = {
 
     this.model.tags().each(function(tag) {
       this.model.get('tag_ids').push(tag.get('id'));
-    }.bind(this))
+    }.bind(this));
 
     var wasNew = this.model.isNew();
 
@@ -58,7 +59,7 @@ BetterNote.Mixins.NoteSubmit = {
         if (wasNew) {
           Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
 
-          $('p.main_input').dblclick()
+          $('p.main_input').dblclick();
         } else {
           // sort the collection?
         }
@@ -67,8 +68,8 @@ BetterNote.Mixins.NoteSubmit = {
       failure: function(response) {
         this.render();
       }.bind(this)
-    })
+    });
 
     return true;
   }
-}
+};

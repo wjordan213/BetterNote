@@ -11,6 +11,12 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'change:notebook_id', this.renderNotebookOptions);
     this.listenTo(this.model, 'change:body', this.renderNewBodyField);
     this.listenTo(this.model.tags(), 'add', this.addTagButton);
+    this.listenTo(this.model, 'destroy', this.removeAndReroute);
+  },
+
+  removeAndReroute: function() {
+    this.remove();
+    Backbone.history.navigate("");
   },
 
   sendToBody: function() {

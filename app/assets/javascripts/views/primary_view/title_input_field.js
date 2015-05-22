@@ -14,27 +14,29 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 	},
 
 	goToBody: function(e) {
-		// debugger
 		var keyCode = e.keyCode || e.which;
 		if (keyCode === 9) {
-		// debugger;
 			if (!this.model.isNew()){
 				e.preventDefault();
+				// trigger custom event on model.
 				$('p.main_input').dblclick();
 			} else {
+				e.preventDefault();
 				$('p.main_input').dblclick();
 			}
 		}
 	},
 
 	submitAndToggle: function(event) {
-		if ($(event.target).val() === "") {
+		if ($(event.target).val() === "" || $('input.title').val() === "") {
 			return false;
 		}
 		if (!this.submit(event)) {
 			this.toggleInactive(event);
+		} else {
+			$('p.main_input').dblclick();
 		}
-		$('p.main_input').dblclick();
+
 	},
 
 	toggleState: function() {

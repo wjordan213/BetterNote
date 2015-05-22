@@ -11,10 +11,19 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 
 	initialize: function(options) {
 		this.$form = options.$form;
-		this.state = "p";
+		if (this.model.isNew()) {
+			this.state = "textarea"
+		} else {
+			this.state = "p";
+		}
 	},
 
 	submitAndToggle: function(event) {
+		var data = $('textarea.main_input').val();
+		if (this.model.isNew()) {
+			this.model.set({body: data}, {silent: true});
+			this.render();
+		}
 		if (!this.submit(event)) {
 			this.toggleInactive(event);
 		}
@@ -24,7 +33,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		var keyCode = event.keyCode || event.which;
 		if (keyCode === 9) {
 			event.preventDefault();
-			$('textarea.main_input').blur()
+			this.$('textarea.main_input').blur()
 		}
 	},
 
@@ -37,13 +46,14 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 	},
 
 	toggleInactive: function(event) {
-		$('.main_input').each(function(el) {
-			$($('.main_input')[el]).toggleClass("inactive");
-		});
+		// debugger;
+		this.$('.main_input').toggleClass("inactive");
 		this.toggleState();
 		if (this.state === "textarea") {
 			input = $('textarea.main_input').focus();
+			// debugger;
 		}
+		// debugger;
 	},
 
 

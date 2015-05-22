@@ -31,7 +31,7 @@ BetterNote.Views.SideContent = Backbone.View.extend(
 
     this.model.destroy();
 
-    if (Backbone.history.getFragment().match('/' + this.model.id + '/edit')) {
+    if (Backbone.history.getFragment().match('/' + this.model.id)) {
       Backbone.history.navigate('/notes/new', {trigger: true});
     }
     this.remove();

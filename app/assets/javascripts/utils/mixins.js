@@ -1,6 +1,5 @@
 BetterNote.Mixins.PaneChanger = {
   _swapPaneView: function(collection, type, model) {
-    // debugger;
     if (model) {
       var sidePane = new BetterNote.Views.SidePane({type: type, collection:  collection, model: model});
     } else {
@@ -17,9 +16,7 @@ BetterNote.Mixins.PaneChanger = {
 BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
     var formData = this.$form.serializeJSON();
-    // debugger;
-    // check if the target is a nonempty tag input
-    if (($(event.target).val() === "") || (formData.title === this.model.get('title') && formData.body === this.model.get('body') && !($(event.target).hasClass('tag_input') && $(event.target).val().length > 0))) {
+    if (($(event.target).val() === "") || ($('input.title_input').val() === "") || (formData.title === this.model.get('title') && formData.body === this.model.get('body') && !($(event.target).hasClass('tag_input')))) {
       return false;
     }
 
@@ -35,13 +32,6 @@ BetterNote.Mixins.NoteSubmit = {
 
 
     this.model.set(formData);
-    // if (this.model.get('title') === "") {
-    //   // remove tags from collection and delete from database
-    //   // this.removeAndDestroyTags(this.model);
-    //   return;
-    // }
-
-    // iterate through this.model.tags(), creating tag_ids
     this.model.set({tag_ids: []});
 
 
@@ -49,8 +39,6 @@ BetterNote.Mixins.NoteSubmit = {
     this.model.tags().each(function(tag) {
       this.model.get('tag_ids').push(tag.get('id'));
     }.bind(this))
-
-    // up to here everything looks good. query contains the right array
 
     var wasNew = this.model.isNew();
 
@@ -68,8 +56,9 @@ BetterNote.Mixins.NoteSubmit = {
 
 
         if (wasNew) {
-          Backbone.history.navigate('notes/' + this.model.id + '/edit', {trigger: true});
-          $('.main_input').focus()
+          Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
+
+          $('p.main_input').dblclick()
         } else {
           // sort the collection?
         }

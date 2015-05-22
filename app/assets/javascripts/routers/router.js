@@ -69,8 +69,9 @@ BetterNote.Routers.Router = Backbone.Router.extend({
   },
 
   edit: function(id){
+    // debugger;
     var note = BetterNote.notes.getOrFetch(id);
-
+    // debugger;
     var editNoteView = new BetterNote.Views.NoteForm({model: note});
 
     this._swapPrimaryView(editNoteView);

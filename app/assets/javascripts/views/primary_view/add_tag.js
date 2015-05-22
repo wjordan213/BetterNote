@@ -11,7 +11,7 @@ BetterNote.Views.AddTag = Backbone.View.extend(
 		this.$form = options.$form;
 	},
 
-	justBlur(event) {
+	justBlur: function(event) {
 		var keyCode = event.keyCode || event.which;
 		if (keyCode === 9) {
 			event.preventDefault();

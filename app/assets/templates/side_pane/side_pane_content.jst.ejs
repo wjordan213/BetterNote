@@ -1,5 +1,7 @@
 <button class="title" data-id="<%= content.get('id') %>"><%= content.get('title') %></button><br>
+<% if (type === "notebooks")  {%>
+  <a class="edit" data-href="notebooks/<%= content.get('id') %>/edit">edit</a>
+<% } %>
 <% if (!(type === 'tags')) { %>
-  <a class="edit" data-href="<%= type %>/<%= content.get('id') %>/edit">edit</a>
   <button class="delete">delete</button>
 <% } %>

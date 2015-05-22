@@ -1,6 +1,5 @@
 TODO:
 
--replace note show with note edit
 -make title and body turn into text boxes on dblclick event
 -clear out tmp and log
 -persist click event upon new note submission

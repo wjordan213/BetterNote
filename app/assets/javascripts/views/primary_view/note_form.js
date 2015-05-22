@@ -39,7 +39,6 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   },
 
   renderNewTitleField: function() {
-    // debugger;
     this._titleInput.remove();
     this.addTitleInputField();
   },

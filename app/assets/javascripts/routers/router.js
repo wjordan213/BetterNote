@@ -14,8 +14,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     'notebooks/:id/edit': 'notebookEdit',
     'notebooks/:notebook_id/notes/new' : 'new',
     'notes/new' : 'new',
-    'notes/:id' : 'show',
-    'notes/:id/edit' : 'edit'
+    'notes/:id' : 'edit',
   },
 
   notebookEdit: function(id) {
@@ -45,6 +44,27 @@ BetterNote.Routers.Router = Backbone.Router.extend({
       var newNoteView = new BetterNote.Views.NoteForm({model: newNote});
 
       this._swapPrimaryView(newNoteView);
+
+      // debugger;
+      if (newNoteView.model.isNew()) {
+        newNoteView._titleInput.state = 'input';
+        newNoteView._bodyInput.state = 'textarea';
+
+        newNoteView._bodyInput.toggleInactive();
+        newNoteView._titleInput.toggleInactive();
+        $('input.title_input').focus();
+      } else {
+        newNoteView._titleInput.state = 'h1';
+      }
+
+      // $("#parentOfTextbox").on('keydown', 'input.title_input', function(e) {
+      // var keyCode = e.keyCode || e.which;
+      //   if (e.keyCode === 9) {
+      //     e.preventDefault();
+      //     $('p.main_input').dblclick();
+      //   }
+      // }
+
     }
   },
 
@@ -54,13 +74,6 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     var editNoteView = new BetterNote.Views.NoteForm({model: note});
 
     this._swapPrimaryView(editNoteView);
-  },
-
-  show: function(id) {
-    var note = BetterNote.notes.getOrFetch(id);
-    var noteShow = new BetterNote.Views.NoteShow({model: note});
-
-    this._swapPrimaryView(noteShow);
   },
 
   _swapPrimaryView: function(view) {

@@ -15,15 +15,11 @@ BetterNote.Mixins.PaneChanger = {
 }
 
 BetterNote.Mixins.NoteSubmit = {
-
-  removeAndDestroyTags: function(model) {
-    model.tags().each(function(tag) {
-      // debugger;
-    })
-  },
-
   submit: function(event) {
     var formData = this.$form.serializeJSON();
+    if (formData.title === this.model.get('title') && formData.body === this.model.get('body')) {
+      return false;
+    }
 
     delete formData.tag;
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
@@ -81,5 +77,7 @@ BetterNote.Mixins.NoteSubmit = {
         this.render();
       }.bind(this)
     })
+
+    return true;
   }
 }

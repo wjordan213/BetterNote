@@ -55,7 +55,8 @@ html, body {
 
 .header {
   padding: 20px;
-  background: green;
+  background-image: url(http://fc09.deviantart.net/fs70/i/2012/195/5/a/forest_panorama_by_blackasmodeus-d5774oa.jpg);
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, -1px 0 white;
 }
 
 .header > .logo {
@@ -264,4 +265,8 @@ div.add_tags {
 
 div.add_tags div{
   padding-top: 0px;
+}
+
+ul.header {
+
 }

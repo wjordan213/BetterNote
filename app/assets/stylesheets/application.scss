@@ -18,6 +18,7 @@
 // reset
 
 h1, h2, h3, ul, li, p, body, section, nav, header, button {
+  border-radius: 3px;
   font: inherit;
   background: transparent;
   margin: 0;
@@ -92,6 +93,11 @@ html, body {
 
 .sidebar > nav {
   margin-top: 55px;
+}
+
+.sidebar a.new {
+  display: block;
+  margin-left: 20px;
 }
 
 .sidebar button {

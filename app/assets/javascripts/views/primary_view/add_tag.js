@@ -3,11 +3,20 @@ BetterNote.Views.AddTag = Backbone.View.extend(
 	template: JST['primary_view/add_tag'],
 	events: {
 		'click .new_tag' : 'tagInput',
+		'keydown .tag_input' : 'justBlur',
 		'blur .tag_input' : 'addTag'
 	},
 
 	initialize: function(options) {
 		this.$form = options.$form;
+	},
+
+	justBlur(event) {
+		var keyCode = event.keyCode || event.which;
+		if (keyCode === 9) {
+			event.preventDefault();
+			$('input.tag_input').blur()
+		}
 	},
 
 	render: function() {

@@ -176,6 +176,7 @@ html, body {
 
 .noteView div {
   padding: 20px 0 0 20px;
+  margin-right: 20px;
   // border-bottom: 2px solid black;
 }
 
@@ -193,8 +194,12 @@ html, body {
 }
 
 .noteView p {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100%;
+  min-height: 300px;
 }
 
 .noteView label {

@@ -39,7 +39,7 @@ BetterNote.Views.SideContent = Backbone.View.extend(
 
   edit: function(event) {
     event.preventDefault();
-    Backbone.history.navigate($(event.target).data('href'), {trigger: true})
+    Backbone.history.navigate($(event.target).data('href'), {trigger: true});
   },
 
   render: function() {
@@ -47,4 +47,4 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     this.$el.html(contents);
     return this;
   }
-}))
+}));

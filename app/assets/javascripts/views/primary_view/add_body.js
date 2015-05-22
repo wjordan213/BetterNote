@@ -12,7 +12,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 	initialize: function(options) {
 		this.$form = options.$form;
 		if (this.model.isNew()) {
-			this.state = "textarea"
+			this.state = "textarea";
 		} else {
 			this.state = "p";
 		}
@@ -29,11 +29,11 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		}
 	},
 
-	justBlur(event) {
+	justBlur: function(event) {
 		var keyCode = event.keyCode || event.which;
 		if (keyCode === 9) {
 			event.preventDefault();
-			this.$('textarea.main_input').blur()
+			this.$('textarea.main_input').blur();
 		}
 	},
 
@@ -64,4 +64,4 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		return this;
 	}
 
-}))
+}));

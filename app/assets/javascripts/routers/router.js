@@ -26,8 +26,8 @@ BetterNote.Routers.Router = Backbone.Router.extend({
   },
 
   newNotebook: function() {
-    var newNotebook = new BetterNote.Models.Notebook;
-    var newNotebookView = new BetterNote.Views.NotebookForm({model: newNotebook})
+    var newNotebook = new BetterNote.Models.Notebook();
+    var newNotebookView = new BetterNote.Views.NotebookForm({model: newNotebook});
 
     this._swapPrimaryView(newNotebookView);
   },
@@ -39,7 +39,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
       var newNote = new BetterNote.Models.Note();
 
       if (notebook_id) {
-        newNote.set({notebook_id: notebook_id})
+        newNote.set({notebook_id: notebook_id});
       }
       var newNoteView = new BetterNote.Views.NoteForm({model: newNote});
 

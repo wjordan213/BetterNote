@@ -1,4 +1,4 @@
-<% pStatus = (note.isNew() ? "inactive" : "") %>
+<% pStatus = note.isNew() ? "inactive" : "" %>
 <p class="main_input <%= pStatus %>"><%= note.get('body') %></p>
 
 <% inputStatus = (note.isNew() ? "" : "inactive") %>

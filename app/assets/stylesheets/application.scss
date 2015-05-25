@@ -263,19 +263,19 @@ input.search {
 
 .noteView {
   display: block;
+  font-family: sans-serif;
   height: 100%;
   background: rgb(0, 219, 41);
 }
 
 .noteView form {
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .noteView div.notebooks {
   padding: 20px 0 0 0;
   margin-right: 20px;
   float: left;
-  // border-bottom: 2px solid black;
 }
 
 .notebook {
@@ -342,7 +342,8 @@ li.tag > button.remove {
 .noteView p {
   box-sizing: border-box;
   border: 1px solid black;
-  padding-top: 20px;
+  padding: 20px;
+  font-size: 16px;
   padding-bottom: 20px;
   height: 100%;
   min-height: 300px;
@@ -350,8 +351,15 @@ li.tag > button.remove {
 
 //
 .noteView textarea {
-  // display: block;
-  margin-left: 20px;
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid black;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+  min-height: 300px;
+  font-size: 16px;
+  background: transparent;
 }
 
 // // form
@@ -360,5 +368,9 @@ li.tag > button.remove {
 }
 
 h1.inactive {
+  display: none;
+}
+
+textarea.inactive {
   display: none;
 }

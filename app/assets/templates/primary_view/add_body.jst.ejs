@@ -2,4 +2,4 @@
 <p class="main_input <%= pStatus %>"><%= note.get('body') %></p>
 
 <% inputStatus = note.isNew() ? "" : "inactive" %>
-<textarea name="body" class="main_input <%= inputStatus %>" rows="8" cols="40"><%= note.get('body') %></textarea>
+<textarea name="body" class="main_input <%= inputStatus %>"><%= note.get('body') %></textarea>

@@ -17,7 +17,6 @@ BetterNote.Mixins.PaneChanger = {
 BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
     var formData = this.$form.serializeJSON();
-    // debugger;
     if (($(event.target).val() === "") ||
         ($('input.title_input').val() === "") ||
               (formData.notebook_id == this.model.get('notebook_id') &&
@@ -60,7 +59,6 @@ BetterNote.Mixins.NoteSubmit = {
         if (!wasNew) {
           BetterNote._currentPane.removeAndInsert(this.model);
         }
-
 
         if (wasNew) {
           Backbone.history.navigate('notes/' + this.model.id, {trigger: true});

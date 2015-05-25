@@ -18,7 +18,6 @@
 // reset
 
 h1, h2, h3, ul, li, p, body, section, nav, header, button, form {
-  border-radius: 3px;
   font: inherit;
   background: transparent;
   margin: 0;
@@ -30,10 +29,15 @@ ul, li {
   list-style: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 
 html, body {
   display: block;
   height: 100%;
+  background: #ccc;
 }
 
 .clearfix:after {
@@ -45,9 +49,8 @@ html, body {
 // main
 .main {
   display: block;
-  position: absolute;
-  right: 0;
-  width: 50%;
+  float: right;
+  width: calc(50% - 4px);
   height: 100%;
 }
 
@@ -74,6 +77,10 @@ html, body {
   border: 1px solid #fff;
 }
 
+.header > .link button:hover {
+  background: #aaa;
+}
+
 .header > .link a {
   text-decoration: none;
   color: white;
@@ -83,10 +90,6 @@ html, body {
   text-align: center;
   margin-left: 80%;
   margin-top: 2px;
-}
-
-body {
-  background: #ccc;
 }
 
 // sign up/sign in
@@ -150,7 +153,7 @@ form.user button:hover {
 .sidebar {
   width: 100px;
   background: rgb(0, 181, 34);
-  position: absolute;
+  float: left;
   top: 81px;
   height: 100%;
 }
@@ -168,9 +171,16 @@ form.user button:hover {
   display: block;
   width: 100%;
   padding: 10px;
-  background: red;
+  background: rgb(0, 54, 10);
+  color: white;
   margin-top: 20px;
 }
+
+.sidebar button:hover {
+  background: blue;
+  cursor: pointer;
+}
+
 
 // sidepane
 
@@ -180,25 +190,42 @@ form.user button:hover {
   cursor: pointer;
 }
 
+.newNote {
+  float: left;
+}
 
+.sidepane h2 {
+  clear: left;
+}
+
+input.search {
+  display: block;
+  width: calc(100% - 4px);
+  font-size: 16px;
+  background: #ccc;
+  border: 1px solid grey;
+}
 
 .sidePane{
-  position: absolute;
-  top: 81px;
+  float: left;
   height: 100%;
-  left: 100px;
-  right: 50%;
+  width: calc(50% - 100px);
   background: rgb(0, 245, 46);
   border-left: 2px solid black;
   border-right: 2px solid black;
+  text-align: center;
 }
 
 .sidePane .content {
+  margin-top: 30px;
+  text-align: left;
   border-top: 2px solid black;
 }
 
 .sidePane h2 {
+  display: block;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .sidePane .content > li {
@@ -227,7 +254,7 @@ form.user button:hover {
 }
 
 .content a:hover {
-  cursor: default;
+  cursor: pointer;
   background: gray;
 }
 
@@ -236,30 +263,78 @@ form.user button:hover {
 
 .noteView {
   display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0px;
+  height: 100%;
   background: rgb(0, 219, 41);
 }
 
-.noteView div {
-  padding: 20px 0 0 20px;
+.noteView form {
+  margin-left: 20px;
+}
+
+.noteView div.notebooks {
+  padding: 20px 0 0 0;
   margin-right: 20px;
+  float: left;
   // border-bottom: 2px solid black;
 }
 
+.notebook {
+  width: 80px;
+}
+
 .noteView Button {
-  margin-top: 10px;
   padding: 10px;
   background: purple;
   color: white;
-  margin-bottom: 20px;
 }
+
+.allTags {
+  display: block;
+  float: left;
+  margin-top: 8px;
+}
+
+button.new_tag {
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 3px 40px 3px 3px;
+  background: transparent;
+  border: 1px solid brown;
+  cursor: text;
+}
+
+.tag_input {
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 3px 40px 3px 3px;
+  background: transparent;
+  outline: 0;
+  border: 1px solid brown;
+  line-height: 1.7;
+}
+
+.add_tags {
+  clear: left;
+
+}
+
+li.tag {
+  display: block;
+  margin-right: 10px;
+  float: left;
+}
+
+li.tag > button.remove {
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 5px 5px 7px 5px;
+  border-radius: 5px;
+}
+
 
 .noteView h1 {
   display: block;
+  clear: left;
   font-size: 24px;
 }
 
@@ -272,64 +347,17 @@ form.user button:hover {
   min-height: 300px;
 }
 
-.noteView label {
-  display: inline-block;
-  padding-top: 10px;
-  padding-left: 20px;
-}
-
-.noteView input {
-  // display: block;
-  margin-left: 20px;
-}
-
-.noteView select {
-  // display: block;
-  margin-left: 5px;
-}
-
+//
 .noteView textarea {
   // display: block;
   margin-left: 20px;
 }
 
-// form
+// // form
 .inactive {
   display: none;
 }
 
 h1.inactive {
   display: none;
-}
-
-label.inactive {
-  display: none;
-}
-
-.noteView > form {
-  height: 100%;
-}
-
-li.tag {
-  display: block;
-  margin-left: 20px;
-  float: left;
-}
-
-li.tag > button.remove {
-  font-size: 12px;
-  padding: 5px 5px 7px 5px;
-  border-radius: 5px;
-}
-
-div.add_tags {
-  padding-top: 0;
-}
-
-div.add_tags div{
-  padding-top: 0px;
-}
-
-ul.header {
-
 }

@@ -17,7 +17,13 @@ BetterNote.Mixins.PaneChanger = {
 BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
     var formData = this.$form.serializeJSON();
-    if (($(event.target).val() === "") || ($('input.title_input').val() === "") || (formData.title === this.model.get('title') && formData.body === this.model.get('body') && !($(event.target).hasClass('tag_input')))) {
+    // debugger;
+    if (($(event.target).val() === "") ||
+        ($('input.title_input').val() === "") ||
+              (formData.notebook_id == this.model.get('notebook_id') &&
+              formData.title === this.model.get('title') &&
+              formData.body === this.model.get('body') &&
+              !($(event.target).hasClass('tag_input')))) {
       return false;
     }
 

@@ -290,7 +290,8 @@ input.search {
 
 .allTags {
   display: block;
-  float: left;
+  // float: left;
+  clear: left;
   margin-top: 8px;
 }
 
@@ -305,7 +306,7 @@ button.new_tag {
 
 .tag_input {
   margin-left: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 3px 40px 3px 3px;
   background: transparent;
   outline: 0;

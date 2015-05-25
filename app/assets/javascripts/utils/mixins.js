@@ -52,8 +52,9 @@ BetterNote.Mixins.NoteSubmit = {
     this.model.save({}, {
       parse: true,
       success: function(response) {
-
-        this.collection.add(this.model, { merge: true });
+        if (this.collection.url === this.model.urlRoot) {
+          this.collection.add(this.model, { merge: true });
+        }
         BetterNote.notes.add(this.model, { merge: true });
 
         if (!wasNew) {

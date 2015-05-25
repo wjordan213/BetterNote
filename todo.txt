@@ -2,43 +2,11 @@ TODO:
 
 
 major refactor:
-  -change jquery events into custom model events.
-Bug:
-  -primary edit view not removing after page refresh followed by model deletion
-
-
-
--clear out tmp and log
+  -change jquery events into custom model events.\
   -fix regexp error
 -refactor
 
 currently:
-
-
-  collectionView.add(subview.model, {sort: true})
-
-  -remove containsModel
-
-
-  -things that have bearing in this instance
-  -searchContent
-  -compareContent
-  -addContentView
-  -insertContent
-
-
-
-
-  -possible currentPane issue
-
-  -then set event listener on change to of content model to remove and then prepend the view
-
-  -then remove tags that have no taggings
-
-2) complete search implementation
-search implementation:
-  -"search whatever" displayed on search bar when empty and un-selected
-  -title is selected at new form open
 
 extra:
   -partial for note show item separate from note index item
@@ -54,13 +22,9 @@ To start:
   -drag and drop
 
 Future:
-  -either keep tag buttons in chronological order or alphabetical, whatever is easier to implement.
-    -change tag buttons to be highlighted on click, and replace remove button with delete keypress event while button is highlighted and active
 
 
 -remove new note from tag show side pane
-
--pingify heroku site
 
 -get code review
 
@@ -83,9 +47,4 @@ Future:
 CSS:
   -style sidebar buttons
   -pick appropriate colors
-
-
-Concerns:
-  -this._tags = new BetterNote.Collections.Tags([], { note: this });
-    -why exactly? are the arguments included like this?
-  -success callback not being called upon successful model destruction.
+  -change tag buttons to be highlighted on click, and replace remove button with delete keypress event while button is highlighted and active

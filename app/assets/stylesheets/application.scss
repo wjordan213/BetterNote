@@ -17,7 +17,7 @@
 
 // reset
 
-h1, h2, h3, ul, li, p, body, section, nav, header, button {
+h1, h2, h3, ul, li, p, body, section, nav, header, button, form {
   border-radius: 3px;
   font: inherit;
   background: transparent;
@@ -56,24 +56,27 @@ html, body {
 .header {
   padding: 20px;
   background-image: url(http://fc09.deviantart.net/fs70/i/2012/195/5/a/forest_panorama_by_blackasmodeus-d5774oa.jpg);
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, -1px 0 white;
 }
 
 .header > .logo {
   float: left;
   font-size: 35px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, -1px 0 white;
 }
 
 .header > .link button {
   display: block;
   padding: 10px;
-  background: grey;
   text-align: center;
   margin-left: 80%;
+  background: #ccc;
   margin-top: 2px;
+  border: 1px solid #fff;
 }
 
 .header > .link a {
+  text-decoration: none;
+  color: white;
   display: block;
   padding: 10px;
   background: grey;
@@ -81,6 +84,61 @@ html, body {
   margin-left: 80%;
   margin-top: 2px;
 }
+
+body {
+  background: #ccc;
+}
+
+// sign up/sign in
+section.user {
+  margin-top: 50px;
+}
+
+section.user h1 {
+  display: block;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+section.user > form.user {
+  display: block;
+  padding: 30px;
+  padding-right: 40px;
+  width: 400px;
+  background: #fff;
+  margin: 0 auto;
+  border: 1px solid #aaa;
+  color: #888;
+}
+
+form.user input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 5px;
+}
+
+section.user h1 {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+form.user button {
+  background: rgb(45, 190, 96);
+  padding: 10px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+form.user button:hover {
+  background: rgb(30, 127, 64);
+}
+
 
 // sidebar
 

@@ -5,14 +5,14 @@ class SessionsController < ApplicationController
   def guest
     user = User.find_by(email: "password")
     login! user
-    redirect_to root_url
+    redirect_to '/app/start'
   end
 
   def create
     user = User.find_by_credentials(*user_params)
     if user
       login! user
-      redirect_to root_url
+      redirect_to '/app/start'
     else
       flash.now[:errors] = ['invalid email or password'];
       render :new;

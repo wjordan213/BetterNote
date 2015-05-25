@@ -46,6 +46,43 @@ html, body {
   clear: both;
 }
 
+// home page
+
+.home_page {
+  font-size: 18px;
+  width: 500px;
+  height: 200px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.home_page h1 {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.home_page p {
+  display: block;
+  text-align: center;
+}
+
+.home_page ul {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.home_page li:first-child {
+  margin-left: 188px;
+}
+
+.home_page li {
+  float: left;
+  margin-right: 10px;
+}
+
 // main
 .main {
   display: block;
@@ -214,6 +251,7 @@ input.search {
   border-left: 2px solid black;
   border-right: 2px solid black;
   text-align: center;
+  overflow: auto;
 }
 
 .sidePane .content {

@@ -33,11 +33,17 @@ button:hover {
   cursor: pointer;
 }
 
+html {
+  height: 91%;
+}
 
 html, body {
   display: block;
-  height: 100%;
   background: #ccc;
+}
+
+body {
+  height: 100%;
 }
 
 .clearfix:after {

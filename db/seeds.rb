@@ -18,20 +18,36 @@ notebooks = users[0].notebooks.create!([
   ])
 
 
-notes = notebooks[0].notes.create!({title: 'created first', body: 'yes they are delicious'})
+notebooks[0].notes.create!({title: 'created first', body: 'yes they are delicious'})
 
-notes = notebooks[0].notes.create!({title: 'created second', body: 'peanut butter'})
-notes = notebooks[0].notes.create!({title: 'created third', body: 'yes and no and yes and no and yes and no'})
-
+notebooks[0].notes.create!({title: 'created second', body: 'peanut butter'})
+notebooks[0].notes.create!({title: 'created third', body: 'yes and no and yes and no and yes and no'})
+notebooks[1].notes.create!({title: '3d printing', body: "I hear it's what the cool kids are doing these days"})
+notebooks[1].notes.create!({title: 'molecular orbitals', body: 'this has to do with benzene and electrons'})
+notebooks[1].notes.create!({title: 'SN2 reactions', body: 'this has to do with my large problem set'})
+notebooks[1].notes.create!({title: 'test on tuesday', body: 'tagging all related topics'})
+notebooks[1].notes.create!({title: 'hw', body: 'this is all thats do next week'})
+notebooks[2].notes.create!({title: 'meditative studying', body: 'this is related to stuff in other notebooks'})
+notebooks[2].notes.create!({title: 'testing with a good attitude', body: 'this is about test taking'})
 Tag.create!([
   {title: 'tasty stuff', user_id: 1},
   {title: 'sandwiches', user_id: 1},
-  {title: 'new things', user_id: 1}
+  {title: 'new things', user_id: 1},
+  {title: 'benzene', user_id: 1},
+  {title: 'electrons', user_id: 1},
+  {title: 'problems', user_id: 1},
+  {title: 'acids and bases', user_id: 1},
+  {title: 'study habits', user_id: 1}
 ])
 
 Tagging.create!([
   {note_id: 1, tag_id: 1},
   {note_id: 1, tag_id: 2},
   {note_id: 2, tag_id: 1},
-  {note_id: 3, tag_id: 3}
+  {note_id: 3, tag_id: 3},
+  {note_id: 9, tag_id: 8},
+  {note_id: 8, tag_id: 8},
+  {note_id: 7, tag_id: 7},
+  {note_id: 6, tag_id: 7},
+  {note_id: 5, tag_id: 7}
   ])

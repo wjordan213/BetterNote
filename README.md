@@ -17,9 +17,9 @@ BetterNote is a clone of Evernote built on Rails and Backbone. Users can:
 - [x] Create/edit notes for notebooks
 - [x] Delete Notes
 - [x] Tag Notes
-- [ ] Search for notes by title
-- [ ] Search for notes by notebook
-- [ ] Search for notes by tag
+- [x] Search for notes by title
+- [x] Search for notes by notebook
+- [x] Search for notes by tag
 
 ## Design Docs
 * [View Wireframes][views]
@@ -66,33 +66,20 @@ search bar input
 
 [Details][phase-four]
 
-
-### Phase 5: drag and drop note linking  (~2-3 days)
-First, I'll have the primary note view/edit view resize when the sidebar view
-pops up, then I'll enable drag and drop from the sidebar to allow linking between
-notes. That drag and drop will have to yield some escaped html containing
-the dragged notes id. I will then set up click handlers on each dragged element
-for navigation to that note's corresponding view.
-
-[Details][phase-five]
-
-
 ### Bonus Features (TBD)
-- [ ] make note show and note edit the same thing
-- [ ] real-time ajax updates during note edit
+- [x] real-time ajax updates during note edit
+- [x] scroll within sectons of page
+- [ ] drag and drop note linking
+- [ ] fancy note forms.
 - [ ] Link notebooks to notes (polymorphic)
-- [ ] Easy hyperlinking to notes
+- [ ] Easy hyperlinking to other websites
 - [ ] Back and forward buttons on notes
-- [ ] User Show page
 - [ ] Regexp email validation
 - [ ] email confirmation via actionMailer
 - [ ] filter out notes index by multiple tags
 - [ ] Edit Tags
 - [ ] delete account
-- [ ] fancy note forms.
-- [ ] infinite scroll/scroll within sectons of page
 - [ ] Multiple sessions/session management
-- [ ] Backbone auth for transition from login/signup into main view
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md

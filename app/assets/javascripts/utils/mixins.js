@@ -72,8 +72,6 @@ BetterNote.Mixins.NoteSubmit = {
         }
         BetterNote.notes.add(this.model, { merge: true });
 
-        debugger;
-
         if (!wasNew) {
           BetterNote._currentPane.removeAndInsert(this.model);
         }

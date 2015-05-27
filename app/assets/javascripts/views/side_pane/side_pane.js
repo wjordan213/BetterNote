@@ -33,8 +33,6 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
       this.removeContentView(workingModel);
 
-      // debugger;
-
       var subview = new BetterNote.Views.SideContent({ model: workingModel, type: this.type, collection: this.collection });
       this.insertContent(subview);
     }
@@ -64,12 +62,13 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   prependContent: function(content) {
+    var subview;
     if (content.urlRoot === "/api/tags") {
-      var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
+      subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
       this.insertContent(subview);
     } else {
 
-      var subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
+      subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
       this.collectionViews[1][content.get('id')] = subview;
       this.collectionViews[0].add(content, {sort: true});
       this.addSubview('.content', subview, true);
@@ -85,15 +84,14 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
   searchContent: function(event) {
     var inputVal = $(event.target).val();
-    // debugger;
+
     this.collection.each(function(content) {
       this.compareContent(content, inputVal);
-    }.bind(this))
+    }.bind(this));
   },
 
   compareContent: function(content, inputVal) {
     // 1) check to see if the title of content matches inputVal
-    // debugger;
     if (content.get('title').toLowerCase().match(inputVal.toLowerCase())) {
       if (!this.collectionViews[0].contains(content)) {
         this.addContentView(content, {insert: true});

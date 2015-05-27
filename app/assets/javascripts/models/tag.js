@@ -5,7 +5,6 @@ BetterNote.Models.Tag = Backbone.Model.extend({
     if (response.notes) {
       this.notes().set(response.notes);
       delete response.notes;
-      // debugger;
     }
     return response;
   },
@@ -14,7 +13,6 @@ BetterNote.Models.Tag = Backbone.Model.extend({
     // here we want to connect to
     if (!this._notes) {
       this._notes = new BetterNote.Collections.Notes({tag: this});
-      // debugger;
     }
 
     return this._notes;

@@ -46,14 +46,11 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 	},
 
 	toggleInactive: function(event) {
-		// debugger;
 		this.$('.main_input').toggleClass("inactive");
 		this.toggleState();
 		if (this.state === "textarea") {
 			input = $('textarea.main_input').focus();
-			// debugger;
 		}
-		// debugger;
 	},
 
 

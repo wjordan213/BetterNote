@@ -45,7 +45,6 @@ BetterNote.Routers.Router = Backbone.Router.extend({
 
       this._swapPrimaryView(newNoteView);
 
-      // debugger;
       if (newNoteView.model.isNew()) {
         newNoteView._titleInput.state = 'input';
         newNoteView._bodyInput.state = 'textarea';
@@ -69,9 +68,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
   },
 
   edit: function(id){
-    // debugger;
     var note = BetterNote.notes.getOrFetch(id);
-    // debugger;
     var editNoteView = new BetterNote.Views.NoteForm({model: note});
 
     this._swapPrimaryView(editNoteView);

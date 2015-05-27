@@ -11,7 +11,6 @@ BetterNote.Models.Note = Backbone.Model.extend({
 
   parse: function(response) {
     if (response.tags) {
-      // debugger;
       response.tags.forEach(function(tag) {
         this.tags().push(BetterNote.tags.getOrFetch(tag.id));
       }.bind(this));

@@ -36,7 +36,6 @@ BetterNote.Mixins.NoteSubmit = {
       this.collection = BetterNote.notebooks;
     }
 
-
     this.model.set(formData);
     this.model.set({tag_ids: []});
 
@@ -53,7 +52,9 @@ BetterNote.Mixins.NoteSubmit = {
       parse: true,
       success: function(response) {
         if (this.collection.url === this.model.urlRoot) {
-          this.collection.add(this.model, { merge: true });
+          if (!this.collection.tag) {
+            this.collection.add(this.model, { merge: true });
+          }
         }
         BetterNote.notes.add(this.model, { merge: true });
 

@@ -1,6 +1,30 @@
 TODO:
 
 
+Refactors/debugging:
+  -remove tag only when none left
+    -currently: issue with tag.notes()
+      -figure out how to resolve that.
+      -compare with other stuff to see if notes() is implemented correctly
+
+
+  -refactor everything
+  -remove note from tag list
+
+  it appears that the model in the tag button view differs from the model who's notes are shown on the side pane
+
+
+
+
+
+
+
+
+
+
+
+
+
 currently: styling
   -redo styling so that it is somewhat normal.
     -then postion tags correctly

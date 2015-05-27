@@ -2,6 +2,12 @@ BetterNote.Collections.Notes = Backbone.Collection.extend({
   url: '/api/notes',
   model: BetterNote.Models.Note,
 
+  initialize: function(options) {
+    if (options) {
+      this.tag = options.tag;
+    }
+  },
+
   comparator: function(first, second) {
     var first_updated = first.get('updated_at');
     var second_updated = second.get('updated_at');
@@ -22,13 +28,13 @@ BetterNote.Collections.Notes = Backbone.Collection.extend({
       note = new this.model({id: id});
       note.fetch({
         success: function() {
-          this.add(note)
+          this.add(note);
         }.bind(this)
       });
     }
     return note;
   }
-})
+});
 
 BetterNote.notes = new BetterNote.Collections.Notes();
 BetterNote.notes.fetch();

@@ -11,6 +11,10 @@ BetterNote.Models.Note = Backbone.Model.extend({
 
   parse: function(response) {
     if (response.tags) {
+      // debugger;
+      response.tags.forEach(function(tag) {
+        this.tags().push(BetterNote.tags.getOrFetch(tag.id));
+      }.bind(this));
       this.tags().set(response.tags);
       delete response.tags;
     }
@@ -25,4 +29,4 @@ BetterNote.Models.Note = Backbone.Model.extend({
 
     return this._tags;
   }
-})
+});

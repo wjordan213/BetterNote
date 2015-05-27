@@ -1,6 +1,13 @@
 BetterNote.Collections.Tags = Backbone.Collection.extend({
   url: '/api/tags',
   model: BetterNote.Models.Tag,
+
+  initialize: function(options) {
+    if (options) {
+      this.note = options.note;
+    }
+  },
+
   comparator: function(first, second) {
     var first_updated = first.get('title').toLowerCase();
     var second_updated = second.get('title').toLowerCase();

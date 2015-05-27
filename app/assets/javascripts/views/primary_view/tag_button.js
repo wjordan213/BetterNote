@@ -12,7 +12,18 @@ BetterNote.Views.TagButton = Backbone.View.extend({
 
 	removeTag: function(event) {
 		event.preventDefault();
-		BetterNote.tags.remove(this.model);
+		// debugger;
+		this.model.notes().remove(this.note);
+		if (this.model.notes().length === 0) {
+			BetterNote.tags.remove(this.model);
+		}
+
+		// debugger;
+
+		if (BetterNote._currentPane && BetterNote._currentPane.collection.tag && BetterNote._currentPane.collection.tag.get('updated_at') === this.model.get('updated_at')) {
+			BetterNote._currentPane.collection.remove(this.note);
+		}
+
 		this.model.destroy({data: { note_id: this.note.get('id') }, processData: true});
 		this.remove();
 	},

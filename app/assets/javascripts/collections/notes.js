@@ -5,6 +5,7 @@ BetterNote.Collections.Notes = Backbone.Collection.extend({
   initialize: function(options) {
     if (options) {
       this.tag = options.tag;
+      this.notebook = options.notebook;
     }
   },
 

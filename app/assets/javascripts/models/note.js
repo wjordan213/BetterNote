@@ -27,5 +27,9 @@ BetterNote.Models.Note = Backbone.Model.extend({
     }
 
     return this._tags;
+  },
+
+  notebook: function() {
+    return BetterNote.notebooks.getOrFetch(this.get('notebook_id'));
   }
 });

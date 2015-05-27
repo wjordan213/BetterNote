@@ -15,6 +15,13 @@ BetterNote.Mixins.PaneChanger = {
 };
 
 BetterNote.Mixins.NoteSubmit = {
+  modelsEqual: function(mod1, mod2) {
+    if (mod1.get('updated_at') === undefined || mod2.get('updated_at') === undefined) {
+      return false;
+    }
+    return (mod1.get('updated_at') === mod2.get('updated_at'));
+  },
+
   submit: function(event) {
     var formData = this.$form.serializeJSON();
     if (($(event.target).val() === "") ||
@@ -52,9 +59,31 @@ BetterNote.Mixins.NoteSubmit = {
       parse: true,
       success: function(response) {
         if (this.collection.url === this.model.urlRoot) {
-          if (!this.collection.tag) {
-            this.collection.add(this.model, { merge: true });
+
+          // now we know we are in a note url
+          // if this.collection.tag is included in model.tags() or this.collection.notebook equals model.notebook();
+
+          debugger;
+
+          if ((this.collection.tag &&
+            this.model.tags().models.some(function(tag) {
+              return this.modelsEqual(this.collection.tag, tag);
+            }.bind(this))) ||
+              (this.collection.notebook && this.model.notebook().get('updated_at') === this.collection.notebook.get('updated_at'))
+            )
+            {
+              this.collection.add(this.model, { merge: true });
           }
+
+
+          // only add to this.collection if this.collection.notebook equals this.model.notebook or this.collection.tag = this.model.tag
+
+          // helper method this.modelsEqual(model1, model2)
+
+          // debugger;
+
+          // if ((!this.collection.tag && !this.collection.notebook) || (modelsEqual())) {
+          // }
         }
         BetterNote.notes.add(this.model, { merge: true });
 

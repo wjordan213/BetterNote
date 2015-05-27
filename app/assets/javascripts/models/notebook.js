@@ -11,9 +11,9 @@ BetterNote.Models.Notebook = Backbone.Model.extend({
 
   notes: function() {
     if (!this._notes) {
-      this._notes = new BetterNote.Collections.Notes([], { notebook: this });
+      this._notes = new BetterNote.Collections.Notes({ notebook: this });
     }
 
     return this._notes;
   }
-})
+});

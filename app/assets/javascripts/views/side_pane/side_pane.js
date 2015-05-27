@@ -39,7 +39,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   containsModel: function(model, collection) {
-    return collection.some(function(curModel) {
+    return collection.models.some(function(curModel) {
       return curModel.get('updated_at') === model.get('updated_at');
     })
   },

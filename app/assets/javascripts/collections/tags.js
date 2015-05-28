@@ -31,12 +31,12 @@ BetterNote.Collections.Tags = Backbone.Collection.extend({
         success: function() {
           this.add(tag);
         }.bind(this)
-      })
+      });
     }
 
     return tag;
   }
-})
+});
 
 
 BetterNote.tags = new BetterNote.Collections.Tags();

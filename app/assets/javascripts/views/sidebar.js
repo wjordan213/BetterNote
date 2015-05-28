@@ -37,4 +37,4 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
     this._swapPaneView(BetterNote.tags, 'tags');
   }
 
-}))
+}));

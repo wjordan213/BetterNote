@@ -38,7 +38,6 @@ BetterNote.Mixins.NoteSubmit = {
 
     if (BetterNote._currentPane.model) {
       this.collection = BetterNote._currentPane.model.notes();
-      // BetterNote._currentPane.model;
     } else {
       this.collection = BetterNote.notebooks;
     }

@@ -42,26 +42,23 @@ BetterNote.Views.AddTag = Backbone.View.extend(
 			return;
 		}
 
-		// 	LEFT OFF OVER HERE
-
 		if (!this.model.tags().some(function(tag) {return tag.get('title') === tag_input; })) {
 			newTag = new BetterNote.Models.Tag();
 			newTag.set({title: tag_input});
-			this.model.tags().add(newTag);
-			BetterNote.tags.add(newTag);
-
+			// debugger;
 			newTag.save({}, {
 			success: function() {
-					if (!this.model.isNew()) {
+				this.model.tags().add(newTag, {merge: true});
+				BetterNote.tags.add(newTag, {merge: true});
+				if (!this.model.isNew()) {
 
-						this.submit.call(this, event);
-						$('.tag_input').val('');
+					this.submit.call(this, event);
+					$('.tag_input').val('');
 				}
 			}.bind(this)
 			});
 		}
 		this.toggleTagInput();
-		// this.submit(event);
 	},
 
 	toggleTagInput: function() {

@@ -6,7 +6,6 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     this.type = options.type;
     this.listenTo(this.collection, 'sort', this.addContentViews);
     this.listenTo(this.collection, 'remove', this.removeContentView);
-    // this.listenTo(this.collection, 'add', this.insertContentView);
     this._beenSorted = false;
 
     if (options.model) {
@@ -41,7 +40,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   containsModel: function(model, collection) {
     return collection.models.some(function(curModel) {
       return curModel.get('updated_at') === model.get('updated_at');
-    })
+    });
   },
 
   addLastContentView: function() {
@@ -55,9 +54,10 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
       this.collection.each(function(item) {
         this.addContentView(item);
-      }.bind(this))
+      }.bind(this));
     } else {
-      this.addLastContentView;
+      // deal with this in a bit. need it for properly adding stuff to side pane but causes an error
+      // this.addLastContentView();
     }
   },
 
@@ -65,6 +65,8 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
     var subview;
     if (content.urlRoot === "/api/tags") {
       subview = new BetterNote.Views.SideContent({ model: content, type: this.type, collection: this.collection });
+      // on error, this is what is called
+        // looks like issue may lay with collectionViews not being updated yet
       this.insertContent(subview);
     } else {
 
@@ -91,7 +93,6 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   compareContent: function(content, inputVal) {
-    // 1) check to see if the title of content matches inputVal
     if (content.get('title').toLowerCase().match(inputVal.toLowerCase())) {
       if (!this.collectionViews[0].contains(content)) {
         this.addContentView(content, {insert: true});
@@ -102,6 +103,8 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   insertContent: function(subview) {
+
+    // what is the purpose of inserted?
     var inserted = false;
 
     for (var idx in this.collectionViews[0].models) {
@@ -135,7 +138,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   newContent: function(event) {
     event.preventDefault();
     if (this.model instanceof BetterNote.Models.Notebook) {
-      Backbone.history.navigate('notebooks/' + this.model.get('id') + '/notes/new', {trigger: true})
+      Backbone.history.navigate('notebooks/' + this.model.get('id') + '/notes/new', {trigger: true});
     } else {
 
       Backbone.history.navigate($(event.target).data('href'), {trigger: true});

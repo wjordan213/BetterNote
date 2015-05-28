@@ -1,58 +1,38 @@
 TODO:
 
-
-Refactors/debugging:
-
-  -when note is added while tag show is open, note is added to tag show for some reason
-
-  -refactor everything
-  -remove note from tag list
-
-
-major refactor:
-  -change jquery events into custom model events.\
-  -fix regexp error
--refactor
-
-currently:
-
-extra:
-  -partial for note show item separate from note index item
-
-
-
-
-
-To start:
-  -remove tags after all their taggings are gone
-    -Get Constance's help on this
-
+ORDER:
+  -file upload, search, omni-auth
+  -styles/design changes
+  -share to fb
   -drag and drop
 
-Future:
+
+Features:
+  -file upload
+  -search
+  -omni-auth w/ facebook
+  -share to fb
+  -drag and drop
 
 
--remove new note from tag s how side pane
-
--get code review
-
--sniff out memory leaks and zombie views
-
--fix bugs with random errors popping up due to bad stack order at startup
--get it so that new can switch to edit on a note seamlessly, thus eliminating the need for the form header
-  -means setting off click event after navigating to edit page
-
--notebook edit/show combination
-  -use drop down as a convenient way to show notebook
-
-- notes api:
-  -refactor h2 on sidepane to only rerender that part on
-
-- error messages on top of primary view for when things go wrong. get teacher's help
-  -error message for invalid form input
-  -error message for after redirect when trying to go to note submission without already having a notebook
-
-CSS:
+Styles/jquery style changes:
+  -pixel perfect to evernote: color, sizes, sprites
+  -custom styles for notes/notebooks/tags
+  -fold/unfold sidepane while increasing/decreasing note form width
   -style sidebar buttons
-  -pick appropriate colors
+    -sprites same as evernote
   -change tag buttons to be highlighted on click, and replace remove button with delete keypress event while button is highlighted and active
+
+Final Round:
+
+Refactoring
+  -change jquery events into custom model events.
+  -dry it out
+
+  extra little features:
+    -partial for note show item separate from note index item
+    -fix bugs with random errors popping up due to bad stack order at startup
+    -refactor h2 on sidepane to only rerender that part on edit
+
+  small bugs:
+    -side pane note view is occasionally re-sorted after tag addition. this should not happen

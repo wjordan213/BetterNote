@@ -394,7 +394,7 @@ li.tag > button.remove {
 }
 
 //
-.noteView textarea {
+.noteView div {
   display: block;
   box-sizing: border-box;
   border: 1px solid black;
@@ -415,6 +415,6 @@ h1.inactive {
   display: none;
 }
 
-textarea.inactive {
+div.inactive {
   display: none;
 }

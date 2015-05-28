@@ -1,0 +1,7 @@
+File upload:
+  -images and pdf
+    -image seeable on the note
+    -able to click on pdf and open it in another tab
+
+  images:
+    -later: create custom destroy route for image deletion

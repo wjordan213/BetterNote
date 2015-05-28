@@ -1,4 +1,0 @@
-to start:
-3) possible memory leaks. ask as they come up.
-5) css form
-9) remove tags with no taggings

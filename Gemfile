@@ -4,6 +4,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
+gem "figaro"
+
+gem 'aws-sdk', '~> 1.6'
+
+gem "paperclip", "~> 4.2"
+
 gem 'backbone-on-rails'
 
 gem 'bcrypt'

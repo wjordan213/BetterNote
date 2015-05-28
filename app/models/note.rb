@@ -1,6 +1,8 @@
 class Note < ActiveRecord::Base
   validates :notebook_id, :title, presence: true
 
+  has_attached_file :image, :styles => { :medium => "300x300" }
+
   has_many :taggings,
   class_name: "Tagging",
   foreign_key: :note_id,

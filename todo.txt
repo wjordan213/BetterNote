@@ -10,8 +10,8 @@ ORDER:
 Features:
   -file upload
   -search
-  -omni-auth w/ facebook
-  -share to fb
+  -omni-auth w/ google
+  -share to gmail
   -drag and drop
 
 

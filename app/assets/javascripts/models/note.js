@@ -4,7 +4,7 @@ BetterNote.Models.Note = Backbone.Model.extend({
   toJSON: function() {
     var json = Backbone.Model.prototype.toJSON.call(this);
 
-    var object = {note: {id: json.id, tag_ids: json.tag_ids, title: json.title, body: json.body, notebook_id: json.notebook_id}};
+    var object = {note: {id: json.id, tag_ids: json.tag_ids, title: json.title, body: json.body, notebook_id: json.notebook_id, image: json.image}};
     delete json;
     return object;
   },

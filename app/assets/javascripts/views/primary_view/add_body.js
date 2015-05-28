@@ -4,7 +4,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 	events: {
 		'keydown .main_input' : 'justBlur',
 		'blur textarea.main_input' : 'submitAndToggle',
-		'dblclick p.main_input' : 'toggleInactive'
+		'dblclick p.main_input' : 'toggleInactive',
 	},
 
 	template: JST['primary_view/add_body'],

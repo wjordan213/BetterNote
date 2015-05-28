@@ -4,4 +4,8 @@ File upload:
     -able to click on pdf and open it in another tab
 
   images:
+    -onloadend: save the image and set the model value
+      -have event listener on that change to the model so that an image can be rendered on screen after file load
     -later: create custom destroy route for image deletion
+
+    -get page to load image on screen, then fix backend

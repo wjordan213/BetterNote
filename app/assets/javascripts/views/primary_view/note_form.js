@@ -3,7 +3,8 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   template: JST['primary_view/note_form'],
 
   events: {
-    'dblclick .notebook' : 'sendToBody'
+    'dblclick .notebook' : 'sendToBody',
+    'change .fileInp' : 'getFile'
   },
 
   initialize: function() {
@@ -13,6 +14,30 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
     this.listenTo(this.model.tags(), 'add', this.addTagButton);
     this.listenTo(this.model, 'destroy', this.removeAndReroute);
   },
+
+  getFile: function(event) {
+    console.log('file');
+		var file = document.getElementsByClassName('fileInp')[0].files[0];
+    var reader = new FileReader();
+    // debugger;
+		reader.onloadend = function() {
+	    var image = reader.result;
+	    this.model.set({image: image});
+			// either have event listener for above change or callback to save;
+      // debugger;
+			this.model.save();
+		}.bind(this);
+
+		if (file) {
+			console.log('it');
+			reader.readAsDataURL(file);
+			console.log('worked');
+		} else {
+			console.log('nope');
+		}
+
+  },
+
 
   removeAndReroute: function() {
     this.remove();

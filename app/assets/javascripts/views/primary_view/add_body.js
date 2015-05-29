@@ -26,7 +26,6 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		reader.onloadend = function() {
 			var image = reader.result;
 			this.model.set({image: image});
-			debugger;
 			this.model.save({}, {
 				success: function() {
 					this.$('.main_input').append("<img src=" + this.model.get('image_url') + ">");
@@ -65,7 +64,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 	},
 
 	toggleState: function() {
-		if (this.state === "p") {
+		if (this.state === false) {
 			this.state = true;
 		} else{
 			this.state = false;
@@ -79,7 +78,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		this.toggleState();
 
 		if (this.state === true) {
-			input = $('div.main_input').focus();
+			input = $('div.main_input').get(0).focus();
 		}
 	},
 

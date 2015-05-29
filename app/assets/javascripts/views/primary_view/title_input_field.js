@@ -18,24 +18,22 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 		if (keyCode === 9) {
 			if (!this.model.isNew()){
 				e.preventDefault();
-				// trigger custom event on model.
-				$('p.main_input').dblclick();
+				$('div.main_input').dblclick();
 			} else {
 				e.preventDefault();
-				$('p.main_input').dblclick();
+				$('div.main_input').dblclick();
 			}
 		}
 	},
 
 	submitAndToggle: function(event) {
+		event.preventDefault();
 		if ($(event.target).val() === "" || $('input.title').val() === "") {
 			return false;
 		}
 		if (!this.submit(event)) {
 			this.toggleInactive(event);
-		} else {
 		}
-
 	},
 
 	toggleState: function() {
@@ -70,8 +68,7 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 			this.state = 'h1';
 		}
 
-
 		return this;
 	}
 
-}))
+}));

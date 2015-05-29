@@ -34,7 +34,7 @@ button:hover {
 }
 
 html {
-  height: 91%;
+  height: 100%;
 }
 
 html, body {
@@ -92,8 +92,8 @@ h1.home {
 // main
 .main {
   display: block;
-  float: right;
-  width: calc(50% - 4px);
+  float: left;
+  width: calc(100% - 533px);
   height: 100%;
 }
 
@@ -194,10 +194,12 @@ form.user button:hover {
 //
 
 .sidebar {
-  width: 100px;
-  background: rgb(0, 181, 34);
-  float: left;
-  top: 81px;
+  position: fixed;
+  top: 0;
+  width: 43.008px;
+  padding: 12px 12px 24px 17px;
+  background: #f8f8f8;
+  // float: left;
   height: 100%;
 }
 
@@ -207,7 +209,7 @@ form.user button:hover {
 
 .sidebar a.new {
   display: block;
-  margin-left: 20px;
+  // margin-left: 20px;
 }
 
 .sidebar button {
@@ -252,7 +254,8 @@ input.search {
 .sidePane{
   float: left;
   height: 100%;
-  width: calc(50% - 100px);
+  margin-left: 73px;
+  width: 456px;
   background: rgb(0, 245, 46);
   border-left: 2px solid black;
   border-right: 2px solid black;

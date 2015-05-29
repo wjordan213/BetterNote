@@ -7,8 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= render 'shared/header' %>
+<div class="hidden_input inactive" data-csrfToken="<%= form_authenticity_token %>"></div>
 <%= render 'shared/errors' %>
 <%= yield %>
 

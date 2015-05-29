@@ -1,10 +1,13 @@
 TODO:
 
 ORDER:
-  -file upload, search, omni-auth
+  -search
+  -omni-auth
+    -share to fb
   -styles/design changes
-  -share to fb
   -drag and drop
+  -file upload
+    -pdf
 
 
 Features:
@@ -13,6 +16,10 @@ Features:
   -omni-auth w/ google
   -share to gmail
   -drag and drop
+
+Bugs:
+  -image upload not working in production.
+    -ArgumentError (missing required :bucket option)
 
 
 Styles/jquery style changes:
@@ -34,6 +41,8 @@ Refactoring
     -partial for note show item separate from note index item
     -fix bugs with random errors popping up due to bad stack order at startup
     -refactor h2 on sidepane to only rerender that part on edit
+    -multiple image uploads
+    -pdf uploads
 
   small bugs:
     -side pane note view is occasionally re-sorted after tag addition. this should not happen

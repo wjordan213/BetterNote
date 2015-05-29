@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
   def auth_token
     x = <<-HTML
-      <input type="hidden" name="authenticity_token" value="#{form_authenticity_token}">
+      <input class="auth_token" type="hidden" name="authenticity_token" value="#{form_authenticity_token}">
     HTML
     x.html_safe
    end

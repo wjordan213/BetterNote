@@ -1,11 +1,14 @@
-File upload:
-  -images and pdf
-    -image seeable on the note
-    -able to click on pdf and open it in another tab
+Styles:
+  -move logout to sidebar bottom
+  -add note search button to top of side bar
+  -sprites for sidebar
+    -logo on top
 
-  images:
-    -onloadend: save the image and set the model value
-      -have event listener on that change to the model so that an image can be rendered on screen after file load
-    -later: create custom destroy route for image deletion
+    -new note
+    -search
 
-    -get page to load image on screen, then fix backend
+    -notes
+    -notebooks
+    -tags
+
+    -then logout

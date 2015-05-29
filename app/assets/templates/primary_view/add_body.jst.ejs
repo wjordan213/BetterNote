@@ -1,9 +1,6 @@
-<% pStatus = note.isNew() ? "inactive" : "" %>
-<p class="main_input <%= pStatus %>"><%= note.get('body') %></p>
-
-<% inputStatus = note.isNew() ? "" : "inactive" %>
-<div contentEditiabl="true" name="body" class="main_input <%= inputStatus %>"><%= note.get('body') %></div>
+<div contenteditable="<%= note.isNew() %>" name="body" class="main_input"><%= note.get('body') %>
+  <% if (note.get('image_url')!== '/images/original/missing.png') { %>
+    <img src="<%= note.get('image_url') %>">
+  <% } %>
+</div>
 <input type="file" class="fileInp" value="add file"></input>
-<% if (note.get('image_url')!== '/images/original/missing.png') { %>
-  <img src="<%= note.get('image_url') %>">
-<% } %>

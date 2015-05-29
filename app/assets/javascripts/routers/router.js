@@ -47,7 +47,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
 
       if (newNoteView.model.isNew()) {
         newNoteView._titleInput.state = 'input';
-        newNoteView._bodyInput.state = 'div';
+        newNoteView._bodyInput.state = true;
 
         newNoteView._bodyInput.toggleInactive();
         newNoteView._titleInput.toggleInactive();

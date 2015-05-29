@@ -4,7 +4,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 	events: {
 		'keydown .main_input' : 'justBlur',
 		'blur div.main_input' : 'submitAndToggle',
-		'dblclick p.main_input' : 'toggleInactive',
+		'dblclick div.main_input' : 'toggleEditable',
 		'change .fileInp' : 'getFile'
 	},
 
@@ -14,9 +14,9 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		this.$el.addClass('addBody');
 		this.$form = options.$form;
 		if (this.model.isNew()) {
-			this.state = "div";
+			this.state = true;
 		} else {
-			this.state = "p";
+			this.state = false;
 		}
 	},
 
@@ -41,7 +41,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 			this.render();
 		}
 		if (!this.submit(event)) {
-			this.toggleInactive(event);
+			this.toggleEditable(event);
 		}
 	},
 
@@ -55,16 +55,20 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 
 	toggleState: function() {
 		if (this.state === "p") {
-			this.state = "div";
+			this.state = true;
 		} else{
-			this.state = "p";
+			this.state = false;
 		}
 	},
 
-	toggleInactive: function(event) {
-		this.$('.main_input').toggleClass("inactive");
+	toggleEditable: function(event) {
+		var $div = this.$('.main_input');
+
+		$div.prop('contenteditable', !!$div.prop('contenteditable'));
+
 		this.toggleState();
-		if (this.state === "div") {
+
+		if (this.state === true) {
 			input = $('div.main_input').focus();
 		}
 	},

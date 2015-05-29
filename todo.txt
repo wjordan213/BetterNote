@@ -22,6 +22,7 @@ Styles/jquery style changes:
   -style sidebar buttons
     -sprites same as evernote
   -change tag buttons to be highlighted on click, and replace remove button with delete keypress event while button is highlighted and active
+  -image/file input on right sidebar of note w/ sprite
 
 Final Round:
 

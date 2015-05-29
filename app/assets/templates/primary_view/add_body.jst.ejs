@@ -1,6 +1,4 @@
-<div contenteditable="<%= note.isNew() %>" name="body" class="main_input"><%= note.get('body') %>
-  <% if (note.get('image_url')!== '/images/original/missing.png') { %>
-    <img src="<%= note.get('image_url') %>">
-  <% } %>
+<div contenteditable="<%= note.isNew() %>" name="body" class="main_input">
+  <%= note.get('body') %>
 </div>
 <input type="file" class="fileInp" value="add file"></input>

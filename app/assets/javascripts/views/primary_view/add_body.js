@@ -26,7 +26,18 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		reader.onloadend = function() {
 			var image = reader.result;
 			this.model.set({image: image});
-			this.model.save();
+			debugger;
+			this.model.save({}, {
+				success: function() {
+					this.$('.main_input').append("<img src=" + this.model.get('image_url') + ">");
+				}.bind(this),
+				error: function() {
+					console.log('this is weird');
+				},
+				failure: function() {
+					console.log('happened');
+				}
+			});
 		}.bind(this);
 
 		if (file) {
@@ -63,7 +74,6 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 
 	toggleEditable: function(event) {
 		var $div = this.$('.main_input');
-
 		$div.prop('contenteditable', !!$div.prop('contenteditable'));
 
 		this.toggleState();

@@ -24,7 +24,8 @@ BetterNote.Mixins.NoteSubmit = {
 
   submit: function(event) {
     var formData = this.$form.serializeJSON();
-    if (($(event.target).val() === "") ||
+
+    if ((($(event.target).html() === "") && this.model.isNew()) ||
         ($('input.title_input').val() === "") ||
               (formData.notebook_id == this.model.get('notebook_id') &&
               formData.title === this.model.get('title') &&
@@ -43,6 +44,7 @@ BetterNote.Mixins.NoteSubmit = {
     }
 
     this.model.set(formData);
+    this.model.set({body: this.$('.main_input').html()})
     this.model.set({tag_ids: []});
 
 
@@ -52,8 +54,6 @@ BetterNote.Mixins.NoteSubmit = {
     }.bind(this));
 
     var wasNew = this.model.isNew();
-
-
     this.model.save({}, {
       parse: true,
       success: function(response) {

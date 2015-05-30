@@ -2,6 +2,7 @@ TODO:
 
 ORDER:
   -styles(weekend)
+  -HEROKU CONFIG BUCKETS
   -omni-auth
     -share to fb
   -search

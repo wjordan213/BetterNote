@@ -1,6 +1,4 @@
 Styles:
-  -move logout to sidebar bottom
-  -add note search button to top of side bar
   -sprites for sidebar
     -logo on top
 
@@ -12,3 +10,15 @@ Styles:
     -tags
 
     -then logout
+
+  -structure form properly.
+    -notebook choice/tags in top section
+    -border-box sizing for note input
+    -large padding on left
+    -font sizes/colors
+
+  -li hover and selected styles and content
+    -display image thumbnail on right side
+    -search bar in top section
+
+  -add note search button to top of side bar (only after search is implemented)

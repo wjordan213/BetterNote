@@ -1,9 +1,10 @@
 TODO:
 
 ORDER:
-  -search
+  -styles(weekend)
   -omni-auth
     -share to fb
+  -search
   -styles/design changes
   -drag and drop
   -file upload

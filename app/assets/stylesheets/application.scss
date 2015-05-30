@@ -199,7 +199,7 @@ form.user button:hover {
   width: 43.008px;
   padding: 12px 12px 24px 17px;
   background: #f8f8f8;
-  // float: left;
+  border-right: #ececec;
   height: 100%;
 }
 
@@ -245,7 +245,8 @@ form.user button:hover {
 
 input.search {
   display: block;
-  width: calc(100% - 4px);
+  width: 364px;
+  margin: 0 auto;
   font-size: 16px;
   background: #ccc;
   border: 1px solid grey;
@@ -255,10 +256,9 @@ input.search {
   float: left;
   height: 100%;
   margin-left: 73px;
-  width: 456px;
-  background: rgb(0, 245, 46);
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  width: 457px;
+  background: #fff;
+  border-right: 2px solid #ececec;
   text-align: center;
   overflow: auto;
 }
@@ -266,7 +266,7 @@ input.search {
 .sidePane .content {
   margin-top: 30px;
   text-align: left;
-  border-top: 2px solid black;
+  border-top: 3px solid #d9d9d9;
 }
 
 .sidePane h2 {
@@ -279,7 +279,7 @@ input.search {
   padding-bottom: 10px;
   padding-top: 10px;
   padding-left: 20px;
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid #d9d9d9;
   font-size: 18px;
 }
 
@@ -312,7 +312,7 @@ input.search {
   display: block;
   font-family: sans-serif;
   height: 100%;
-  background: rgb(0, 219, 41);
+  background: #fff;
 }
 
 .noteView form {

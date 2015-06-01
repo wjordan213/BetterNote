@@ -38,6 +38,7 @@ Final Round:
 Refactoring
   -change jquery events into custom model events.
   -dry it out
+  -break out giant if statement in subimt mixin
 
   extra little features:
     -partial for note show item separate from note index item

@@ -26,9 +26,11 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		reader.onloadend = function() {
 			var image = reader.result;
 			this.model.set({image: image});
+			// debugger;
 			this.model.save({}, {
 				success: function() {
 					this.$('.main_input').append("<img src=" + this.model.get('image_url') + ">");
+					this.submit(event);
 				}.bind(this),
 				error: function() {
 					console.log('this is weird');

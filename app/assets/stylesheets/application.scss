@@ -93,7 +93,7 @@ h1.home {
 .main {
   display: block;
   float: left;
-  width: calc(100% - 533px);
+  width: calc(100% - 583px);
   height: 100%;
 }
 
@@ -195,9 +195,10 @@ form.user button:hover {
 
 .sidebar {
   position: fixed;
+  box-sizing: border-box;
   top: 0;
-  width: 43.008px;
-  padding: 12px 12px 24px 17px;
+  width: 80px;
+  padding: 12px 12px 24px 19px;
   background: #f8f8f8;
   border-right: #ececec;
   height: 100%;
@@ -255,8 +256,8 @@ input.search {
 .sidePane{
   float: left;
   height: 100%;
-  margin-left: 73px;
-  width: 457px;
+  margin-left: 81px;
+  width: 500px;
   background: #fff;
   border-right: 2px solid #ececec;
   text-align: center;
@@ -422,9 +423,21 @@ div.inactive {
   display: none;
 }
 
-div.main_input {
-  outline: 0;
+input.title_input {
+  line-height: 1.4;
+  font-size: 25px;
+  padding: 10px;
   border: 0;
+  width: 100%;
+}
+
+div.main_input {
+  box-sizing: border-box;
+  outline: 0;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  min-height: 300px;
   // white-space: pre;
 }
 

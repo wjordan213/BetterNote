@@ -26,15 +26,16 @@ BetterNote.Mixins.NoteSubmit = {
     var formData = this.$form.serializeJSON();
     var body = $('.main_input').html();
 
-    if ((($(event.target).html() === "") && this.model.isNew()) ||
-        ($('input.title_input').val() === "") ||
-              (formData.notebook_id == this.model.get('notebook_id') &&
-              formData.title === this.model.get('title') &&
-              body.trim() === this.model.get('body').trim() &&
-              !($(event.target).hasClass('tag_input')))) {
-      return false;
+    if (!(event.target.tagName === "INPUT" && $(event.target).val() !== "")) {
+      if ((($(event.target).html() === "") && this.model.isNew()) ||
+          ($('input.title_input').val() === "") ||
+                (formData.notebook_id == this.model.get('notebook_id') &&
+                formData.title === this.model.get('title') &&
+                body.trim() === this.model.get('body').trim() &&
+                !($(event.target).hasClass('tag_input')))) {
+        return false;
+      }
     }
-
     delete formData.tag;
     var notebook = BetterNote.notebooks.get(formData.notebook_id);
 
@@ -78,7 +79,7 @@ BetterNote.Mixins.NoteSubmit = {
         if (wasNew) {
           Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
 
-          $('p.main_input').dblclick();
+          $('div.main_input').dblclick();
         } else {
           // sort the collection?
         }

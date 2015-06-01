@@ -1,7 +1,6 @@
 TODO:
 
 ORDER:
-  -HEROKU CONFIG BUCKETS
   -omni-auth
     -share to fb
   -search
@@ -24,11 +23,10 @@ Bugs:
 
 
 Styles/jquery style changes:
+  -tags for sidebar
   -pixel perfect to evernote: color, sizes, sprites
   -custom styles for notes/notebooks/tags
   -fold/unfold sidepane while increasing/decreasing note form width
-  -style sidebar buttons
-    -sprites same as evernote
   -change tag buttons to be highlighted on click, and replace remove button with delete keypress event while button is highlighted and active
   -image/file input on right sidebar of note w/ sprite
 
@@ -40,6 +38,7 @@ Refactoring
   -break out giant if statement in subimt mixin
 
   extra little features:
+    -clean up sidebar sprites
     -partial for note show item separate from note index item
     -fix bugs with random errors popping up due to bad stack order at startup
     -refactor h2 on sidepane to only rerender that part on edit

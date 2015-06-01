@@ -1,16 +1,8 @@
+
+
+
+
 Styles:
-  -sprites for sidebar
-    -logo on top
-
-    -new note
-    -search
-
-    -notes
-    -notebooks
-    -tags
-
-    -then logout
-
   -structure form properly.
     -notebook choice/tags in top section
     -border-box sizing for note input

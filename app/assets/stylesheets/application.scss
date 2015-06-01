@@ -241,11 +241,13 @@ form.user button:hover {
   overflow: hidden;
   border-radius: 50%;
   background-position-x: -6px;
+  background-color: #fff;
   border: 1px solid #ccc;
 }
 
 .sidebar button:hover {
   background-position-x: -46px;
+  border: 0;
   cursor: pointer;
 }
 
@@ -255,7 +257,8 @@ form.user button:hover {
 }
 
 .sidebar a.new:hover {
-  background-position: -6px -123px;
+  background-position: -5px -123px;
+  border: 0;
 }
 
 .sidebar button.notebooks {

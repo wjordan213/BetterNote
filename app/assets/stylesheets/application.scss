@@ -23,6 +23,7 @@ h1, h2, h3, ul, li, p, body, section, nav, header, button, form {
   margin: 0;
   padding: 0;
   border: 0;
+  outline: 0;
 }
 
 ul, li {
@@ -205,7 +206,22 @@ form.user button:hover {
 }
 
 .sidebar > nav {
-  margin-top: 55px;
+  position: absolute;
+  height: 100%;
+  top: 15px;
+}
+
+.sidebar figure {
+  background-image: image-url("logo.png");
+  display: block;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 0;
+  width: 39px;
+  padding-top: 39px;
+  background-position: 0 0;
+  background-size: 39px 39px;
+
 }
 
 .sidebar a.new {
@@ -213,20 +229,61 @@ form.user button:hover {
   // margin-left: 20px;
 }
 
-.sidebar button {
+.sidebar button, .sidebar a.new {
   display: block;
-  width: 100%;
-  padding: 10px;
-  background: rgb(0, 54, 10);
-  color: white;
-  margin-top: 20px;
+  position: absolute;
+  background-image: image-url("sidebar_sprite.png");
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 36px;
+  height: 0;
+  padding-top: 36px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-position-x: -6px;
+  border: 1px solid #ccc;
 }
 
 .sidebar button:hover {
-  background: blue;
+  background-position-x: -46px;
   cursor: pointer;
 }
 
+.sidebar a.new {
+  background-position: -46px -123px;
+  top: 80px;
+}
+
+.sidebar a.new:hover {
+  background-position: -6px -123px;
+}
+
+.sidebar button.notebooks {
+  background-position-y: -40px;
+  top: 130px;
+}
+
+
+.sidebar button.notes {
+  background-position-y: 0;
+  top: 180px;
+}
+
+.sidebar button.tags {
+  background-position-y: -82px;
+  top: 230px;
+}
+
+.sidebar button.logout {
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: 18px;
+  width: 51px;
+  border-radius: 0;
+  font-size: 16px;
+  bottom: 60px;
+}
 
 // sidepane
 

@@ -1,3 +1,4 @@
+<figure class="logo"></figure>
 <a href="#/notes/new" class="new">new note</a>
 
 <button class="notebooks">notebooks</button>
@@ -7,5 +8,5 @@
 <form action="/session" method="post">
   <input type="hidden" name="_method" value="Delete">
   <input class="auth_token" type="hidden" name="authenticity_token" value="<%= auth_token %>">
-  <button>Logout</button>
+  <button class="logout">Logout</button>
 </form>

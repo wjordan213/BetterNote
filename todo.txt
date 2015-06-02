@@ -1,9 +1,9 @@
 TODO:
 
 ORDER:
+  -search
   -omni-auth
     -share to fb
-  -search
   -styles/design changes
   -drag and drop
   -file upload
@@ -23,12 +23,20 @@ Bugs:
 
 
 Styles/jquery style changes:
-  -tags for sidebar
+  -structure form properly.
+    -notebook choice/tags in top section
+    -border-box sizing for note input
+    -large padding on left
+    -font sizes/colors
+  -li hover and selected styles and content
+    -display image thumbnail on right side
+    -search bar in top section
   -pixel perfect to evernote: color, sizes, sprites
   -custom styles for notes/notebooks/tags
   -fold/unfold sidepane while increasing/decreasing note form width
   -change tag buttons to be highlighted on click, and replace remove button with delete keypress event while button is highlighted and active
   -image/file input on right sidebar of note w/ sprite
+
 
 Final Round:
 

@@ -1,16 +1,27 @@
+Search:
+  Todo(in order):
+    -add note search button to top of side bar
+    -create backbone view on sidepane for note search
+    -remove search bar from side pane for notes index
+    -have note search button link to note search sidepane, implement in router because it will be less painful
+    -have search send out collection fetch or something like that
+
+  implementation specifics:
+    Backbone:
+      Views:
+        -html: input and button
+          -remove search bar from notes indexes
+          -side pane view for that
+        -listeners: click button
+        -colllection listener 'sync' : renderResults()
+          -
 
 
-
-
-Styles:
-  -structure form properly.
-    -notebook choice/tags in top section
-    -border-box sizing for note input
-    -large padding on left
-    -font sizes/colors
-
-  -li hover and selected styles and content
-    -display image thumbnail on right side
-    -search bar in top section
-
-  -add note search button to top of side bar (only after search is implemented)
+      Collections:
+        -SearchResults collection
+          -model: Note
+          -url: '/api/search'
+        -searchInfo.query = $input.val();
+        -fetched on search event
+          -data: this.collection.searchInfo
+        -Sync event triggers View method

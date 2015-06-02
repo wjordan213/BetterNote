@@ -25,6 +25,7 @@ BetterNote.Views.SideContent = Backbone.View.extend(
 
   changePane: function(event) {
     event.preventDefault();
+    debugger;
     var id = $(event.target).data('id');
     if (this.type === "notes") {
       Backbone.history.navigate('notes/' + id, {trigger: true});

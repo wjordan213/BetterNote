@@ -1,10 +1,10 @@
 Search:
   Todo(in order):
-    -add note search button to top of side bar
     -create backbone view on sidepane for note search
     -remove search bar from side pane for notes index
     -have note search button link to note search sidepane, implement in router because it will be less painful
     -have search send out collection fetch or something like that
+    -position search button correctly
 
   implementation specifics:
     Backbone:

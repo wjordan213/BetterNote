@@ -8,7 +8,6 @@ class UsersController < ApplicationController
       login! @user
       redirect_to '/app/start'
     else
-      # fail
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end

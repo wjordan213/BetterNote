@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/session/new/guest', to: 'sessions#guest'
 
     namespace :api, defaults: { format: :json } do
+      get "search", to: 'static#search'
       resources :notebooks, except: [:new, :edit]
       resources :notes, except: [:new, :edit]
       resources :tags, only: [:destroy, :show, :index, :create]

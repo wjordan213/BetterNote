@@ -5,13 +5,13 @@
   <h2><%= this.model.get('title') %> notes</h2>
 <% } else if (type === "tags") { %>
   <h2><%= type %></h2>
+  <input type="text" class="search" placeholder="Search tags">
 <% } else if (!this.model && type !== "notes"){ %>
-  <a data-href="<%= type %>/new" class="new">new <%= type %></a>
+    <a data-href="<%= type %>/new" class="new">new <%= type %></a>
+    <input type="text" class="search" placeholder="Search notebooks">
   <h2><%= type %></h2>
 <% } else { %>
   <h2>Notes</h2>
 <% } %>
-
-<input type="text" class="search" placeholder="enter <%= type %>">
 
 <ul class="content"></ul>

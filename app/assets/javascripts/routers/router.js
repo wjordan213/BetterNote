@@ -15,6 +15,16 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     'notebooks/:notebook_id/notes/new' : 'new',
     'notes/new' : 'new',
     'notes/:id' : 'edit',
+    'search' : 'search'
+  },
+
+  search: function() {
+    var searchPane = new BetterNote.Views.SearchPane();
+    if (BetterNote._currentPane) {
+      BetterNote._currentPane.remove();
+    }
+    BetterNote._currentPane = searchPane;
+    $('.sidePane').html(BetterNote._currentPane.render().$el);
   },
 
   notebookEdit: function(id) {
@@ -55,15 +65,6 @@ BetterNote.Routers.Router = Backbone.Router.extend({
       } else {
         newNoteView._titleInput.state = 'h1';
       }
-
-      // $("#parentOfTextbox").on('keydown', 'input.title_input', function(e) {
-      // var keyCode = e.keyCode || e.which;
-      //   if (e.keyCode === 9) {
-      //     e.preventDefault();
-      //     $('p.main_input').dblclick();
-      //   }
-      // }
-
     }
   },
 

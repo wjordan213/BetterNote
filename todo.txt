@@ -23,6 +23,7 @@ Bugs:
 
 
 Styles/jquery style changes:
+  -button selected depending on side pane state
   -structure form properly.
     -notebook choice/tags in top section
     -border-box sizing for note input

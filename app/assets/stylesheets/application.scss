@@ -261,37 +261,12 @@ form.user button:hover {
   border: 0;
 }
 
-.sidebar button.notebooks {
-  background-position-y: -40px;
-  top: 130px;
-}
-
-
-.sidebar button.notes {
-  background-position-y: 0;
-  top: 180px;
-}
-
-.sidebar button.tags {
-  background-position-y: -82px;
-  top: 230px;
-}
-
-.sidebar button.logout {
-  background: transparent;
-  border: none;
-  padding: 0;
-  height: 18px;
-  width: 51px;
-  border-radius: 0;
-  font-size: 16px;
-  bottom: 60px;
-}
-
 .sidebar button.search {
   background-image: image-url("blocks/zoosearch.png");
   display: block;
   position: absolute;
+  top: 130px;
+
   background-repeat: no-repeat;
   margin: auto;
   width: 36px;
@@ -307,6 +282,33 @@ form.user button:hover {
 
 .sidebar button.search:hover {
   background-image: image-url("blocks/zoosearchselected.png");
+}
+
+.sidebar button.notebooks {
+  background-position-y: -40px;
+  top: 200px;
+}
+
+
+.sidebar button.notes {
+  background-position-y: 0;
+  top: 250px;
+}
+
+.sidebar button.tags {
+  background-position-y: -82px;
+  top: 300px
+}
+
+.sidebar button.logout {
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: 18px;
+  width: 51px;
+  border-radius: 0;
+  font-size: 16px;
+  bottom: 60px;
 }
 
 // sidepane

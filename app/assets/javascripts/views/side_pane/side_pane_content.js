@@ -14,18 +14,13 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     this.type = options.type;
     this.listenTo(this.model, 'change:title sync', this.render);
 
-    if(this.model.tags) {
-      this.listenTo(this.model.tags(), 'remove', this.removeStuff);
-    }
-  },
-
-  removeStuff: function() {
-    console.log('triggered');
+    // if(this.model.tags) {
+    //   this.listenTo(this.model.tags(), 'remove', this.removeStuff);
+    // }
   },
 
   changePane: function(event) {
     event.preventDefault();
-    debugger;
     var id = $(event.target).data('id');
     if (this.type === "notes") {
       Backbone.history.navigate('notes/' + id, {trigger: true});

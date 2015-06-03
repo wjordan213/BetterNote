@@ -80,8 +80,6 @@ BetterNote.Mixins.NoteSubmit = {
           Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
 
           $('div.main_input').dblclick();
-        } else {
-          // sort the collection?
         }
       }.bind(this),
 

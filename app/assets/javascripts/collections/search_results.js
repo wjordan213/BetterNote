@@ -3,19 +3,17 @@ BetterNote.Collections.SearchResults = Backbone.Collection.extend({
     this.searchInfo = {};
   },
 
-  // parse: function(response) {
-  //   response.search_results.forEach(function(item){
-  //   var something = new this.model();
-  //     something.set(item);
-  //     this.add(something);
-  //   }.bind(this));
-  //   debugger;
-  //   // delete response.search_results;
-  //   // return response;
-  //   delete response;
-  //   return this;
-  // },
-
+  comparator: function(first, second) {
+    var first_updated = first.get('updated_at');
+    var second_updated = second.get('updated_at');
+    if (first_updated > second_updated) {
+      return 1;
+    } else if (first_updated === second_updated) {
+      return 0;
+    } else {
+      return -1;
+    }
+  },
   url: "/api/search",
 
   model: BetterNote.Models.Note

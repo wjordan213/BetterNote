@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
     root to: 'static_pages#home'
+
     get '/app/start', to: 'static_pages#root'
+    get "/auth/:provider", to: "sessions#omniauth"
+
     resources :users, only: [:new, :create] do
     end
 

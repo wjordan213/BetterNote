@@ -14,6 +14,7 @@ module Api
     def create
       @note = Note.new(note_params)
       puts params
+      @note.user_id = current_user.id
       if @note.save
         render :show
       else

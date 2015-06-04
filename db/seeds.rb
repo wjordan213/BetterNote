@@ -18,17 +18,17 @@ notebooks = users[0].notebooks.create!([
   ])
 
 
-notebooks[0].notes.create!({title: 'created first', body: 'yes they are delicious'})
+notebooks[0].notes.create!({title: 'created first', body: 'yes they are delicious', user_id: 1})
 
-notebooks[0].notes.create!({title: 'created second', body: 'peanut butter'})
-notebooks[0].notes.create!({title: 'created third', body: 'yes and no and yes and no and yes and no'})
-notebooks[1].notes.create!({title: '3d printing', body: "I hear it's what the cool kids are doing these days"})
-notebooks[1].notes.create!({title: 'molecular orbitals', body: 'this has to do with benzene and electrons'})
-notebooks[1].notes.create!({title: 'SN2 reactions', body: 'this has to do with my large problem set'})
-notebooks[1].notes.create!({title: 'test on tuesday', body: 'tagging all related topics'})
-notebooks[1].notes.create!({title: 'hw', body: 'this is all thats do next week'})
-notebooks[2].notes.create!({title: 'meditative studying', body: 'this is related to stuff in other notebooks'})
-notebooks[2].notes.create!({title: 'testing with a good attitude', body: 'this is about test taking'})
+notebooks[0].notes.create!({title: 'created second', body: 'peanut butter', user_id: 1})
+notebooks[0].notes.create!({title: 'created third', body: 'yes and no and yes and no and yes and no', user_id: 1})
+notebooks[1].notes.create!({title: '3d printing', body: "I hear it's what the cool kids are doing these days", user_id: 1})
+notebooks[1].notes.create!({title: 'molecular orbitals', body: 'this has to do with benzene and electrons', user_id: 1})
+notebooks[1].notes.create!({title: 'SN2 reactions', body: 'this has to do with my large problem set', user_id: 1})
+notebooks[1].notes.create!({title: 'test on tuesday', body: 'tagging all related topics', user_id: 1})
+notebooks[1].notes.create!({title: 'hw', body: 'this is all thats do next week', user_id: 1})
+notebooks[2].notes.create!({title: 'meditative studying', body: 'this is related to stuff in other notebooks', user_id: 1})
+notebooks[2].notes.create!({title: 'testing with a good attitude', body: 'this is about test taking', user_id: 1})
 Tag.create!([
   {title: 'tasty stuff', user_id: 1},
   {title: 'sandwiches', user_id: 1},

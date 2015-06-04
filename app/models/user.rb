@@ -13,7 +13,10 @@ class User < ActiveRecord::Base
   primary_key: :id,
   dependent: :destroy
 
-  has_many :notes, through: :notebooks
+  has_many :notes,
+  class_name: "Note",
+  foreign_key: :user_id,
+  primary_key: :id
 
   has_many :taggings, through: :notes
 

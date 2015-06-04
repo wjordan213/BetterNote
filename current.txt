@@ -1,4 +1,7 @@
 Search:
+
+  -search is turning up other user's posts
+
   Todo(in order):
     -correct ordering for rendered search results
     -position search button correctly

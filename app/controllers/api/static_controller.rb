@@ -1,4 +1,3 @@
-require 'byebug'
 module Api
   class StaticController < ApplicationController
     def search

@@ -1,27 +1,14 @@
-Search:
-
-  -search is turning up other user's posts
-
-  Todo(in order):
-    -correct ordering for rendered search results
-    -position search button correctly
-
-  implementation specifics:
-    Backbone:
-      Views:
-        -html: input and button
-          -remove search bar from notes indexes
-          -side pane view for that
-        -listeners: click button
-        -colllection listener 'sync' : renderResults()
-          -
-
-
-      Collections:
-        -SearchResults collection
-          -model: Note
-          -url: '/api/search'
-        -searchInfo.query = $input.val();
-        -fetched on search event
-          -data: this.collection.searchInfo
-        -Sync event triggers View method
+-style home page
+-style login/sign up
+-fix bug with notebook creation
+  -prevent empty content panel formation in side pane
+-on new notebook redirect, display styled message to create a notebook first
+-put pg search bar inside of form
+-style all search bars
+-get all fonts to be the same
+-style top of note form
+-look into things I can do with my note input?
+  -styles after highlight
+  -font coloring
+  -move note input to top right of form
+-readme

@@ -3,10 +3,12 @@
 -fix bug with notebook creation
   -prevent empty content panel formation in side pane
 -on new notebook redirect, display styled message to create a notebook first
+-style notebook creation
 -put pg search bar inside of form
 -style all search bars
 -get all fonts to be the same
 -style top of note form
+-style content panes
 -look into things I can do with my note input?
   -styles after highlight
   -font coloring

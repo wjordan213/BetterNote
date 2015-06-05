@@ -137,26 +137,29 @@ h1.home {
 }
 
 // sign up/sign in
+
+div.homeMessage p {
+  text-align: center
+}
+
 section.user {
-  margin-top: 50px;
-}
-
-section.user h1 {
-  display: block;
-  width: 300px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-section.user > form.user {
   display: block;
   padding: 30px;
   padding-right: 40px;
   width: 400px;
   background: #fff;
   margin: 0 auto;
+  margin-top: 50px;
   border: 1px solid #aaa;
   color: #888;
+}
+
+section.user h1 {
+  color: black;
+  display: block;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 form.user input {

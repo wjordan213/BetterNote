@@ -1,4 +1,12 @@
 <%= render 'shared/header' %>
+
+<div class="homeMessage">
+  <h1 class="home">Welcome to BetterNote</h1>
+  <p>
+    A note taking and organization app inspired by evernote.
+  </p>
+</div>
+
 <section class="user">
   <h1>Sign in</h1>
   <%= render 'shared/form', status: session_url %>

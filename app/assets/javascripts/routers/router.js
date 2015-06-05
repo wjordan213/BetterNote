@@ -60,8 +60,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
         newNoteView._bodyInput.state = true;
         // debugger;
         newNoteView._bodyInput.toggleEditable();
-        newNoteView._titleInput.toggleInactive();
-        $('input.title_input').focus();
+        $('div.title_input').focus();
       } else {
         newNoteView._titleInput.state = 'h1';
       }

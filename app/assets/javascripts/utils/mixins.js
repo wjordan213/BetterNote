@@ -23,6 +23,7 @@ BetterNote.Mixins.NoteSubmit = {
   },
 
   submit: function(event) {
+    event.preventDefault();
     var formData = this.$form.serializeJSON();
     var body = $('.main_input').html();
     var title = $('.title_input').html();
@@ -46,10 +47,7 @@ BetterNote.Mixins.NoteSubmit = {
     }
 
     this.model.set(formData);
-    this.model.set({body: body});
-    this.model.set({tag_ids: []});
-    this.model.set({title: title});
-
+    this.model.set({body: body, tag_ids: [], title: title});
 
     this.model.tags().each(function(tag) {
       this.model.get('tag_ids').push(tag.get('id'));

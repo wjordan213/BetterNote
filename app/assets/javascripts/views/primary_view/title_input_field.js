@@ -3,8 +3,7 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 
 	events: {
 		'keydown div.title_input' : 'goToBody',
-		'blur div.title_input' : 'submitAndToggle',
-		// 'dblclick h1.title_input' : 'toggleInactive'
+		'blur div.title_input' : 'submitAndToggle'
 	},
 
 	template: JST['primary_view/title_input_field'],
@@ -35,37 +34,9 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 		this.submit(event);
 	},
 
-	toggleState: function() {
-		if (this.state === "h1") {
-			this.state = "input";
-		} else{
-			this.state = "h1";
-		}
-	},
-
-	toggleInactive: function(event) {
-		$('.title_input').each(function(el) {
-			$($('.title_input')[el]).toggleClass("inactive");
-		});
-		this.toggleState();
-		if (this.state === "input") {
-			input = $('input.title_input').focus();
-			var tmpStr = input.val();
-			input.val('');
-			input.val(tmpStr);
-		}
-	},
-
 	render: function() {
 		var content = this.template({note: this.model});
 		this.$el.html(content);
-
-		if (this.model.isNew()) {
-			this.state = 'input';
-			this.toggleInactive();
-		} else {
-			this.state = 'h1';
-		}
 
 		return this;
 	}

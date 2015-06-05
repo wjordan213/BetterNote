@@ -1,9 +1,9 @@
 <% if (BetterNote.notebooks.length === 0) { %>
   <div class="warning"><p>Create at least 1 notebook before making a note!</p></div>
 <% } %>
-<h2 class="notebook-form"><%= message %> Notebook</h2>
+<h2 class="notebook-header"><%= message %> Notebook</h2>
 
-<form action="/api/notebooks" method="post">
+<form class="notebook-form" action="/api/notebooks" method="post">
   <label for="notebook_title">title</label><br>
   <input type="text" name="title" value="<%= notebook.get('title') %>"><br>
   <button clas="submit">Submit</button>

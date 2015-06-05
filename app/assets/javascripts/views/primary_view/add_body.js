@@ -58,9 +58,7 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 			this.model.set({body: data}, {silent: true});
 			this.render();
 		}
-		if (!this.submit(event)) {
-			this.toggleEditable(event);
-		}
+		this.submit(event);
 	},
 
 	justBlur: function(event) {

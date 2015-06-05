@@ -513,12 +513,13 @@ div.inactive {
   display: none;
 }
 
-input.title_input {
+div.title_input {
   line-height: 1.4;
   font-size: 25px;
   padding: 10px;
   border: 0;
   width: 100%;
+  text-align: left;
 }
 
 div.main_input {

@@ -7,9 +7,7 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   },
 
   initialize: function() {
-    this.listenTo(this.model, 'change:title', this.renderNewTitleField);
     this.listenTo(this.model, 'change:notebook_id', this.renderNotebookOptions);
-    this.listenTo(this.model, 'change:body', this.renderNewBodyField);
     this.listenTo(this.model.tags(), 'add', this.addTagButton);
     this.listenTo(this.model, 'destroy', this.removeAndReroute);
     this.render();
@@ -43,16 +41,6 @@ BetterNote.Views.NoteForm = Backbone.CompositeView.extend({
   renderNotebookOptions: function() {
     this._notebookInput.remove();
     this.addNotebookInputField();
-  },
-
-  renderNewTitleField: function() {
-    this._titleInput.remove();
-    this.addTitleInputField();
-  },
-
-  renderNewBodyField: function() {
-    this._bodyInput.remove();
-    this.addBodyInputField();
   },
 
   addNotebookInputField: function() {

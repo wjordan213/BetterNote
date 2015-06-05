@@ -1,7 +1,3 @@
--style home page
--style login/sign up
--fix bug with notebook creation
-  -prevent empty content panel formation in side pane
 -on new notebook redirect, display styled message to create a notebook first
 -style notebook creation
 -put pg search bar inside of form

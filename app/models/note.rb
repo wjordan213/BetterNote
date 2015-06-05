@@ -7,8 +7,16 @@ class Note < ActiveRecord::Base
   validates_attachment :image,
    :content_type => { :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] }
 
-  multisearchable against: [:title, :body]
+   PgSearch.multisearch_options = {
+     :using => {
+       :tsearch => {
+         :prefix => true
+       }
+     }
+   }
 
+  multisearchable against: [:title, :body]
+  
   has_many :taggings,
   class_name: "Tagging",
   foreign_key: :note_id,

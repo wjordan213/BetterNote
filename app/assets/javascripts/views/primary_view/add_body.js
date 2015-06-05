@@ -4,7 +4,8 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 	events: {
 		'keydown .main_input' : 'justBlur',
 		'blur div.main_input' : 'submitAndToggle',
-		'dblclick div.main_input' : 'toggleEditable',
+		// 'dblclick div.main_input' : 'toggleEditable',
+		'dblclick div.main_input' : 'focusMain',
 		'change .fileInp' : 'getFile'
 	},
 
@@ -18,6 +19,11 @@ BetterNote.Views.AddBody = Backbone.View.extend(
 		} else {
 			this.state = false;
 		}
+	},
+
+	focusMain: function(event) {
+		event.preventDefault();
+		$(event.target).focus();
 	},
 
 	getFile: function(event) {

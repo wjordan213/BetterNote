@@ -25,12 +25,12 @@ BetterNote.Mixins.NoteSubmit = {
   submit: function(event) {
     var formData = this.$form.serializeJSON();
     var body = $('.main_input').html();
-
+    var title = $('.title_input').html();
     if (!(event.target.tagName === "INPUT" && $(event.target).val() !== "")) {
       if ((($(event.target).html() === "") && this.model.isNew()) ||
-          ($('input.title_input').val() === "") ||
+          ($('div.title_input').html() === "") ||
                 (formData.notebook_id == this.model.get('notebook_id') &&
-                formData.title === this.model.get('title') &&
+                title === this.model.get('title') &&
                 body.trim() === this.model.get('body').trim() &&
                 !($(event.target).hasClass('tag_input')))) {
         return false;
@@ -48,7 +48,7 @@ BetterNote.Mixins.NoteSubmit = {
     this.model.set(formData);
     this.model.set({body: body});
     this.model.set({tag_ids: []});
-
+    this.model.set({title: title});
 
 
     this.model.tags().each(function(tag) {

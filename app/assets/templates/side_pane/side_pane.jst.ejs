@@ -7,9 +7,9 @@
   <h2><%= type %></h2>
   <input type="text" class="search" placeholder="Search tags">
 <% } else if (!this.model && type !== "notes"){ %>
+    <h2 class="type"><%= type %></h2>
     <a data-href="<%= type %>/new" class="new">new <%= type %></a>
     <input type="text" class="search" placeholder="Search notebooks">
-  <h2><%= type %></h2>
 <% } else { %>
   <h2>Notes</h2>
 <% } %>

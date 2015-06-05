@@ -317,6 +317,8 @@ form.user button:hover {
 // sidepane
 
 .sidePane .new {
+  display: block;
+  float: right;
   text-decoration: underline;
   text-color: blue;
   cursor: pointer;
@@ -332,6 +334,7 @@ form.user button:hover {
 
 input.search {
   display: block;
+  clear: both;
   width: 364px;
   margin: 0 auto;
   font-size: 16px;
@@ -351,12 +354,14 @@ input.search {
 }
 .sidePane .content {
   margin-top: 30px;
+  clear: both;
   text-align: left;
   border-top: 3px solid #d9d9d9;
 }
 
 .sidePane h2 {
   display: block;
+  float: left;
   margin-bottom: 20px;
   text-align: center;
 }

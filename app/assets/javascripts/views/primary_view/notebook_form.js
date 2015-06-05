@@ -15,9 +15,9 @@ BetterNote.Views.NotebookForm = Backbone.View.extend(
   render: function() {
     var message;
     if (this.model.isNew()) {
-      message = 'New'
+      message = 'New';
     } else {
-      message = 'Edit'
+      message = 'Edit';
     }
     var content = this.template({notebook: this.model, message: message});
 

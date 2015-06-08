@@ -13,7 +13,7 @@ BetterNote.Views.AddTag = Backbone.View.extend(
 
 	justBlur: function(event) {
 		var keyCode = event.keyCode || event.which;
-		if (keyCode === 9) {
+		if (keyCode === 9 || keyCode === 13) {
 			event.preventDefault();
 			$('input.tag_input').blur()
 		}

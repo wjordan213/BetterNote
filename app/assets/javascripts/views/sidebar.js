@@ -7,12 +7,17 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
     'click .notebooks' : 'changeToNotebooks',
     'click .notes' : 'changeToNotes',
     'click .tags' : 'changeToTags',
-    'click .newNote' : 'newNote',
+    'click .new' : 'newNote',
     'click .search' : 'search'
   },
 
   newNote: function(event) {
     event.preventDefault();
+
+    if (BetterNote._currentPane.model && BetterNote._currentPane.model.urlRoot === "/api/notebooks") {
+      BetterNote.currentNotebook = BetterNote._currentPane.model;
+    }
+
     Backbone.history.navigate($(event.target).data('href'), {trigger: true});
   },
 

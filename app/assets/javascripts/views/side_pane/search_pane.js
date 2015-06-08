@@ -5,7 +5,7 @@ BetterNote.Views.SearchPane = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click button" : "search"
+    "submit form" : "search"
   },
 
   template: JST['side_pane/search_pane'],

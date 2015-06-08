@@ -40,6 +40,7 @@ BetterNote.Routers.Router = Backbone.Router.extend({
     var newNotebookView = new BetterNote.Views.NotebookForm({model: newNotebook});
 
     this._swapPrimaryView(newNotebookView);
+    $('form input').focus();
   },
 
   new: function(notebook_id) {
@@ -50,6 +51,9 @@ BetterNote.Routers.Router = Backbone.Router.extend({
 
       if (notebook_id) {
         newNote.set({notebook_id: notebook_id});
+      } else if (BetterNote.currentNotebook){
+        newNote.set({notebook_id: BetterNote.currentNotebook.id});
+        BetterNote.currentNotebook = false;
       }
       var newNoteView = new BetterNote.Views.NoteForm({model: newNote});
 

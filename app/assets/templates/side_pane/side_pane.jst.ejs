@@ -1,17 +1,20 @@
-<% if (this.model && this.model.urlRoot !== "/api/tags") { %>
-  <% if (this.model && this.model.urlRoot === "/api/notebooks") { %>
-    <a href="#/notebooks/<%= this.model.id %>/notes/new" class="new newNote">new note</a><% %>
+<section class="top">
+  <% if (this.model && this.model.urlRoot !== "/api/tags") { %>
+    <% if (this.model && this.model.urlRoot === "/api/notebooks") { %>
+      <a href="#/notebooks/<%= this.model.id %>/notes/new" class="new newNote">new note</a><% %>
+    <% } %>
+    <h2><%= this.model.get('title') %> notes</h2>
+  <% } else if (type === "tags") { %>
+    <h2><%= type %></h2>
+    <input type="text" class="search" placeholder="Search tags">
+  <% } else if (!this.model && type !== "notes"){ %>
+      <h2 class="notebooks">notebooks</h2>
+      <a data-href="<%= type %>/new" class="newNotebook">new <%= type %></a>
+      <input type="text" class="search" placeholder="Search notebooks">
+  <% } else if (this.model) { %>
+      <h2><%= this.model.get('title') %> notes</h2>
+  <% } else { %>
+    <h2>Notes</h2>
   <% } %>
-  <h2><%= this.model.get('title') %> notes</h2>
-<% } else if (type === "tags") { %>
-  <h2><%= type %></h2>
-  <input type="text" class="search" placeholder="Search tags">
-<% } else if (!this.model && type !== "notes"){ %>
-    <h2 class="type"><%= type %></h2>
-    <a data-href="<%= type %>/new" class="new">new <%= type %></a>
-    <input type="text" class="search" placeholder="Search notebooks">
-<% } else { %>
-  <h2>Notes</h2>
-<% } %>
-
+</section>
 <ul class="content"></ul>

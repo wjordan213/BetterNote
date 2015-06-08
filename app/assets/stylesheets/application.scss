@@ -328,11 +328,36 @@ form.user button:hover {
   float: left;
 }
 
-.sidepane h2 {
-  clear: left;
+.sidePane .top {
+  display: block;
+  height: 90px;
 }
 
-input.search {
+.sidePane section >  h2 {
+  font-size: 30px;
+  clear: left;
+  padding: 24px 0 0 24px;
+}
+
+.sidePane a.newNotebook {
+  background-image: image-url("add_notebook.png");
+  float: right;
+  background-position: 0 0;
+  display: block;
+  background-repeat: no-repeat;
+  height: 0;
+  width: 39px;
+  margin: 0;
+  margin-top: 25px;
+  // margin-right: 24px;
+  padding-top: 39px;
+  background-position: 0 0;
+  background-size: 30px 30px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+input.search, #query {
   display: block;
   clear: both;
   width: 364px;
@@ -340,6 +365,7 @@ input.search {
   font-size: 16px;
   background: #ccc;
   border: 1px solid grey;
+  outline: 0;
 }
 
 .sidePane{
@@ -404,6 +430,7 @@ input.search {
   font-family: sans-serif;
   height: 100%;
   background: #fff;
+  overflow: hidden;
 }
 
 .noteView form {
@@ -414,6 +441,53 @@ input.search {
   padding: 20px 0 0 0;
   margin-right: 20px;
   float: left;
+}
+
+// .noteView div {
+//   display: block;
+//   height: 100%;
+//   text-align: center;
+// }
+
+.noteView div.lineSeparator {
+  height: 0;
+  padding: 0;
+  border-top: 1px solid #ccc;
+  width: 70px;
+  margin: 0 auto;
+}
+
+figure.notebook {
+  background-image: image-url("add_notebook.png");
+  background-position: 0 0;
+  display: block;
+  background-repeat: no-repeat;
+  height: 0;
+  width: 39px;
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  padding-top: 39px;
+  background-position: 0 0;
+  background-size: 30px 30px;
+  overflow: hidden;
+}
+
+h2.notebook-header {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.notebook-form input {
+  display: block;
+  height: 50px;
+  font-size: 24px;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  outline: 0;
 }
 
 .notebook {
@@ -529,7 +603,6 @@ div.main_input {
   margin-top: 20px;
   border: 1px solid #ccc;
   min-height: 300px;
-  // white-space: pre;
 }
 
 input.fileInp {

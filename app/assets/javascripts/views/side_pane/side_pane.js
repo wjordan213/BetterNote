@@ -79,6 +79,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
   events: {
     'click .new' : 'newContent',
+    'click .newNotebook' : 'newContent',
     'input .search' : 'searchContent'
   },
 

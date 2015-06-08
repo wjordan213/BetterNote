@@ -1,3 +1,10 @@
+Side pane styles:
+  -note count
+  -set for tags and notebooks
+  -fonts
+  -list element height/clicking/hover state
+
+
 -style notebook creation
 -style all search bars
 -get all fonts to be the same

@@ -1,8 +1,5 @@
 <section class="top">
   <% if (this.model && this.model.urlRoot !== "/api/tags") { %>
-    <% if (this.model && this.model.urlRoot === "/api/notebooks") { %>
-      <a href="#/notebooks/<%= this.model.id %>/notes/new" class="new newNote">new note</a><% %>
-    <% } %>
     <h2><%= this.model.get('title') %> notes</h2>
   <% } else if (type === "tags") { %>
     <h2><%= type %></h2>

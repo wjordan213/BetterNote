@@ -17,7 +17,6 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
     if (BetterNote._currentPane.model && BetterNote._currentPane.model.urlRoot === "/api/notebooks") {
       BetterNote.currentNotebook = BetterNote._currentPane.model;
     }
-
     Backbone.history.navigate($(event.target).data('href'), {trigger: true});
   },
 

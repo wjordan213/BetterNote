@@ -17,4 +17,4 @@ BetterNote.Views.AddNotebook = Backbone.View.extend(
 
 			return this;
 		}
-}))
+}));

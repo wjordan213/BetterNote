@@ -10,6 +10,9 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
     if (options.model) {
       this.listenTo(this.model, 'sync', this.render);
+      if (this.model.urlRoot === "/api/notebooks") {
+        BetterNote.currentNotebook = this.model;
+      }
     }
 
     if (this.type === "notebooks") {

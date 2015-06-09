@@ -2,24 +2,11 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[Main site]: http://www.betternote.io
 
-- username/password: password
-
-## Minimum Viable Product
-BetterNote is a clone of Evernote built on Rails and Backbone. Users can:
-
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
-
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create/edit/delete notebooks
-- [x] Create/edit notes for notebooks
-- [x] Delete Notes
-- [x] Tag Notes
-- [x] Search for notes by title
-- [x] Search for notes by notebook
-- [x] Search for notes by tag
+## Description
+A note taking/organization app inspired by the website Evernote. Users can write
+notes, upload photos, tag their notes, insert them into custom notebooks, and search over their notebooks and tags. They can also log in with twitter and search over the title and body of all notes that they write.
 
 ## Design Docs
 * [View Wireframes][views]
@@ -56,6 +43,8 @@ On the front end, I will first create a view for editing/creating/viewing notes.
 for notes and tags. I will also create an association between notebooks and notes and
 vice versa. Last, I will create a sidebar-subview that display an index of notes corresponding to notebooks and one that groups by tags.
 
+A difficult component here was to make sure that my side pane, while displaying the title of whatever is being modified in the primary View, updates the order/title in which that item is displayed.
+
 [Details][phase-three]
 
 ### Phase 4: Searching for Notes, Notebooks, and Tags (~1 day)
@@ -64,7 +53,18 @@ in the sidebar. I will add a search bar on top of the view, then I will add
 an event handler for key input to the browser which matches the titles against
 search bar input
 
+The difficult piece of everything here was keeping each list item sorted. Since
+each list item was implemented as a composite view, I had to actually remove
+notebooks and tags while matching the text of each title to the input in the
+search bar. To re-insert it into the correct place, I actually had to iterate
+over my collection of all rendered items for my sidePane View and use its
+comparator function to find the appropriate spot
+
 [Details][phase-four]
+
+### Technologies
+Javascript, ruby on rails, Backbone, App Academy's composite view backbone
+extension, JQuery, HTML5, CSS3, the Twitter api (omni-auth), pg search (ruby gem)
 
 ### Bonus Features (TBD)
 - [x] real-time ajax updates during note edit
@@ -79,7 +79,6 @@ search bar input
 - [ ] filter out notes index by multiple tags
 - [ ] Edit Tags
 - [ ] delete account
-- [ ] Multiple sessions/session management
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md

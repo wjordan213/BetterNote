@@ -37,7 +37,7 @@ BetterNote.Views.AddTag = Backbone.View.extend(
 		var tag_input = $('.tag_input').val();
 
 		if ($.trim(tag_input).length === 0)  {
-			$('.tag_input').val('');
+			$('.tag_input').html('');
 			this.toggleTagInput();
 			return;
 		}
@@ -57,6 +57,7 @@ BetterNote.Views.AddTag = Backbone.View.extend(
 			}.bind(this)
 			});
 		}
+		$('.tag_input').val('');
 		this.toggleTagInput();
 	},
 

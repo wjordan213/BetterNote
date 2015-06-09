@@ -2,12 +2,12 @@
   <% if (this.model && this.model.urlRoot !== "/api/tags") { %>
     <h2><%= this.model.get('title') %> notes</h2>
   <% } else if (type === "tags") { %>
-    <h2><%= type %></h2>
-    <input type="text" class="search" placeholder="Search tags">
+    <h2>Tags</h2>
+    <input type="text" class="search" placeholder="Search Tags">
   <% } else if (!this.model && type !== "notes"){ %>
-      <h2 class="notebooks">notebooks</h2>
-      <a data-href="<%= type %>/new" class="newNotebook">new <%= type %></a>
-      <input type="text" class="search" placeholder="Search notebooks">
+      <h2 class="notebooks">Notebooks</h2>
+      <a data-href="<%= type %>/new" class="newNotebook">New Notebook</a>
+      <input type="text" class="search" placeholder="Search Notebooks">
   <% } else if (this.model) { %>
       <h2><%= this.model.get('title') %> notes</h2>
   <% } else { %>

@@ -1,8 +1,9 @@
 Side pane styles:
+  -delete tag buttons
+  -list element height/clicking/hover state
   -note count
   -set for tags and notebooks
   -fonts
-  -list element height/clicking/hover state
 
 
 -style notebook creation

@@ -507,6 +507,12 @@ h2.notebook-header {
   color: white;
 }
 
+// note form
+
+select.notebook {
+  width: 100px;
+}
+
 .allTags {
   display: block;
   // float: left;
@@ -549,8 +555,9 @@ li.tag {
 li.tag > button.remove {
   margin-top: 10px;
   font-size: 12px;
-  padding: 5px 5px 7px 5px;
+  padding: 5px 5px 5px 5px;
   border-radius: 5px;
+  background: #3c6;
 }
 
 

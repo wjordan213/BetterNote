@@ -1,7 +1,5 @@
 # BetterNote
 
-[Heroku link][heroku]
-
 [Main site]: http://www.betternote.io
 
 ## Description

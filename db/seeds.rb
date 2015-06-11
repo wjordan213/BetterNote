@@ -16,7 +16,7 @@ notebooks = users[0].notebooks.create!([
   {title: 'birds and bees'},
   {title: 'pokemon'}
   ])
-
+  root = "#{Rails.root}/db/seeds"
 
 notebooks[0].notes.create!({title: 'created first', body: 'yes they are delicious', user_id: 1})
 
@@ -27,8 +27,8 @@ notebooks[1].notes.create!({title: 'molecular orbitals', body: 'this has to do w
 notebooks[1].notes.create!({title: 'SN2 reactions', body: 'this has to do with my large problem set', user_id: 1})
 notebooks[1].notes.create!({title: 'test on tuesday', body: 'tagging all related topics', user_id: 1})
 notebooks[1].notes.create!({title: 'hw', body: 'this is all thats do next week', user_id: 1})
-notebooks[2].notes.create!({title: 'meditative studying', body: 'this is related to stuff in other notebooks', user_id: 1})
-notebooks[2].notes.create!({title: 'testing with a good attitude', body: 'this is about test taking', user_id: 1})
+notebooks[2].notes.create!({title: 'meditative studying', body: 'this is related to stuff in other notebooks', user_id: 1, image: File.open("#{root}/cat.jpeg")})
+notebooks[2].notes.create!({title: 'testing with a good attitude', body: 'this is about test taking', user_id: 1, image: File.open("#{root}/images.jpeg")})
 Tag.create!([
   {title: 'tasty stuff', user_id: 1},
   {title: 'sandwiches', user_id: 1},

@@ -30,7 +30,7 @@ BetterNote.Views.AddTitle = Backbone.View.extend(
 		if ($(event.target).html() === "" || $('div.title_input').html() === "") {
 			return false;
 		}
-
+		
 		this.submit(event);
 	},
 

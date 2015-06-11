@@ -22,6 +22,8 @@ BetterNote.Mixins.NoteSubmit = {
     return (mod1.get('updated_at') === mod2.get('updated_at'));
   },
 
+  // fetch note if side pane type is notebooks
+
   submit: function(event) {
     event.preventDefault();
     var formData = this.$form.serializeJSON();
@@ -57,6 +59,9 @@ BetterNote.Mixins.NoteSubmit = {
     this.model.save({}, {
       parse: true,
       success: function(response) {
+        if (BetterNote.currentNotebook && BetterNote.currentNotebook.id === this.model.get('notebook_id')) {
+          BetterNote.currentNotebook.fetch();
+        }
         if (this.collection.url === this.model.urlRoot) {
           if ((this.collection.tag &&
             this.model.tags().models.some(function(tag) {

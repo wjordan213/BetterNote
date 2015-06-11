@@ -163,7 +163,7 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
       this.collectionViews[0].add(content, {sort: true});
     if (options && options.insert) {
       this.insertContent(subview);
-    } else{
+    } else {
       this.addSubview('.content', subview);
     }
   },

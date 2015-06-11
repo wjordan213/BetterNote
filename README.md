@@ -15,12 +15,11 @@ notes, upload photos, tag their notes, insert them into custom notebooks, and se
 3) start making notes!
   - users can upload images, tag their notes, and organize them into different notebooks
 
-### Technologies
+## Technologies
 Javascript, ruby on rails, Backbone, App Academy's composite view backbone
 extension, JQuery, HTML5, CSS3, the Twitter api (omni-auth), pg search (ruby gem)
 
 ## Implementation Details:
-
 ### Composite Views
 - only necessary segments of the page re-render after given events, minimizing the amount of work the browser has to perform (setting up event listeners, removing Views, re-rendering html, etc.) giving the application a snappy feel
 

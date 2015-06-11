@@ -1,10 +1,8 @@
 TODO:
 
 ORDER:
-  -search
-  -omni-auth
-    -share to fb
-  -styles/design changes
+  -grey background against title for note input
+  -change BetterNote to white
   -drag and drop
   -file upload
     -pdf

@@ -1,6 +1,8 @@
 # BetterNote
 
-[Main site]: http://www.betternote.io
+* [Main site][Main]
+
+[Main]: http://www.betternote.io
 
 ## Description
 A note taking/organization app inspired by the website Evernote. Users can write

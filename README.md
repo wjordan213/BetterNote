@@ -8,14 +8,16 @@
 A note taking/organization app inspired by the website Evernote. Users can write
 notes, upload photos, tag their notes, insert them into custom notebooks, and search over their notebooks and tags. They can also log in with twitter and search over the title and body of all notes that they write.
 
-## Design Docs
-* [View Wireframes][views]
-* [DB schema][schema]
 
-[views]: ./docs/views.md
-[schema]: ./docs/schema.md
+## How to use:
+1) either create a username and password, or sign in with your twitter account
+2) create a notebook
+3) start making notes!
+  - users can upload images, tag their notes, and organize them into different notebooks
 
-## Implementation Timeline
+### Technologies
+Javascript, ruby on rails, Backbone, App Academy's composite view backbone
+extension, JQuery, HTML5, CSS3, the Twitter api (omni-auth), pg search (ruby gem)
 
 ### Phase 1: User Authentication Heroku Deployment (~1 day)
 I will implement user authentication in Rails based on the practices learned at
@@ -61,10 +63,6 @@ over my collection of all rendered items for my sidePane View and use its
 comparator function to find the appropriate spot
 
 [Details][phase-four]
-
-### Technologies
-Javascript, ruby on rails, Backbone, App Academy's composite view backbone
-extension, JQuery, HTML5, CSS3, the Twitter api (omni-auth), pg search (ruby gem)
 
 ### Bonus Features (TBD)
 - [x] real-time ajax updates during note edit

@@ -10,9 +10,9 @@ notes, upload photos, tag their notes, insert them into custom notebooks, and se
 
 
 ## How to use:
-1) either create a username and password, or sign in with your twitter account
-2) create a notebook
-3) start making notes!
+- either create a username and password, or sign in with your twitter account
+- create a notebook
+- start making notes!
   - users can upload images, tag their notes, and organize them into different notebooks
 
 ## Technologies

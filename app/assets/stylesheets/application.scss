@@ -610,6 +610,8 @@ div.title_input {
   border: 0;
   width: 100%;
   text-align: left;
+  outline: 0;
+  border: 1px solid #ccc;
 }
 
 div.main_input {
@@ -619,6 +621,11 @@ div.main_input {
   margin-top: 20px;
   border: 1px solid #ccc;
   min-height: 300px;
+}
+
+label.fileInp {
+  position: relative;
+  top: 45px;
 }
 
 input.fileInp {

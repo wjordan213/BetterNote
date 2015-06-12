@@ -410,7 +410,7 @@ input.search, #query {
   padding: 5px;
 }
 
-.content button:hover {
+.content button.delete:hover {
   background: gray;
 }
 
@@ -420,7 +420,11 @@ input.search, #query {
 }
 
 .content li {
-  cursor: default;
+  cursor: pointer;
+}
+
+.content li:hover {
+  background: #3c6;
 }
 
 .content a:hover {

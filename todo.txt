@@ -1,7 +1,6 @@
 TODO:
 
 ORDER:
-  -grey background against title for note input
   -change BetterNote to white
   -drag and drop
   -file upload

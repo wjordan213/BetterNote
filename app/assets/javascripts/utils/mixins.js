@@ -76,12 +76,15 @@ BetterNote.Mixins.NoteSubmit = {
         BetterNote.notes.add(this.model, { merge: true });
 
         if (!wasNew) {
+          if ($('strong.Message').length > 0) {
+            $('strong.Message').remove();
+          }
           BetterNote._currentPane.removeAndInsert(this.model);
         }
 
         if (wasNew) {
           Backbone.history.navigate('notes/' + this.model.id, {trigger: true});
-
+          $('section.noteView').prepend($('<strong class="Message">Note Created!</strong>'));
           $('div.main_input').dblclick();
         }
       }.bind(this),

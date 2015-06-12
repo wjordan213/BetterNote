@@ -28,7 +28,6 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
   },
 
   removeAndInsert: function(model) {
-
     if (this.containsModel(model, this.collection) && this.containsModel(model, this.collectionViews[0])) {
 
       var workingModel = this.collectionViews[0].findWhere({updated_at: model.get('updated_at')});
@@ -126,6 +125,8 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
         subview.render().$el.insertBefore(contentView.$el);
         this.collectionViews[1][subview.model.get('id')] = subview;
         this.collectionViews[0].add(subview.model, {sort: true});
+        this.subviews('.content').unshift(subview);
+        return false;
         break;
       }
     }

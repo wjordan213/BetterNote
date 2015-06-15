@@ -1,19 +1,13 @@
 Side pane styles:
   -delete tag buttons
-  -list element height/clicking/hover state
+  -list element height, clicked state
   -note count
   -set for tags and notebooks
   -fonts
 
-
--style notebook creation
--style all search bars
--get all fonts to be the same
 -style top of note form
 -style content panes
 -look into things I can do with my note input?
-  ***-cursor indicates div input is focused
-  -styles after highlight
   -font coloring
   -move note input to top right of form
 -readme

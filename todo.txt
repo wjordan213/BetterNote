@@ -1,7 +1,7 @@
 TODO:
 
 ORDER:
-  -change BetterNote to white
+  -Note form custom user styling options. Theres a gem for that.
   -drag and drop
   -file upload
     -pdf
@@ -9,14 +9,9 @@ ORDER:
 
 Features:
   -file upload
-  -search
-  -omni-auth w/ google
-  -share to gmail
   -drag and drop
 
 Bugs:
-  -image upload not working in production.
-    -ArgumentError (missing required :bucket option)
 
 
 Styles/jquery style changes:

@@ -31,7 +31,13 @@ BetterNote.Views.SideContent = Backbone.View.extend(
     if (this.type === "notes") {
       Backbone.history.navigate('notes/' + id, {trigger: true});
     } else {
-      this.model.fetch();
+      this.model.fetch({
+        success: function() {
+          this.model.notes().sort();
+          // debugger;
+          this._swapPaneView(this.model.notes(), 'notes', this.model);
+        }.bind(this)
+      });
       this._swapPaneView(this.model.notes(), "notes", this.model);
     }
   },

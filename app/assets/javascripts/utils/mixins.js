@@ -69,6 +69,7 @@ BetterNote.Mixins.NoteSubmit = {
             }.bind(this))) ||
               (wasNew && this.collection.notebook && this.model.notebook().get('updated_at') === this.collection.notebook.get('updated_at'))
             ) {
+              debugger;
               this.collection.add(this.model, { merge: true });
           }
 
@@ -79,6 +80,8 @@ BetterNote.Mixins.NoteSubmit = {
           if ($('strong.Message').length > 0) {
             $('strong.Message').remove();
           }
+          // debugger;
+          this.collection.add(this.model, { merge: true });
           BetterNote._currentPane.removeAndInsert(this.model);
         }
 

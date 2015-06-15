@@ -17,6 +17,8 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
 
     if (this.type === "notebooks") {
       this.collection.sort();
+    } else if (this.type === "notes") {
+      this.listenTo(this.collection, 'sync', this.render);
     }
 
     this.addContentViews();
@@ -166,10 +168,17 @@ BetterNote.Views.SidePane = Backbone.CompositeView.extend({
       this.insertContent(subview);
     } else {
       this.addSubview('.content', subview);
+      this.subviews().sortBy(this.subviews(), function(subview) { return subview['.content']['_wrapped'][0].model.get('updated_at'); });
     }
   },
 
+
+  // CURRENTLY: SUBVIEW SORTING
+
+
+
   render: function() {
+    this.subviews().sortBy(this.subviews(), function(subview) { return subview['.content']['_wrapped'][0].model.get('updated_at'); });
     var contents = this.template({type: this.type });
     this.$el.html(contents);
     this.attachSubviews();

@@ -33,7 +33,13 @@ BetterNote.Views.Sidebar = Backbone.View.extend(
   },
 
   changeToNotes: function() {
-    BetterNote.notes.fetch();
+    BetterNote.notes.fetch({
+      success: function() {
+        BetterNote.notes.sort();
+        // debugger;
+        this._swapPaneView(BetterNote.notes, 'notes');
+      }.bind(this)
+    });
     this._swapPaneView(BetterNote.notes, 'notes');
   },
 

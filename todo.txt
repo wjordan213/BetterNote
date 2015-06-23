@@ -12,7 +12,7 @@ Features:
   -drag and drop
 
 Bugs:
-
+ 
 
 Styles/jquery style changes:
   -button selected depending on side pane state

@@ -37,6 +37,10 @@ extension, JQuery, HTML5, CSS3, the Twitter api (omni-auth), pg search (ruby gem
 - Note titles and bodies can be searched over server-side
   - a custom SQL join is used with active-record and pg search to match only those notes belonging to the current user
 
+### Authentication
+- Users are allowed to sign up for the site either by inputting a username and password or signing up through twitter
+  - twitter sign in/sign up implemented using the omni-auth gem
+
 ### Bonus Features (TBD)
 - [x] real-time ajax updates during note edit
 - [x] scroll within sectons of page

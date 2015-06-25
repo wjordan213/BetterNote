@@ -41,6 +41,10 @@ extension, JQuery, HTML5, CSS3, the Twitter api (omni-auth), pg search (ruby gem
 - Users are allowed to sign up for the site either by inputting a username and password or signing up through twitter
   - twitter sign in/sign up implemented using the omni-auth gem
 
+### Custom API
+- data is sent to client through RESTFUL JSON API calls
+  
+
 ### Bonus Features (TBD)
 - [x] real-time ajax updates during note edit
 - [x] scroll within sectons of page
